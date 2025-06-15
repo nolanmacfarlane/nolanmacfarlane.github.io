@@ -2,8 +2,8 @@
 
     :root
     {
-        --background-color: rgb(80, 73, 109);
-        --text-color: rgb(225, 207, 247);
+        --background-color: rgb(235, 234, 225);
+        --text-color: rgb(107, 105, 109);
     }
 
     *
@@ -36,10 +36,15 @@
 
     #title-bar
     {
-        display: flex;
         align-items: center;
         justify-content: center;
         height: 5vh;
+        padding: 0.5vh;
+    }
+
+    #title-bar-left, #title-bar-center, #title-bar-right
+    {
+        display: flex;
         padding: 0.5vh;
         gap: 1vh;
     }
@@ -47,7 +52,6 @@
     #title-bar-left
     {
         justify-content: left;
-        padding: 0.5vh;
     }
 
     #title-bar-center
@@ -58,12 +62,71 @@
     #title-bar-right
     {
         justify-content: right;
-        padding: 0.5vh;
     }
 
     main
     {
-        height: 90vh;
+        height: 77vh;
+        padding: 1vh;
+    }
+
+    #game-disc-container
+    {
+        justify-content: center;
+        align-items: center;
+        padding: 10vh;
+    }
+
+    #game-disc
+    {
+        height: 60vh;
+        width: 60vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 100%;
+    }
+
+    #game-info
+    {
+        justify-content: center;
+        align-items: end;
+        padding: 1vh;
+    }
+
+    #game-info > h1
+    {
+        font-size: 5vh;
+    }
+
+    #game-info > h2
+    {
+        font-size: 2vh;
+    }
+
+    .game-shelf
+    {
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .game-shelf-item
+    {
+        display: flex;
+        height: 7vh;
+        width: 5vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 0.5vh;
+        cursor: pointer;
+        transform: rotateX(-10deg) rotateY(-30deg);
+        box-shadow: 0.5vh 0.2vh 0.2vh var(--text-color);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .game-shelf-item:hover
+    {
+        height: 8vh;
+        width: 6vh;
+        transform: rotateX(0deg) rotateY(0deg);
     }
 
     .container 
@@ -80,6 +143,8 @@
     .border
     {
         border: 0.2vh solid var(--text-color);
+        border-radius: 1vh;
+        box-shadow: inset 0.1vh 0.1vh 0.5vh var(--text-color);
     }
 
     .flex
@@ -96,6 +161,14 @@
 
 /* #region Text */
 
+    h1
+    {
+        font-size: 2.5vh;
+    }
 
+    h2
+    {
+        font-size: 1.5vh;
+    }
 
 /* #endregion */

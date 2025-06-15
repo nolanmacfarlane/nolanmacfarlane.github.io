@@ -7,21 +7,35 @@
         <script src="script.js" defer></script>
     </head>
     <body class="container vertical">
-        <header class="border" id="title-bar">
-            <section class="container flex" id="title-bar-left">
+        <header class="container border" id="title-bar">
+            <section class="flex" id="title-bar-left">
                 <h1 class="clickable">Profile</h1>
             </section>
-            <section class="container flex" id="title-bar-center">
+            <section class="flex" id="title-bar-center">
                 <h1>Nolan MacFarlane Portfolio Site</h1>
             </section>
-            <section class="container flex" id="title-bar-right">
+            <section class="flex" id="title-bar-right">
                 <h1 class="clickable">Settings</h1>
                 <h1 id="clock"></h1>
             </section>
         </header>
 
         <main class="container border">
-
+            <section class="container flex" id="game-disc-container">
+                <div id="game-disc"></div>
+            </section>
+            <section class="container vertical flex" id="game-info">
+                <h1>Game Title</h1>
+                <h2>Game description.</h2>
+            </section>
         </main>
+
+        <footer class="game-shelf container border">
+            <div class="game-shelf-item"></div>
+            <div class="game-shelf-item"></div>
+            <div class="game-shelf-item"></div>
+            <div class="game-shelf-item"></div>
+            <div class="game-shelf-item"></div>
+        </footer>
     </body>
 </html>
