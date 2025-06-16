@@ -91,12 +91,6 @@
         cursor: pointer;
         mask-image: radial-gradient(circle, transparent 0 8%, black 8.5% 100%);
         animation: rotating-disc infinite 40s linear;
-        animation-play-state: runnning;
-    }
-
-    #game-disc:hover
-    {
-        animation-play-state: paused;
     }
 
     #game-disc::before
@@ -138,31 +132,69 @@
         }
     }
 
-    #game-info
+    #game-info-container
     {
         justify-content: center;
-        align-items: end;
         padding: 1vh;
     }
 
-    #game-info > h1
+    #game-info
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 30vh;
+    }
+
+    #game-title
     {
         font-size: 5vh;
         font-style: italic;
         font-weight: 800;
         letter-spacing: 0.3vh;
+        line-height: 4vh;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
         transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    #game-info > h1:hover
+    #game-title:hover
     {
         letter-spacing: 0.7vh;
     }
 
-    #game-info > h2
+    #game-description
     {
         font-size: 2vh;
-        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        transition: all 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .tag
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        width: 12vh;
+        font-size: 1.5vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 3vh;
+    }
+
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        width: 25vh;
+        font-size: 3vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 3vh;
+        box-shadow: inset -0.2vh -0.2vh 0.5vh var(--text-color);
+        cursor: pointer;
     }
 
     .game-shelf
