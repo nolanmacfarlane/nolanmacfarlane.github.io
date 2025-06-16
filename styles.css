@@ -64,13 +64,6 @@
         justify-content: right;
     }
 
-    #settings-icon
-    {
-        height: 3vh;
-        width: 3vh;
-        fill: var(--text-color);
-    }
-
     main
     {
         height: 77vh;
@@ -217,6 +210,37 @@
     .clickable
     {
         cursor: pointer;
+    }
+
+/* #endregion */
+
+/* #region Icons */
+
+    #profile-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        stroke: var(--text-color);
+    }
+
+    #settings-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        fill: var(--text-color);
+    }
+
+    @keyframes spin
+    {
+        0%
+        {
+            transform: rotateZ(0deg);
+        }
+
+        100%
+        {
+            transform: rotateZ(360deg);
+        }
     }
 
 /* #endregion */

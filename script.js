@@ -6,68 +6,84 @@
 
 // #region Global Variables
 
-    const clock = document.getElementById("clock");
-    
-    const discContainer = document.getElementById("game-disc-container");
-    const discImage = document.getElementById("disc-image");
-    const gameTitle = document.getElementById("game-title");
-    const gameDescription = document.getElementById("game-description");
-    
-    const shelfItems = document.querySelectorAll(".game-shelf-item");
+const settingsIcon = document.getElementById("settings-icon");
+const clock = document.getElementById("clock");
+
+const discContainer = document.getElementById("game-disc-container");
+const discImage = document.getElementById("disc-image");
+
+const gameTitle = document.getElementById("game-title");
+const gameDescription = document.getElementById("game-description");
+
+const shelfItems = document.querySelectorAll(".game-shelf-item");
 
 // #endregion
 
 // #region Main
 
-    updateClock();
-    gameInfoSetup();
+initializeSettingsButton();
+initializeClock();
+initializeGameInfo();
 
 // #endregion
 
 // #region Functions
 
-    function updateClock()
+function initializeSettingsButton()
+{
+    settingsIcon.addEventListener("click", () =>
     {
-        let time = new Date();
+        settingsIcon.style.animation = "spin 1s ease-in-out";
+    });
 
-        clock.textContent = time.toLocaleTimeString();
-
-        setTimeout(updateClock, 1000);
-    }
-    
-    function gameInfoSetup()
+    settingsIcon.addEventListener("animationend", () =>
     {
-        shelfItems.forEach(item =>
+        settingsIcon.style.animation = "none";
+    });
+}
+
+function initializeClock()
+{
+    let time = new Date();
+
+    clock.textContent = time.toLocaleTimeString();
+
+    setTimeout(initializeClock, 1000);
+}
+
+function initializeGameInfo()
+{
+    shelfItems.forEach(item =>
+    {
+        // const img = item.dataset.image;
+
+        // if (img)
+        // {
+        //     item.style.backgroundImage = `url(${img})`;
+        // }
+
+        item.addEventListener("click", () =>
         {
-            // const img = item.dataset.image;
+            discContainer.style.transform = "translateY(70vh)";
 
-            // if (img)
-            // {
-            //     item.style.backgroundImage = `url(${img})`;
-            // }
+            gameTitle.textContent = item.dataset.name;
+            gameDescription.textContent = item.dataset.description;
 
-            item.addEventListener("click", () =>
+            shelfItems.forEach(item => item.classList.remove("selected"));
+            item.classList.add("selected");
+
+            setTimeout(() => 
             {
-                discContainer.style.transform = "translateY(70vh)";
-
-                gameTitle.textContent = item.dataset.name;
-                gameDescription.textContent = item.dataset.description;
-
-                shelfItems.forEach(item => item.classList.remove("selected"));
-                item.classList.add("selected");
-
-                setTimeout(() => 
-                {
-                    // discImage.src = item.dataset.image;
-                    discContainer.style.transform = "translateY(0vh)";
-                }, 1000);
-            });
+                // discImage.src = item.dataset.image;
+                discContainer.style.transform = "translateY(0vh)";
+            }, 1000);
         });
+    });
 
-        if (shelfItems.length > 0)
-        {
-            shelfItems[0].click();
-        }
+    if (shelfItems.length > 0)
+    {
+        shelfItems[0].click();
     }
+}
 
 // #endregion
