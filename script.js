@@ -66,8 +66,8 @@ function initializeGameInfo()
         {
             discContainer.style.transform = "translateY(70vh)";
 
-            gameTitle.textContent = item.dataset.name;
-            gameDescription.textContent = item.dataset.description;
+            gameTitle.style.transform = "translateX(50vw)";
+            gameDescription.style.transform = "translateX(50vw)";
 
             shelfItems.forEach(item => item.classList.remove("selected"));
             item.classList.add("selected");
@@ -75,6 +75,12 @@ function initializeGameInfo()
             setTimeout(() => 
             {
                 // discImage.src = item.dataset.image;
+                gameTitle.textContent = item.dataset.name;
+                gameDescription.textContent = item.dataset.description;
+                
+                gameTitle.style.transform = "translateX(0vw)";
+                gameDescription.style.transform = "translateX(0vw)";
+                
                 discContainer.style.transform = "translateY(0vh)";
             }, 1000);
         });

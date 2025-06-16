@@ -91,6 +91,12 @@
         cursor: pointer;
         mask-image: radial-gradient(circle, transparent 0 8%, black 8.5% 100%);
         animation: rotating-disc infinite 40s linear;
+        animation-play-state: runnning;
+    }
+
+    #game-disc:hover
+    {
+        animation-play-state: paused;
     }
 
     #game-disc::before
@@ -142,11 +148,21 @@
     #game-info > h1
     {
         font-size: 5vh;
+        font-style: italic;
+        font-weight: 800;
+        letter-spacing: 0.3vh;
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #game-info > h1:hover
+    {
+        letter-spacing: 0.7vh;
     }
 
     #game-info > h2
     {
         font-size: 2vh;
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .game-shelf
@@ -234,12 +250,12 @@
     {
         0%
         {
-            transform: rotateZ(0deg);
+            
         }
 
         100%
         {
-            transform: rotateZ(360deg);
+            transform: rotate(360deg);
         }
     }
 
