@@ -14,8 +14,7 @@
     @font-face 
     {
         font-family: "continuum";
-        src: url("fonts/contm.woff2") format("woff2"),
-             url("fonts/contm.ttf") format("truetype");
+        src: url("fonts/contm.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
     }
@@ -45,6 +44,7 @@
     #title-bar-left, #title-bar-center, #title-bar-right
     {
         display: flex;
+        align-items: center;
         padding: 0.5vh;
         gap: 1vh;
     }
@@ -64,16 +64,25 @@
         justify-content: right;
     }
 
+    #settings-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        fill: var(--text-color);
+    }
+
     main
     {
         height: 77vh;
         padding: 1vh;
+        overflow: hidden;
     }
 
     #game-disc-container
     {
         justify-content: center;
         align-items: center;
+        transition: all 1s ease-in-out;
     }
 
     #game-disc
@@ -88,7 +97,7 @@
         border-radius: 50%;
         cursor: pointer;
         mask-image: radial-gradient(circle, transparent 0 8%, black 8.5% 100%);
-        animation: rotating-disc infinite 30s linear;
+        animation: rotating-disc infinite 40s linear;
     }
 
     #game-disc::before
@@ -115,11 +124,18 @@
         0%
         {
             transform: rotateX(20deg) rotateY(-30deg) rotateZ(0deg);
+            scale: 1;
+        }
+
+        50%
+        {
+            scale: 0.8;
         }
 
         100%
         {
             transform: rotateX(20deg) rotateY(-30deg) rotateZ(360deg);
+            scale: 1;
         }
     }
 
@@ -165,6 +181,14 @@
         height: 8vh;
         width: 6vh;
         transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    .game-shelf-item.selected
+    {
+        height: 8vh;
+        width: 6vh;
+        transform: rotateX(0deg) rotateY(0deg);
+        border: 0.25vh solid var(--text-color);
     }
 
     .container 
