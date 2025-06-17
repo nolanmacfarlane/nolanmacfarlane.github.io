@@ -32,6 +32,8 @@ gameDescription.addEventListener("transitionend", () =>
     isTransitioning = false;
 });
 
+window.addEventListener("resize", onResize);
+
 // #endregion
 
 // #region Functions
@@ -74,11 +76,21 @@ function initializeGameInfo()
             if (!item.classList.contains("selected") && !isTransitioning)
             {
                 isTransitioning = true;
-                
-                discContainer.style.transform = "translateY(70vh)";
 
-                gameTitle.style.transform = "translateX(50vw)";
-                gameDescription.style.transform = "translateX(50vw)";
+                if (window.innerWidth > 1080)
+                {
+                    discContainer.style.transform = "translateY(70vh)";
+
+                    gameTitle.style.transform = "translateX(50vw)";
+                    gameDescription.style.transform = "translateX(50vw)";
+                }
+                else
+                {
+                    discContainer.style.transform = "translateY(-90vw)";
+                    
+                    gameTitle.style.transform = "translateX(100vw)";
+                    gameDescription.style.transform = "translateX(100vw)";
+                }
 
                 shelfItems.forEach(item => item.classList.remove("selected"));
                 item.classList.add("selected");
@@ -102,6 +114,12 @@ function initializeGameInfo()
     {
         shelfItems[0].click();
     }
+}
+
+function onResize()
+{
+    if (window.innerWidth > 1080)
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // #endregion
