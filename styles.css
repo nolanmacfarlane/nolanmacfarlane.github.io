@@ -105,7 +105,7 @@
     {
         justify-content: center;
         align-items: center;
-        transition: all 1s ease-in-out;
+        transition: transform 1s ease-in-out;
     }
 
     #game-disc
@@ -338,10 +338,36 @@
         height: 3vh;
         width: 3vh;
         stroke: var(--text-color);
-        transition: all 0.3s ease;
+        transition: stroke 0.3s ease;
     }
 
     #profile-icon:hover
+    {
+        stroke: var(--accent-color);
+    }
+
+    #volume-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        stroke: var(--text-color);
+        transition: stroke 0.3s ease;
+    }
+
+    #volume-icon:hover
+    {
+        stroke: var(--accent-color);
+    }
+
+    #mute-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        stroke: var(--text-color);
+        transition: stroke 0.3s ease;
+    }
+
+    #mute-icon:hover
     {
         stroke: var(--accent-color);
     }
@@ -351,7 +377,7 @@
         height: 3vh;
         width: 3vh;
         fill: var(--text-color);
-        transition: all 0.3s ease;
+        transition: fill 0.3s ease;
     }
     
     #settings-icon:hover
@@ -377,7 +403,7 @@
         height: 8vh;
         width: 8vh;
         stroke: var(--text-color);
-        transition: all 0.3s ease;
+        transition: stroke 0.3s ease;
     }
 
     #shop-icon:hover
@@ -391,7 +417,7 @@
         width: 8vh;
         fill: var(--text-color);
         margin-right: 1vh;
-        transition: all 0.3s ease;
+        transition: fill 0.3s ease;
     }
 
     #library-icon:hover

@@ -6,6 +6,8 @@
 
 // #region Global Variables
 
+const volumeIcon = document.getElementById("volume-icon");
+const muteIcon = document.getElementById("mute-icon");
 const settingsIcon = document.getElementById("settings-icon");
 const clock = document.getElementById("clock");
 
@@ -23,6 +25,7 @@ let isTransitioning = false;
 
 // #region Main
 
+initializeVolumeButtons();
 initializeSettingsButton();
 initializeClock();
 initializeGameInfo();
@@ -37,6 +40,23 @@ window.addEventListener("resize", onResize);
 // #endregion
 
 // #region Functions
+
+function initializeVolumeButtons()
+{
+    muteIcon.style.display = "none";
+    
+    volumeIcon.addEventListener("click", () =>
+    {
+        volumeIcon.style.display = "none";
+        muteIcon.style.display = "block";
+    });
+
+    muteIcon.addEventListener("click", () =>
+    {
+        muteIcon.style.display = "none";
+        volumeIcon.style.display = "block";
+    })
+}
 
 function initializeSettingsButton()
 {
