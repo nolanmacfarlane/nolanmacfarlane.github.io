@@ -17,6 +17,8 @@ const gameDescription = document.getElementById("game-description");
 
 const shelfItems = document.querySelectorAll(".game-shelf-item");
 
+let isTransitioning = false;
+
 // #endregion
 
 // #region Main
@@ -24,6 +26,11 @@ const shelfItems = document.querySelectorAll(".game-shelf-item");
 initializeSettingsButton();
 initializeClock();
 initializeGameInfo();
+
+gameDescription.addEventListener("transitionend", () =>
+{
+    isTransitioning = false;
+});
 
 // #endregion
 
@@ -64,25 +71,30 @@ function initializeGameInfo()
 
         item.addEventListener("click", () =>
         {
-            discContainer.style.transform = "translateY(70vh)";
-
-            gameTitle.style.transform = "translateX(50vw)";
-            gameDescription.style.transform = "translateX(50vw)";
-
-            shelfItems.forEach(item => item.classList.remove("selected"));
-            item.classList.add("selected");
-
-            setTimeout(() => 
+            if (!item.classList.contains("selected") && !isTransitioning)
             {
-                // discImage.src = item.dataset.image;
-                gameTitle.textContent = item.dataset.name;
-                gameDescription.textContent = item.dataset.description;
+                isTransitioning = true;
                 
-                gameTitle.style.transform = "translateX(0vw)";
-                gameDescription.style.transform = "translateX(0vw)";
-                
-                discContainer.style.transform = "translateY(0vh)";
-            }, 1000);
+                discContainer.style.transform = "translateY(70vh)";
+
+                gameTitle.style.transform = "translateX(50vw)";
+                gameDescription.style.transform = "translateX(50vw)";
+
+                shelfItems.forEach(item => item.classList.remove("selected"));
+                item.classList.add("selected");
+
+                setTimeout(() => 
+                {
+                    // discImage.src = item.dataset.image;
+                    gameTitle.textContent = item.dataset.name;
+                    gameDescription.textContent = item.dataset.description;
+                    
+                    gameTitle.style.transform = "translateX(0vw)";
+                    gameDescription.style.transform = "translateX(0vw)";
+                    
+                    discContainer.style.transform = "translateY(0vh)";
+                }, 1000);
+            }
         });
     });
 
