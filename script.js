@@ -6,9 +6,17 @@
 
 // #region Global Variables
 
+const profileIcon = document.getElementById("profile-icon");
 const volumeIcon = document.getElementById("volume-icon");
 const muteIcon = document.getElementById("mute-icon");
 const settingsIcon = document.getElementById("settings-icon");
+const shopIcon = document.getElementById("shop-icon");
+const libraryIcon = document.getElementById("library-icon");
+
+const icons = [profileIcon, volumeIcon, muteIcon, settingsIcon, shopIcon, libraryIcon];
+
+const buttons = document.querySelectorAll(".button");
+
 const clock = document.getElementById("clock");
 
 const discContainer = document.getElementById("game-disc-container");
@@ -21,6 +29,7 @@ const shelfItems = document.querySelectorAll(".game-shelf-item");
 
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 let isTransitioning = false;
+let isMute = false;
 
 const cursor = document.getElementById("cursor");
 
@@ -28,6 +37,8 @@ const cursor = document.getElementById("cursor");
 
 // #region Main
 
+initializeIcons();
+initializeButtons();
 initializeVolumeButtons();
 initializeSettingsButton();
 initializeClock();
@@ -36,22 +47,31 @@ initializeGameInfo();
 if (isMobile)
     cursor.style.display = "none";
 
-gameDescription.addEventListener("transitionend", () =>
-{
-    isTransitioning = false;
-});
-
-window.addEventListener("resize", onResize);
-
-document.body.onpointermove = event =>
-{
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
-};
-
 // #endregion
 
 // #region Functions
+
+function initializeIcons()
+{
+    icons.forEach(icon =>
+    {
+        icon.addEventListener("mouseenter", () =>
+        {
+            playSound("sounds/hover.wav");
+        });
+    });
+}
+
+function initializeButtons()
+{
+    buttons.forEach(button =>
+    {
+        button.addEventListener("mouseenter", () =>
+        {
+            playSound("sounds/hover.wav");
+        });
+    });
+}
 
 function initializeVolumeButtons()
 {
@@ -59,15 +79,32 @@ function initializeVolumeButtons()
     
     volumeIcon.addEventListener("click", () =>
     {
+        isMute = true;
+        
         volumeIcon.style.display = "none";
         muteIcon.style.display = "block";
+
+        console.log(isMute);
     });
 
     muteIcon.addEventListener("click", () =>
     {
+        isMute = false;
+        
         muteIcon.style.display = "none";
         volumeIcon.style.display = "block";
+
+        console.log(isMute);
     })
+}
+
+function playSound(url)
+{
+    if (!isMute)
+    {
+        const audio = new Audio(url);
+        audio.play();
+    }
 }
 
 function initializeSettingsButton()
@@ -140,6 +177,11 @@ function initializeGameInfo()
                 }, 1000);
             }
         });
+
+        item.addEventListener("mouseenter", () =>
+        {
+            playSound("sounds/hover.wav");
+        })
     });
 
     if (shelfItems.length > 0)
@@ -152,6 +194,28 @@ function onResize()
 {
     if (window.innerWidth > 1080)
         window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// #endregion
+
+// #region Events
+
+gameDescription.addEventListener("transitionend", () =>
+{
+    isTransitioning = false;
+});
+
+window.addEventListener("resize", onResize);
+
+document.body.onpointermove = event =>
+{
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+};
+
+document.body.onpointerdown = event =>
+{
+    playSound("sounds/click.wav");
 }
 
 // #endregion
