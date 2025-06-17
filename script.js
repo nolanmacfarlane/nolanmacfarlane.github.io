@@ -72,6 +72,7 @@ function initializePlayButton()
 
     playButton.addEventListener("click", () =>
     {
+        playSound("sounds/play.wav");
         discContainer.classList.add("enter");
     });
 }
