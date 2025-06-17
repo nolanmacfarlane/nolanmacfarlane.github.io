@@ -19,7 +19,10 @@ const gameDescription = document.getElementById("game-description");
 
 const shelfItems = document.querySelectorAll(".game-shelf-item");
 
+const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 let isTransitioning = false;
+
+const cursor = document.getElementById("cursor");
 
 // #endregion
 
@@ -30,12 +33,21 @@ initializeSettingsButton();
 initializeClock();
 initializeGameInfo();
 
+if (isMobile)
+    cursor.style.display = "none";
+
 gameDescription.addEventListener("transitionend", () =>
 {
     isTransitioning = false;
 });
 
 window.addEventListener("resize", onResize);
+
+document.body.onpointermove = event =>
+{
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+};
 
 // #endregion
 

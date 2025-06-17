@@ -2,9 +2,10 @@
 
     :root
     {
-        --background-color: rgb(235, 234, 225);
-        --text-color: rgb(107, 105, 109);
-        --accent-color: rgb(143, 201, 201);
+        --background-color: #ebeae1;
+        --text-color: #6b696d;
+        --accent-color: #8fc9c9;
+        --cursor-color: #19297c;
     }
 
     *
@@ -28,6 +29,7 @@
         font-family: "continuum";
         background-color: var(--background-color);
         overflow: hidden;
+        cursor: none;
     }
 
     @media (max-width: 1080px)
@@ -118,7 +120,6 @@
         overflow: hidden;
         border: 0.2vh solid black;
         border-radius: 50%;
-        cursor: pointer;
         mask-image: radial-gradient(circle, transparent 0 8%, black 8.5% 100%);
         animation: rotating-disc infinite 40s linear;
     }
@@ -234,7 +235,6 @@
         border-radius: 3vh;
         box-shadow: inset -0.2vh -0.2vh 0.5vh var(--text-color);
         transition: color 0.3s ease;
-        cursor: pointer;
     }
 
     .button:hover
@@ -280,7 +280,6 @@
         width: 5vh;
         border: 0.2vh solid var(--text-color);
         border-radius: 0.5vh;
-        cursor: pointer;
         transform: rotateX(-10deg) rotateY(-30deg);
         box-shadow: 0.5vh 0.2vh 0.2vh var(--text-color);
         transition: all 0.2s ease-in-out;
@@ -322,11 +321,6 @@
     .flex
     {
         flex: 1;
-    }
-
-    .clickable
-    {
-        cursor: pointer;
     }
 
 /* #endregion */
@@ -437,6 +431,25 @@
     h2
     {
         font-size: 1.5vh;
+    }
+
+/* #endregion */
+
+/* #region Cursor */
+
+    #cursor
+    {
+        height: 2vh;
+        aspect-ratio: 1;
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        background: var(--cursor-color);
+        opacity: 0.4;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
     }
 
 /* #endregion */
