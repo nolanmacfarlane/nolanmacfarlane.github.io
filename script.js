@@ -15,7 +15,7 @@ const libraryIcon = document.getElementById("library-icon");
 
 const icons = [profileIcon, volumeIcon, muteIcon, settingsIcon, shopIcon, libraryIcon];
 
-const buttons = document.querySelectorAll(".button");
+const playButton = document.getElementById("play-button");
 
 const clock = document.getElementById("clock");
 
@@ -38,9 +38,7 @@ const cursor = document.getElementById("cursor");
 // #region Main
 
 initializeIcons();
-initializeButtons();
-initializeVolumeButtons();
-initializeSettingsButton();
+initializePlayButton();
 initializeClock();
 initializeGameInfo();
 
@@ -60,20 +58,25 @@ function initializeIcons()
             playSound("sounds/hover.wav");
         });
     });
+
+    initializeVolumeIcons();
+    initializeSettingsIcon();
 }
 
-function initializeButtons()
+function initializePlayButton()
 {
-    buttons.forEach(button =>
+    playButton.addEventListener("mouseenter", () =>
     {
-        button.addEventListener("mouseenter", () =>
-        {
-            playSound("sounds/hover.wav");
-        });
+        playSound("sounds/hover.wav");
+    });
+
+    playButton.addEventListener("click", () =>
+    {
+        discContainer.classList.add("enter");
     });
 }
 
-function initializeVolumeButtons()
+function initializeVolumeIcons()
 {
     muteIcon.style.display = "none";
     
@@ -107,7 +110,7 @@ function playSound(url)
     }
 }
 
-function initializeSettingsButton()
+function initializeSettingsIcon()
 {
     settingsIcon.addEventListener("click", () =>
     {
@@ -148,14 +151,14 @@ function initializeGameInfo()
 
                 if (window.innerWidth > 1080)
                 {
-                    discContainer.style.transform = "translateY(70vh)";
+                    discContainer.style.transform = "translateY(70vh) rotateX(20deg) rotateY(-30deg)";
 
                     gameTitle.style.transform = "translateX(50vw)";
                     gameDescription.style.transform = "translateX(50vw)";
                 }
                 else
                 {
-                    discContainer.style.transform = "translateY(-90vw)";
+                    discContainer.style.transform = "translateY(-90vw) rotateX(20deg) rotateY(-30deg)";
                     
                     gameTitle.style.transform = "translateX(100vw)";
                     gameDescription.style.transform = "translateX(100vw)";
@@ -173,7 +176,7 @@ function initializeGameInfo()
                     gameTitle.style.transform = "translateX(0vw)";
                     gameDescription.style.transform = "translateX(0vw)";
                     
-                    discContainer.style.transform = "translateY(0vh)";
+                    discContainer.style.transform = "translateY(0vh) rotateX(20deg) rotateY(-30deg)";
                 }, 1000);
             }
         });
