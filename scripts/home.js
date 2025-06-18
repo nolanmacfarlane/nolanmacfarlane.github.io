@@ -64,11 +64,12 @@ function initializeProfileIcon()
 
 function initializeVolumeIcons()
 {
-    muteIcon.style.display = "none";
+    if (localStorage.getItem("isMute") === "true") volumeIcon.style.display = "none";
+    else muteIcon.style.display = "none";
     
     volumeIcon.addEventListener("click", () =>
     {
-        window.isMute = true;
+        localStorage.setItem("isMute", "true");
         
         volumeIcon.style.display = "none";
         muteIcon.style.display = "block";
@@ -76,7 +77,7 @@ function initializeVolumeIcons()
 
     muteIcon.addEventListener("click", () =>
     {
-        window.isMute = false;
+        localStorage.setItem("isMute", "false");
         
         muteIcon.style.display = "none";
         volumeIcon.style.display = "block";

@@ -1,7 +1,6 @@
 // #region Global Variables
 
 window.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-window.isMute = false;
 
 window.cursor = document.getElementById("cursor");
 
@@ -23,11 +22,10 @@ function checkMobile()
 
 function playSound(url)
 {
-    if (!window.isMute)
-    {
-        const audio = new Audio(url);
-        audio.play().catch(e => console.warn("Playback failed:", e));
-    }
+    if (localStorage.getItem("isMute") === "true") return;
+    
+    const audio = new Audio(url);
+    audio.play().catch(e => console.warn("Playback failed:", e));
 }
 
 function checkLightMode()
