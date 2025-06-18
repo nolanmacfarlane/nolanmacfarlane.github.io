@@ -116,6 +116,10 @@ function initializeSettingsIcon()
     settingsIcon.addEventListener("click", () =>
     {
         settingsIcon.style.animation = "spin 1s ease-in-out";
+        setTimeout(() =>
+        {
+            window.location.href = "/settings/";
+        }, 1000);
     });
 
     settingsIcon.addEventListener("animationend", () =>
