@@ -20,6 +20,7 @@ const discImage = document.getElementById("disc-image");
 
 const gameTitle = document.getElementById("game-title");
 const gameDescription = document.getElementById("game-description");
+const gameTags = document.getElementById("game-tags");
 
 const shelfItems = document.querySelectorAll(".game-shelf-item");
 
@@ -130,6 +131,20 @@ function initializePlayButton()
     {
         playSound("sounds/play.wav");
         discContainer.classList.add("enter");
+
+        discContainer.addEventListener("animationend", () =>
+        {
+            window.location.href = playButton.dataset.link;
+            discContainer.classList.remove("enter");
+            document.querySelector(".selected").style.order = "0";
+
+            shelfItems.forEach(item =>
+            {
+                if (!item.classList.contains("selected")) item.style.order++;
+
+                localStorage.setItem(item.dataset.name, item.style.order.toString());
+            });
+        });
     });
 }
 
@@ -153,11 +168,14 @@ function initializeGameInfo()
         //     item.style.backgroundImage = `url(${img})`;
         // }
 
+        if (localStorage.getItem(item.dataset.name) !== null) item.style.order = localStorage.getItem(item.dataset.name);
+
         item.addEventListener("click", () =>
         {
             if (!item.classList.contains("selected") && !isTransitioning)
             {
                 isTransitioning = true;
+                playButton.dataset.link = "";
 
                 if (window.innerWidth > 1080)
                 {
@@ -165,6 +183,7 @@ function initializeGameInfo()
 
                     gameTitle.style.transform = "translateX(50vw)";
                     gameDescription.style.transform = "translateX(50vw)";
+                    gameTags.style.transform = "translateX(50vw)";
                 }
                 else
                 {
@@ -172,6 +191,7 @@ function initializeGameInfo()
                     
                     gameTitle.style.transform = "translateX(100vw)";
                     gameDescription.style.transform = "translateX(100vw)";
+                    gameTags.style.transform = "translateX(100vw)";
                 }
 
                 shelfItems.forEach(item => item.classList.remove("selected"));
@@ -185,6 +205,7 @@ function initializeGameInfo()
                     
                     gameTitle.style.transform = "translateX(0vw)";
                     gameDescription.style.transform = "translateX(0vw)";
+                    gameTags.style.transform = "translateX(0vw)";
                     
                     discContainer.style.transform = "translateY(0vh) rotateX(20deg) rotateY(-30deg)";
                 }, 1000);
@@ -199,8 +220,22 @@ function initializeGameInfo()
 
     if (shelfItems.length > 0)
     {
-        shelfItems[0].click();
+        const lowestOrderElement = Array.from(shelfItems).reduce((lowest, current) =>
+        {
+            const currentOrder = parseInt(current.style.order) || 0;
+            const lowestOrder = parseInt(lowest.style.order) || 0;
+
+            return currentOrder < lowestOrder ? current : lowest;
+        });
+
+        lowestOrderElement.click();
     }
+
+    gameTags.addEventListener("transitionend", () =>
+    {
+        isTransitioning = false;
+        playButton.dataset.link = document.querySelector(".selected").dataset.link;
+    });
 }
 
 function onResize()
@@ -212,11 +247,6 @@ function onResize()
 // #endregion
 
 // #region Events
-
-gameDescription.addEventListener("transitionend", () =>
-{
-    isTransitioning = false;
-});
 
 window.addEventListener("resize", onResize);
 
