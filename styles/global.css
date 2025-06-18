@@ -1,0 +1,76 @@
+/* #region General Styles and Global Variables */
+
+    :root
+    {
+        --background-color: #ebeae1;
+        --text-color: #6b696d;
+        --accent-color: #8fc9c9;
+        --cursor-color: #19297c;
+    }
+
+    *
+    {
+        color: var(--text-color);
+    }
+
+    @font-face 
+    {
+        font-family: "continuum";
+        src: url("../fonts/contm.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body 
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 1vh;
+        gap: 1vh;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "continuum";
+        background-color: var(--background-color);
+        overflow: hidden;
+        cursor: none;
+    }
+
+/* #endregion */
+
+/* #region Text */
+
+    h1
+    {
+        font-size: 2.5vh;
+    }
+
+    h2
+    {
+        font-size: 2vh;
+    }
+
+    p
+    {
+        font-size: 1.5vh;
+    }
+
+/* #endregion */
+
+/* #region Cursor */
+
+    #cursor
+    {
+        height: 2vh;
+        aspect-ratio: 1;
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        background: var(--cursor-color);
+        opacity: 0.4;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+    }
+
+/* #endregion */

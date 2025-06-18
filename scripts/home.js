@@ -1,10 +1,4 @@
-// #region Classes
-
-
-
-// #endregion
-
-// #region Global Variables
+// #region Variables
 
 const profileIcon = document.getElementById("profile-icon");
 const volumeIcon = document.getElementById("volume-icon");
@@ -27,11 +21,7 @@ const gameDescription = document.getElementById("game-description");
 
 const shelfItems = document.querySelectorAll(".game-shelf-item");
 
-const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 let isTransitioning = false;
-let isMute = false;
-
-const cursor = document.getElementById("cursor");
 
 // #endregion
 
@@ -41,9 +31,6 @@ initializeIcons();
 initializePlayButton();
 initializeClock();
 initializeGameInfo();
-
-if (isMobile)
-    cursor.style.display = "none";
 
 // #endregion
 
@@ -59,8 +46,51 @@ function initializeIcons()
         });
     });
 
+    initializeProfileIcon();
     initializeVolumeIcons();
     initializeSettingsIcon();
+}
+
+function initializeProfileIcon()
+{
+    profileIcon.addEventListener("click", () =>
+    {
+        window.location.href = "/profile/";
+    });
+}
+
+function initializeVolumeIcons()
+{
+    muteIcon.style.display = "none";
+    
+    volumeIcon.addEventListener("click", () =>
+    {
+        window.isMute = true;
+        
+        volumeIcon.style.display = "none";
+        muteIcon.style.display = "block";
+    });
+
+    muteIcon.addEventListener("click", () =>
+    {
+        window.isMute = false;
+        
+        muteIcon.style.display = "none";
+        volumeIcon.style.display = "block";
+    })
+}
+
+function initializeSettingsIcon()
+{
+    settingsIcon.addEventListener("click", () =>
+    {
+        settingsIcon.style.animation = "spin 1s ease-in-out";
+    });
+
+    settingsIcon.addEventListener("animationend", () =>
+    {
+        settingsIcon.style.animation = "none";
+    });
 }
 
 function initializePlayButton()
@@ -74,57 +104,6 @@ function initializePlayButton()
     {
         playSound("sounds/play.wav");
         discContainer.classList.add("enter");
-    });
-}
-
-function initializeVolumeIcons()
-{
-    muteIcon.style.display = "none";
-    
-    volumeIcon.addEventListener("click", () =>
-    {
-        isMute = true;
-        
-        volumeIcon.style.display = "none";
-        muteIcon.style.display = "block";
-
-        console.log(isMute);
-    });
-
-    muteIcon.addEventListener("click", () =>
-    {
-        isMute = false;
-        
-        muteIcon.style.display = "none";
-        volumeIcon.style.display = "block";
-
-        console.log(isMute);
-    })
-}
-
-function playSound(url)
-{
-    if (!isMute)
-    {
-        const audio = new Audio(url);
-        audio.play();
-    }
-}
-
-function initializeSettingsIcon()
-{
-    settingsIcon.addEventListener("click", () =>
-    {
-        settingsIcon.style.animation = "spin 1s ease-in-out";
-        setTimeout(() =>
-        {
-            window.location.href = "/settings/";
-        }, 1000);
-    });
-
-    settingsIcon.addEventListener("animationend", () =>
-    {
-        settingsIcon.style.animation = "none";
     });
 }
 
@@ -214,16 +193,5 @@ gameDescription.addEventListener("transitionend", () =>
 });
 
 window.addEventListener("resize", onResize);
-
-document.body.onpointermove = event =>
-{
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
-};
-
-document.body.onpointerdown = event =>
-{
-    playSound("sounds/click.wav");
-}
 
 // #endregion
