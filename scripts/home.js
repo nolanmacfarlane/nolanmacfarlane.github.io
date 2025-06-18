@@ -3,11 +3,13 @@
 const profileIcon = document.getElementById("profile-icon");
 const volumeIcon = document.getElementById("volume-icon");
 const muteIcon = document.getElementById("mute-icon");
+const lightIcon = document.getElementById("light-icon");
+const darkIcon = document.getElementById("dark-icon");
 const settingsIcon = document.getElementById("settings-icon");
 const shopIcon = document.getElementById("shop-icon");
 const libraryIcon = document.getElementById("library-icon");
 
-const icons = [profileIcon, volumeIcon, muteIcon, settingsIcon, shopIcon, libraryIcon];
+const icons = [profileIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon, shopIcon, libraryIcon];
 
 const playButton = document.getElementById("play-button");
 
@@ -48,6 +50,7 @@ function initializeIcons()
 
     initializeProfileIcon();
     initializeVolumeIcons();
+    initializeLightIcons();
     initializeSettingsIcon();
 }
 
@@ -78,6 +81,28 @@ function initializeVolumeIcons()
         muteIcon.style.display = "none";
         volumeIcon.style.display = "block";
     })
+}
+
+function initializeLightIcons()
+{
+    if (localStorage.getItem("isLightMode") === "true") darkIcon.style.display = "none";
+    else lightIcon.style.display = "none";
+
+    lightIcon.addEventListener("click", () =>
+    {
+        toggleLightMode();
+
+        lightIcon.style.display = "none";
+        darkIcon.style.display = "block";
+    });
+
+    darkIcon.addEventListener("click", () =>
+    {
+        toggleLightMode();
+
+        darkIcon.style.display = "none";
+        lightIcon.style.display = "block";
+    });
 }
 
 function initializeSettingsIcon()

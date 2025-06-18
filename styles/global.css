@@ -8,11 +8,6 @@
         --cursor-color: #19297c;
     }
 
-    *
-    {
-        color: var(--text-color);
-    }
-
     @font-face 
     {
         font-family: "continuum";
@@ -30,9 +25,17 @@
         min-height: 100vh;
         margin: 0;
         font-family: "continuum";
+        color: var(--text-color);
         background-color: var(--background-color);
         overflow: hidden;
         cursor: none;
+    }
+
+    .dark-mode
+    {
+        --background-color: #161422;
+        --text-color: #f7e5e8;
+        --cursor-color: #7685cf;
     }
 
 /* #endregion */

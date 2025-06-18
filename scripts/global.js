@@ -10,6 +10,7 @@ window.cursor = document.getElementById("cursor");
 // #region Main
 
 checkMobile();
+checkLightMode();
 
 // #endregion
 
@@ -27,6 +28,18 @@ function playSound(url)
         const audio = new Audio(url);
         audio.play().catch(e => console.warn("Playback failed:", e));
     }
+}
+
+function checkLightMode()
+{
+    if (localStorage.getItem("isLightMode") === "false") document.body.classList.add("dark-mode");
+}
+
+function toggleLightMode()
+{
+    document.body.classList.toggle("dark-mode");
+    let isLightMode = !document.body.classList.contains("dark-mode");
+    localStorage.setItem("isLightMode", isLightMode.toString());
 }
 
 // #endregion
