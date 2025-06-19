@@ -7,14 +7,21 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        pointer-events: none;
+        transition: opacity 1s ease-in-out,
+                    filter 1s ease-in-out,
+                    scale 1s ease-in-out;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        filter: blur(10px);
+        scale: 1.05;
         z-index: -1;
     }
 
     .background-image.active
     {
         opacity: 1;
+        filter: blur(0);
+        scale: 1;
     }
 
 /* #endregion */
@@ -73,12 +80,6 @@
 /* #endregion */
 
 /* #region Containers */
-
-    .content
-    {
-        position: relative;
-        z-index: 1;
-    }
 
     #title-bar
     {
@@ -278,7 +279,7 @@
         padding-left: 1.5vh;
         padding-right: 1.5vh;
         font-size: 1.5vh;
-        border: 0.2vh solid var(--shadow-color);
+        /* border: 0.2vh solid var(--shadow-color); */
         box-shadow: inset -0.2vh -0.2vh 0.5vh var(--shadow-color);
         border-radius: 3vh;
     }
@@ -291,7 +292,7 @@
         height: 5vh;
         width: 25vh;
         font-size: 3vh;
-        border: 0.2vh solid var(--shadow-color);
+        /* border: 0.2vh solid var(--shadow-color); */
         border-radius: 3vh;
         box-shadow: inset -0.2vh -0.2vh 0.5vh var(--shadow-color);
         transition: color 0.3s ease;
@@ -370,9 +371,21 @@
 
     .border
     {
-        border: 0.2vh solid var(--shadow-color);
         border-radius: 1vh;
-        box-shadow: inset 0.1vh 0.1vh 0.5vh var(--shadow-color);
+    }
+
+    .border::after
+    {
+        content: "";
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: 1vh;
+        box-shadow: inset -0.2vh -0.2vh 0.5vh var(--shadow-color);
     }
 
     .frosted-glass

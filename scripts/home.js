@@ -153,12 +153,14 @@ function initializePlayButton()
         document.body.style.pointerEvents = "none";
         playSound("sounds/play.wav");
         discContainer.classList.add("enter");
+        document.querySelector(".active").style.scale = 1.1;
 
         discContainer.addEventListener("animationend", () =>
         {
             window.location.href = playButton.dataset.link;
             document.body.style.pointerEvents = "auto";
             discContainer.classList.remove("enter");
+            document.querySelector(".active").style.scale = 1;
             document.querySelector(".selected").style.order = "0";
 
             shelfItems.forEach(item =>
