@@ -1,4 +1,25 @@
+// #region Classes
+
+class BackgroundImage
+{
+    constructor(src)
+    {
+        this.src = src;
+
+        this.element = document.createElement("div");
+        this.element.className = "background-image";
+
+        this.element.style.background = `url(${this.src}) center / cover no-repeat fixed`;
+
+        document.body.appendChild(this.element);
+    }
+}
+
+// #endregion
+
 // #region Variables
+
+let backgroundImages = [];
 
 const profileIcon = document.getElementById("profile-icon");
 const volumeIcon = document.getElementById("volume-icon");
@@ -129,12 +150,14 @@ function initializePlayButton()
 
     playButton.addEventListener("click", () =>
     {
+        document.body.style.pointerEvents = "none";
         playSound("sounds/play.wav");
         discContainer.classList.add("enter");
 
         discContainer.addEventListener("animationend", () =>
         {
             window.location.href = playButton.dataset.link;
+            document.body.style.pointerEvents = "auto";
             discContainer.classList.remove("enter");
             document.querySelector(".selected").style.order = "0";
 
@@ -161,12 +184,10 @@ function initializeGameInfo()
 {
     shelfItems.forEach(item =>
     {
-        // const img = item.dataset.image;
+        item.style.background = `url(${item.dataset.image}) center / cover no-repeat fixed`;
 
-        // if (img)
-        // {
-        //     item.style.backgroundImage = `url(${img})`;
-        // }
+        const backgroundImage = new BackgroundImage(item.dataset.bgImage);
+        backgroundImages.push(backgroundImage);
 
         if (localStorage.getItem(item.dataset.name) !== null) item.style.order = localStorage.getItem(item.dataset.name);
 
@@ -197,9 +218,12 @@ function initializeGameInfo()
                 shelfItems.forEach(item => item.classList.remove("selected"));
                 item.classList.add("selected");
 
+                backgroundImages.forEach(bgImage => bgImage.element.classList.remove("active"));
+                backgroundImage.element.classList.add("active");
+
                 setTimeout(() => 
                 {
-                    // discImage.src = item.dataset.image;
+                    discImage.src = item.dataset.image;
                     gameTitle.textContent = item.dataset.name;
                     gameDescription.textContent = item.dataset.description;
                     

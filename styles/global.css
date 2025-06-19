@@ -3,9 +3,11 @@
     :root
     {
         --background-color: #ebeae1;
-        --text-color: #6b696d;
+        --text-color: #363636;
         --accent-color: #8fc9c9;
+        --shadow-color: #363636;
         --cursor-color: #19297c;
+        --frosted-glass-color: #ffffff26;
     }
 
     @font-face 
@@ -35,7 +37,9 @@
     {
         --background-color: #161422;
         --text-color: #f7e5e8;
-        --cursor-color: #7685cf;
+        --shadow-color: #f7e5e8;
+        --cursor-color: #e1e4f5;
+        --frosted-glass-color: #00000044;
     }
 
 /* #endregion */
