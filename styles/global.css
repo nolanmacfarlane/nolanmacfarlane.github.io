@@ -11,7 +11,7 @@
         background: var(--frosted-glass-color);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        z-index: -1;
+        z-index: -5;
     }
 
 /* #endregion */
@@ -25,6 +25,7 @@
         --accent-color: #8fc9c9;
         --cursor-color: #19297c;
         --frosted-glass-color: #ffffff26;
+        --vignette-color: #ffffff;
     }
 
     @font-face 
@@ -54,6 +55,7 @@
         --text-color: #f7e5e8;
         --cursor-color: #e1e4f5;
         --frosted-glass-color: #00000044;
+        --vignette-color: #000000;
     }
 
 /* #endregion */

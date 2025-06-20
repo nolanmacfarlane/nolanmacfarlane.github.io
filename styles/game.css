@@ -14,7 +14,7 @@
         width: 100vw;
         pointer-events: none;
         background: url(/images/botw_landscape.jpg) center / cover no-repeat fixed;
-        z-index: -2;
+        z-index: -10;
     }
 
     #title-screen

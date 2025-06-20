@@ -14,7 +14,7 @@
         opacity: 0;
         filter: blur(10px);
         scale: 1.05;
-        z-index: -2;
+        z-index: -10;
     }
 
     .background-image.active
@@ -22,6 +22,18 @@
         opacity: 1;
         filter: blur(0);
         scale: 1;
+    }
+
+    #vignette
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 135vw;
+        pointer-events: none;
+        background: radial-gradient(ellipse at 0% 50%, transparent 50%, var(--vignette-color));
+        z-index: -1;
     }
 
 /* #endregion */
@@ -386,7 +398,7 @@
 
     .game-shelf-item:hover
     {
-        scale: 1.1;
+        scale: 1.05;
         transform: rotateX(0deg) rotateY(0deg);
     }
 
@@ -402,13 +414,13 @@
         content: "";
         position: absolute;
         inset: -0.2vh;
-        background: linear-gradient(-45deg, transparent 15%, var(--accent-color) 50%, transparent 85%);
+        background: linear-gradient(-45deg, transparent 20%, var(--accent-color) 50%, transparent 80%);
         background-size: 600% 600%;
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
         box-sizing: border-box;
         border: 0.25vh solid transparent;
-        border-radius: 0.5vh;
+        border-radius: 0.7vh;
         animation: border-effect 3s linear infinite;
         z-index: 1;
     }
@@ -431,6 +443,7 @@
         height: 100%;
         width: 100%;
         border-radius: 0.5vh;
+        pointer-events: none;
     }
 
 /* #endregion */
