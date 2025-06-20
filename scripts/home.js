@@ -186,7 +186,9 @@ function initGameInfo()
 {
     shelfItems.forEach(item =>
     {
-        item.style.background = `url(${item.dataset.image}) center / cover no-repeat fixed`;
+        // item.style.background = `url(${item.dataset.image}) center / cover no-repeat fixed`;
+
+        Array.from(item.children)[0].src = item.dataset.image;
 
         const backgroundImage = new BackgroundImage(item.dataset.bgImage);
         backgroundImages.push(backgroundImage);
