@@ -4,6 +4,9 @@ window.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 window.cursor = document.getElementById("cursor");
 
+const soundCooldown = 50;
+let lastSoundTime = 0;
+
 // #endregion
 
 // #region Main
@@ -23,9 +26,16 @@ function checkMobile()
 function playSound(url)
 {
     if (localStorage.getItem("isMute") === "true") return;
-    
-    const audio = new Audio(url);
-    audio.play().catch(e => console.warn("Playback failed:", e));
+
+    const now = Date.now();
+
+    if (now - lastSoundTime >= soundCooldown)
+    {
+        const audio = new Audio(url);
+        audio.play().catch(e => console.warn("Playback failed:", e));
+
+        lastSoundTime = now;
+    }
 }
 
 function checkLightMode()
