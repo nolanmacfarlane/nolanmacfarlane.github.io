@@ -46,8 +46,8 @@ function toggleLightMode()
 
 document.body.onpointermove = event =>
 {
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
+    cursor.style.left = `${event.pageX}px`;
+    cursor.style.top = `${event.pageY}px`;
 };
 
 document.body.onpointerdown = event =>

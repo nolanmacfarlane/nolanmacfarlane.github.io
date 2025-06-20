@@ -51,16 +51,16 @@ let isTransitioning = false;
 
 // #region Main
 
-initializeIcons();
-initializePlayButton();
-initializeClock();
-initializeGameInfo();
+initIcons();
+initPlayButton();
+initClock();
+initGameInfo();
 
 // #endregion
 
 // #region Functions
 
-function initializeIcons()
+function initIcons()
 {
     icons.forEach(icon =>
     {
@@ -70,13 +70,13 @@ function initializeIcons()
         });
     });
 
-    initializeProfileIcon();
-    initializeVolumeIcons();
-    initializeLightIcons();
-    initializeSettingsIcon();
+    initProfileIcon();
+    initVolumeIcons();
+    initLightIcons();
+    initSettingsIcon();
 }
 
-function initializeProfileIcon()
+function initProfileIcon()
 {
     profileIcon.addEventListener("click", () =>
     {
@@ -84,7 +84,7 @@ function initializeProfileIcon()
     });
 }
 
-function initializeVolumeIcons()
+function initVolumeIcons()
 {
     if (localStorage.getItem("isMute") === "true") volumeIcon.style.display = "none";
     else muteIcon.style.display = "none";
@@ -106,7 +106,7 @@ function initializeVolumeIcons()
     })
 }
 
-function initializeLightIcons()
+function initLightIcons()
 {
     if (localStorage.getItem("isLightMode") === "true") darkIcon.style.display = "none";
     else lightIcon.style.display = "none";
@@ -128,7 +128,7 @@ function initializeLightIcons()
     });
 }
 
-function initializeSettingsIcon()
+function initSettingsIcon()
 {
     settingsIcon.addEventListener("click", () =>
     {
@@ -141,7 +141,7 @@ function initializeSettingsIcon()
     });
 }
 
-function initializePlayButton()
+function initPlayButton()
 {
     playButton.addEventListener("mouseenter", () =>
     {
@@ -173,16 +173,16 @@ function initializePlayButton()
     });
 }
 
-function initializeClock()
+function initClock()
 {
     let time = new Date();
 
     clock.textContent = time.toLocaleTimeString();
 
-    setTimeout(initializeClock, 1000);
+    setTimeout(initClock, 1000);
 }
 
-function initializeGameInfo()
+function initGameInfo()
 {
     shelfItems.forEach(item =>
     {
