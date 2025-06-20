@@ -1,3 +1,21 @@
+/* #region Background Layers */
+
+    #frosted-glass
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+        background: var(--frosted-glass-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+
+/* #endregion */
+
 /* #region General Styles and Global Variables */
 
     :root
@@ -5,7 +23,6 @@
         --background-color: #ebeae1;
         --text-color: #363636;
         --accent-color: #8fc9c9;
-        --shadow-color: #363636;
         --cursor-color: #19297c;
         --frosted-glass-color: #ffffff26;
     }
@@ -22,8 +39,6 @@
     {
         display: flex;
         flex-direction: column;
-        padding: 1vh;
-        gap: 1vh;
         min-height: 100vh;
         margin: 0;
         font-family: "continuum";
@@ -37,7 +52,6 @@
     {
         --background-color: #161422;
         --text-color: #f7e5e8;
-        --shadow-color: #f7e5e8;
         --cursor-color: #e1e4f5;
         --frosted-glass-color: #00000044;
     }

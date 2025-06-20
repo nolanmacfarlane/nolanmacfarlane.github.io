@@ -2,14 +2,16 @@
 <html lang="en">
     <head>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <title>Nolan MacFarlane's Homepage</title>
+        <title>Nolan MacFarlane - Home</title>
         <link rel="stylesheet" href="styles/global.css">
         <link rel="stylesheet" href="styles/home.css">
         <script src="scripts/global.js" defer></script>
         <script src="scripts/home.js" defer></script>
     </head>
     <body>
-        <header class="border frosted-glass" id="title-bar">
+        <div id="frosted-glass"></div>
+
+        <header id="title-bar">
             <section id="title-bar-left">
                 <svg id="profile-icon" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -138,7 +140,7 @@
             </section>
         </header>
 
-        <main class="border frosted-glass">
+        <main>
             <section id="game-disc-container">
                 <div id="game-disc">
                     <img id="disc-image" src="" alt="Disc Image"/>
@@ -158,7 +160,7 @@
             </section>
         </main>
 
-        <footer class="border frosted-glass" id="game-shelf">
+        <footer id="game-shelf">
             <section id="game-shelf-left">
                 <svg id="shop-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.85795 8.84661C4.93811 7.80461 5.80699 7 6.85206 7H17.1479C18.193 7 19.0619 7.80461 19.142 8.84661L19.6687 15.6932C19.8474 18.0164 18.0105 20 15.6805 20H8.31951C5.98947 20 4.15259 18.0164 4.33129 15.6932L4.85795 8.84661Z" stroke-width="1"/>

@@ -202,7 +202,7 @@ function initGameInfo()
 
                 if (window.innerWidth > 1080)
                 {
-                    discContainer.style.transform = "translateY(70vh) rotateX(20deg) rotateY(-30deg)";
+                    discContainer.style.transform = "translateY(100vh) rotateX(20deg) rotateY(-30deg)";
 
                     gameTitle.style.transform = "translateX(50vw)";
                     gameDescription.style.transform = "translateX(50vw)";
