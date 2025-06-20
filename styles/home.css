@@ -41,7 +41,7 @@
             display: none;
         }
         
-        main
+        #game-play-screen
         {
             flex-direction: column;
             height: max-content !important;
@@ -125,8 +125,15 @@
     main
     {
         display: flex;
-        height: 78vh;
+        flex-direction: column;
         padding: 1vh;
+        overflow: hidden;
+    }
+
+    #game-play-screen
+    {
+        display: flex;
+        height: 80vh;
         gap: 1vh;
     }
 
@@ -310,7 +317,6 @@
         display: flex;
         align-items: center;
         height: 11vh;
-        padding: 1vh;
         gap: 1vh;
         overflow-x: auto;
     }
