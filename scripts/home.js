@@ -28,9 +28,8 @@ const lightIcon = document.getElementById("light-icon");
 const darkIcon = document.getElementById("dark-icon");
 const settingsIcon = document.getElementById("settings-icon");
 const shopIcon = document.getElementById("shop-icon");
-const libraryIcon = document.getElementById("library-icon");
 
-const icons = [profileIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon, shopIcon, libraryIcon];
+const icons = [profileIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon, shopIcon];
 
 const playButton = document.getElementById("play-button");
 

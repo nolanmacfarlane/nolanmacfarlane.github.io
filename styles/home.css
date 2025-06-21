@@ -96,6 +96,7 @@
         display: flex;
         flex: 1;
         align-items: center;
+        min-width: fit-content;
         padding: 0.5vh;
         gap: 1vh;
     }
@@ -103,18 +104,17 @@
     #title-bar-left
     {
         justify-content: left;
+        gap: 0.5vh;
     }
 
     #title-bar-center
     {
         justify-content: center;
-        min-width: fit-content;
     }
 
     #title-bar-right
     {
         justify-content: right;
-        min-width: fit-content;
     }
 
     #clock
@@ -447,7 +447,15 @@
         transition: stroke 0.3s ease;
     }
 
-    #profile-icon:hover, #volume-icon:hover, #mute-icon:hover
+    #shop-icon
+    {
+        height: 4vh;
+        width: 4vh;
+        stroke: var(--text-color);
+        transition: stroke 0.3s ease;
+    }
+
+    #profile-icon:hover, #shop-icon:hover, #volume-icon:hover, #mute-icon:hover
     {
         stroke: var(--accent-color);
     }
@@ -471,35 +479,6 @@
         {
             transform: rotate(360deg);
         }
-    }
-
-    #shop-icon, #library-icon
-    {
-        height: 8vh;
-        width: 8vh;
-    }
-
-    #shop-icon
-    {
-        stroke: var(--text-color);
-        transition: stroke 0.3s ease;
-    }
-
-    #shop-icon:hover
-    {
-        stroke: var(--accent-color);
-    }
-
-    #library-icon
-    {
-        fill: var(--text-color);
-        margin-right: 1vh;
-        transition: fill 0.3s ease;
-    }
-
-    #library-icon:hover
-    {
-        fill: var(--accent-color);
     }
 
 /* #endregion */
