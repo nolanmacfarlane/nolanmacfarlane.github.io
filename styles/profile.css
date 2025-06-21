@@ -1,0 +1,138 @@
+/* #region Background Layers */
+
+    #vignette
+    {
+        width: 100vw;
+        background: radial-gradient(ellipse at 50% 50%, transparent 50%, var(--vignette-color));
+    }
+
+/* #endregion */
+
+/* #region General Styles */
+
+    body
+    {
+        overflow: auto;
+    }
+
+/* #endregion */
+
+/* #region Containers */
+
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 20vh; padding-bottom: 20vh;
+        padding-left: 20vw; padding-right: 20vw;
+        gap: 1vh;
+        overflow: hidden;
+    }
+
+    #profile-container
+    {
+        display: flex;
+        flex: 1;
+        padding: 0.5vh;
+        gap: 1vh;
+    }
+
+    #profile-img
+    {
+        height: 40vh;
+        width: 40vh;
+        border-radius: 50%;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    #profile-text
+    {
+        flex: 1;
+    }
+
+    .section-title
+    {
+        font-size: 4vh;
+        margin: 0;
+    }
+
+    #games-container
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 0.5vh;
+        gap: 2vh;
+    }
+
+    .game
+    {
+        display: flex;
+        align-items: center;
+        height: 25vh;
+        gap: 2vh;
+    }
+
+    .game-img
+    {
+        display: flex;
+        height: 21vh;
+        width: 15.6vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 0.5vh;
+    }
+
+    .game-text-container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game-title
+    {
+        font-size: 3vh;
+        margin-top: 1vh; margin-bottom: 1vh;
+    }
+
+    .game-tags
+    {
+        display: flex;
+        gap: 1vh;
+    }
+
+    .tag
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3vh;
+        width: max-content;
+        padding-left: 1vh; padding-right: 1vh;
+        font-size: 1vh;
+        border: 0.2vh solid var(--text-color);
+        border-radius: 3vh;
+    }
+
+/* #endregion */
+
+/* #region Icons */
+
+    #home-icon
+    {
+        height: 3vh;
+        width: 3vh;
+        top: 1.75vh;
+        left: 1.5vh;
+        position: sticky;
+        fill: var(--text-color);
+        transition: fill 0.3s ease;
+    }
+
+    #home-icon:hover
+    {
+        fill: var(--accent-color);
+    }
+
+/* #endregion */

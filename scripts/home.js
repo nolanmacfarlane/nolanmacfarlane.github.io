@@ -202,7 +202,7 @@ function initGameInfo()
                 isTransitioning = true;
                 playButton.dataset.link = "";
 
-                if (window.innerWidth > 1080)
+                if (window.innerWidth > 1079)
                 {
                     discContainer.style.transform = "translateY(100vh) rotateX(20deg) rotateY(-30deg)";
 
