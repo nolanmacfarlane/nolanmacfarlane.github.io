@@ -364,7 +364,6 @@
     #game-shelf-center
     {
         justify-content: center;
-        gap: 1.5vh;
     }
 
     #game-shelf-right
@@ -387,13 +386,14 @@
 
     .game-shelf-item:hover
     {
-        scale: 1.05;
+        scale: 1.1;
         transform: rotateX(0deg) rotateY(0deg);
     }
 
     .game-shelf-item.selected
     {
         scale: 1.3;
+        margin-left: 1.5vh; margin-right: 1.5vh;
         transform: rotateX(0deg) rotateY(0deg);
         border: 0.2vh solid transparent;
     }
