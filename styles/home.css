@@ -245,13 +245,13 @@
 
     #game-title
     {
+        width: fit-content;
         font-size: 5vh;
         font-style: italic;
         font-weight: 800;
         letter-spacing: 0.3vh;
         line-height: 4vh;
-        margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin-top: 1vh; margin-bottom: 1vh;
         transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
@@ -468,7 +468,15 @@
         transition: fill 0.3s ease;
     }
 
-    #light-icon:hover, #dark-icon:hover, #settings-icon:hover
+    #photo-gallery-icon
+    {
+        height: 4vh;
+        width: 4vh;
+        fill: var(--text-color);
+        transition: fill 0.3s ease;
+    }
+
+    #photo-gallery-icon:hover, #light-icon:hover, #dark-icon:hover, #settings-icon:hover
     {
         fill: var(--accent-color);
     }

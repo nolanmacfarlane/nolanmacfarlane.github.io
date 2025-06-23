@@ -22,14 +22,15 @@ class BackgroundImage
 let backgroundImages = [];
 
 const profileIcon = document.getElementById("profile-icon");
+const shopIcon = document.getElementById("shop-icon");
+const photoGalleryIcon = document.getElementById("photo-gallery-icon");
 const volumeIcon = document.getElementById("volume-icon");
 const muteIcon = document.getElementById("mute-icon");
 const lightIcon = document.getElementById("light-icon");
 const darkIcon = document.getElementById("dark-icon");
 const settingsIcon = document.getElementById("settings-icon");
-const shopIcon = document.getElementById("shop-icon");
 
-const icons = [profileIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon, shopIcon];
+const icons = [profileIcon, shopIcon, photoGalleryIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon];
 
 const playButton = document.getElementById("play-button");
 
@@ -257,6 +258,11 @@ function initGameInfo()
 
         lowestOrderElement.click();
     }
+
+    gameTitle.addEventListener("mouseenter", () =>
+    {
+        playSound("/sounds/game-title-hover.wav");
+    });
 
     gameTags.addEventListener("transitionend", () =>
     {
