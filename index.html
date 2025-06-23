@@ -22,18 +22,18 @@
 
         <header id="title-bar">
             <section id="title-bar-left">
-                <svg id="profile-icon" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <svg class="button" id="profile-icon" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <circle cx="16" cy="16" fill="none" r="15" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
                         <path d="M26,27L26,27   c0-5.523-4.477-10-10-10h0c-5.523,0-10,4.477-10,10v0" fill="none" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
                         <circle cx="16" cy="11" fill="none" r="6" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
                     </g>
                 </svg>
-                <svg id="shop-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="button" id="shop-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.85795 8.84661C4.93811 7.80461 5.80699 7 6.85206 7H17.1479C18.193 7 19.0619 7.80461 19.142 8.84661L19.6687 15.6932C19.8474 18.0164 18.0105 20 15.6805 20H8.31951C5.98947 20 4.15259 18.0164 4.33129 15.6932L4.85795 8.84661Z" stroke-width="1"/>
                     <path d="M15 11V6C15 4.34315 13.6569 3 12 3V3C10.3431 3 9 4.34315 9 6V11" stroke-width="1" stroke-linecap="round"/>
                 </svg>
-                <svg id="photo-gallery-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="button" id="photo-gallery-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <g>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4416 23.0166C26.9228 23.0166 23.8978 20.5774 23.1228 17.1917C22.9996 16.6534
@@ -58,7 +58,7 @@
                 <!-- TODO: Add a radio element here that shows the current song that is playing (Need to add songs first). -->
             </section>
             <section id="title-bar-right">
-                <svg id="volume-icon" viewBox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <svg class="button" id="volume-icon" viewBox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <g stroke-width="1" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g transform="translate(-896.000000, -304.000000)" stroke-width="1">
                             <g transform="translate(893.000000, 302.000000)">
@@ -68,7 +68,7 @@
                         </g>
                     </g>
                 </svg>
-                <svg id="mute-icon" viewBox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <svg class="button" id="mute-icon" viewBox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <g stroke-width="1" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g transform="translate(-823.000000, -304.000000)" stroke-width="1">
                             <g transform="translate(819.000000, 302.000000)">
@@ -78,7 +78,7 @@
                         </g>
                     </g>
                 </svg>
-                <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
+                <svg class="button" id="light-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
                     <g>
                         <path d="M17,31.9727993c0,8.295599,6.7157001,15.0206013,15,15.0206013s15-6.7250023,15-15.0206013
                             c0-8.2957001-6.7157021-15.0206985-15-15.0206985S17,23.6770992,17,31.9727993z M45,31.9727993
@@ -128,7 +128,7 @@
                             c0.4775009-0.2767982,0.6416016-0.8889008,0.3642998-1.3680992L42.8378983,50.2584991z"/>
                     </g>
                 </svg>
-                <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.539 47.539">
+                <svg class="button" id="dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.539 47.539">
                     <g>
                         <g>
                             <path d="M24.997,47.511C11.214,47.511,0,36.298,0,22.515C0,12.969,5.314,4.392,13.869,0.132
@@ -140,7 +140,7 @@
                         </g>
                     </g>
                 </svg>
-                <svg id="settings-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 478.703 478.703">
+                <svg class="button" id="settings-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 478.703 478.703">
                     <g>
                         <g>
                             <path d="M454.2,189.101l-33.6-5.7c-3.5-11.3-8-22.2-13.5-32.6l19.8-27.7c8.4-11.8,7.1-27.9-3.2-38.1l-29.8-29.8
@@ -189,7 +189,7 @@
                         <div class="tag">Achievements: 0/10</div>
                         <div class="tag">Progress: 0%</div>
                         <div class="tag">Play Time: 0h</div>
-                        <div id="play-button" data-link="">Play</div>
+                        <div class="button" id="play-button" data-link="">Play</div>
                     </section>
                 </section>
             </section>
@@ -199,7 +199,7 @@
                 </section>
                 <section id="game-shelf-center">
                     <!-- TODO: Add a little element that shows the title of the game when hovering so the user does not need to click to know what it is. -->
-                    <div class="game-shelf-item" data-name="About" data-link="/about/" data-image="/images/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" data-bg-image="/images/botw_landscape.jpg" 
+                    <div class="game-shelf-item button" data-name="About" data-link="/about/" data-image="/images/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" data-bg-image="/images/botw_landscape.jpg" 
                         data-description="About me description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
@@ -207,17 +207,17 @@
                         in culpa qui officia deserunt mollit anim id est laborum.">
                         <img class="game-shelf-item-img" src=""/>
                     </div>
-                    <div class="game-shelf-item" data-name="Skills" data-link="/skills/" data-image="" data-bg-image="" data-description="Skills description.">
+                    <div class="game-shelf-item button" data-name="Skills" data-link="/skills/" data-image="" data-bg-image="" data-description="Skills description.">
                         <!-- TODO: Add an updating loading bar on this page to symbolize continuous learning. -->
                         <img class="game-shelf-item-img" src=""/>
                     </div>
-                    <div class="game-shelf-item" data-name="Things I Like" data-link="/thingsilike/" data-image="" data-bg-image="" data-description="Things I Like description.">
+                    <div class="game-shelf-item button" data-name="Things I Like" data-link="/thingsilike/" data-image="" data-bg-image="" data-description="Things I Like description.">
                         <img class="game-shelf-item-img" src=""/>
                     </div>
-                    <div class="game-shelf-item" data-name="Hospital Bed Manager" data-link="/projects/hospitalbedmanager/" data-image="" data-bg-image="" data-description="HospiFlow description.">
+                    <div class="game-shelf-item button" data-name="Hospital Bed Manager" data-link="/projects/hospitalbedmanager/" data-image="" data-bg-image="" data-description="HospiFlow description.">
                         <img class="game-shelf-item-img" src=""/>
                     </div>
-                    <div class="game-shelf-item" data-name="Metroidvania Game" data-link="/projects/metroidvaniagame/" data-image="" data-bg-image="" data-description="Metroidvania description.">
+                    <div class="game-shelf-item button" data-name="Metroidvania Game" data-link="/projects/metroidvaniagame/" data-image="" data-bg-image="" data-description="Metroidvania description.">
                         <img class="game-shelf-item-img" src=""/>
                     </div>
                 </section>
@@ -226,8 +226,6 @@
                 </section>
             </section>
         </main>
-
-        <!-- TODO: Add animations to the cursor depending on context. -->
 
         <div id="cursor"></div>
     </body>

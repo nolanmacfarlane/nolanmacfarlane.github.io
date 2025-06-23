@@ -30,8 +30,6 @@ const lightIcon = document.getElementById("light-icon");
 const darkIcon = document.getElementById("dark-icon");
 const settingsIcon = document.getElementById("settings-icon");
 
-const icons = [profileIcon, shopIcon, photoGalleryIcon, volumeIcon, muteIcon, lightIcon, darkIcon, settingsIcon];
-
 const playButton = document.getElementById("play-button");
 
 const clock = document.getElementById("clock");
@@ -62,14 +60,6 @@ initGameInfo();
 
 function initIcons()
 {
-    icons.forEach(icon =>
-    {
-        icon.addEventListener("mouseenter", () =>
-        {
-            playSound("sounds/hover.wav");
-        });
-    });
-
     initProfileIcon();
     initVolumeIcons();
     initLightIcons();
@@ -143,11 +133,6 @@ function initSettingsIcon()
 
 function initPlayButton()
 {
-    playButton.addEventListener("mouseenter", () =>
-    {
-        playSound("sounds/hover.wav");
-    });
-
     playButton.addEventListener("click", () =>
     {
         document.body.style.pointerEvents = "none";
@@ -186,8 +171,6 @@ function initGameInfo()
 {
     shelfItems.forEach(item =>
     {
-        // item.style.background = `url(${item.dataset.image}) center / cover no-repeat fixed`;
-
         Array.from(item.children)[0].src = item.dataset.image;
 
         const backgroundImage = new BackgroundImage(item.dataset.bgImage);
@@ -239,11 +222,6 @@ function initGameInfo()
                 }, 1000);
             }
         });
-
-        item.addEventListener("mouseenter", () =>
-        {
-            playSound("sounds/hover.wav");
-        })
     });
 
     if (shelfItems.length > 0)

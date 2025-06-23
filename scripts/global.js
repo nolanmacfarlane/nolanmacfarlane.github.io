@@ -1,8 +1,12 @@
 // #region Global Variables
 
+const buttons = document.querySelectorAll(".button");
+
 window.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 window.cursor = document.getElementById("cursor");
+
+let cursorHeight = window.cursor.style.height;
 
 const soundCooldown = 50;
 let lastSoundTime = 0;
@@ -11,12 +15,32 @@ let lastSoundTime = 0;
 
 // #region Main
 
+initButtonEffects();
 checkMobile();
 checkLightMode();
 
 // #endregion
 
 // #region Functions
+
+function initButtonEffects()
+{
+    buttons.forEach(button =>
+    {
+        button.addEventListener("mouseenter", () =>
+        {
+            playSound("/sounds/hover.wav");
+
+            cursorHeight = window.cursor.style.height;
+            window.cursor.style.height = "1.5vh";
+        });
+
+        button.addEventListener("mouseleave", () =>
+        {
+            window.cursor.style.height = cursorHeight;
+        })
+    });
+}
 
 function checkMobile()
 {

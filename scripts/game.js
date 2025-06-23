@@ -1,7 +1,5 @@
 // #region Variables
 
-const buttonContainer = document.getElementById("button-container");
-
 const continueButton = document.getElementById("continue-button");
 const newGameButton = document.getElementById("new-game-button");
 const homeButton = document.getElementById("home-button");
@@ -20,14 +18,6 @@ initButtons();
 
 function initButtons()
 {
-    for (let button of buttonContainer.children)
-    {
-        button.addEventListener("pointerenter", () =>
-        {
-            playSound("/sounds/hover.wav");
-        });
-    }
-
     continueButton.addEventListener("click", () =>
     {
         let target = contentContainer.offsetTop;
