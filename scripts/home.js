@@ -41,7 +41,9 @@ const gameTitle = document.getElementById("game-title");
 const gameDescription = document.getElementById("game-description");
 const gameTags = document.getElementById("game-tags");
 
-const shelfItems = document.querySelectorAll(".game-shelf-item");
+const hoveredGameTitle = document.getElementById("hovered-game-title");
+
+const games = document.querySelectorAll(".game");
 
 let isTransitioning = false;
 
@@ -148,7 +150,7 @@ function initPlayButton()
             document.querySelector(".active").style.scale = 1;
             document.querySelector(".selected").style.order = "0";
 
-            shelfItems.forEach(item =>
+            games.forEach(item =>
             {
                 if (!item.classList.contains("selected")) item.style.order++;
 
@@ -169,18 +171,18 @@ function initClock()
 
 function initGameInfo()
 {
-    shelfItems.forEach(item =>
+    games.forEach(game =>
     {
-        Array.from(item.children)[0].src = item.dataset.image;
+        Array.from(game.children)[0].src = game.dataset.image;
 
-        const backgroundImage = new BackgroundImage(item.dataset.bgImage);
+        const backgroundImage = new BackgroundImage(game.dataset.bgImage);
         backgroundImages.push(backgroundImage);
 
-        if (localStorage.getItem(item.dataset.name) !== null) item.style.order = localStorage.getItem(item.dataset.name);
+        if (localStorage.getItem(game.dataset.name) !== null) game.style.order = localStorage.getItem(game.dataset.name);
 
-        item.addEventListener("click", () =>
+        game.addEventListener("click", () =>
         {
-            if (!item.classList.contains("selected") && !isTransitioning)
+            if (!game.classList.contains("selected") && !isTransitioning)
             {
                 isTransitioning = true;
                 playButton.dataset.link = "";
@@ -202,17 +204,17 @@ function initGameInfo()
                     gameTags.style.transform = "translateX(100vw)";
                 }
 
-                shelfItems.forEach(item => item.classList.remove("selected"));
-                item.classList.add("selected");
+                games.forEach(item => item.classList.remove("selected"));
+                game.classList.add("selected");
 
                 backgroundImages.forEach(bgImage => bgImage.element.classList.remove("active"));
                 backgroundImage.element.classList.add("active");
 
                 setTimeout(() => 
                 {
-                    discImage.src = item.dataset.image;
-                    gameTitle.textContent = item.dataset.name;
-                    gameDescription.textContent = item.dataset.description;
+                    discImage.src = game.dataset.image;
+                    gameTitle.textContent = game.dataset.name;
+                    gameDescription.textContent = game.dataset.description;
                     
                     gameTitle.style.transform = "translateX(0vw)";
                     gameDescription.style.transform = "translateX(0vw)";
@@ -222,11 +224,23 @@ function initGameInfo()
                 }, 1000);
             }
         });
+
+        game.addEventListener("mouseenter", () =>
+        {
+            hoveredGameTitle.style.opacity = "1";
+            hoveredGameTitle.textContent = game.dataset.name;
+            console.log(hoveredGameTitle.style.textContent);
+        });
+
+        game.addEventListener("mouseleave", () =>
+        {
+            hoveredGameTitle.style.opacity = "0";
+        });
     });
 
-    if (shelfItems.length > 0)
+    if (games.length > 0)
     {
-        const lowestOrderElement = Array.from(shelfItems).reduce((lowest, current) =>
+        const lowestOrderElement = Array.from(games).reduce((lowest, current) =>
         {
             const currentOrder = parseInt(current.style.order) || 0;
             const lowestOrder = parseInt(lowest.style.order) || 0;
