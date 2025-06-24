@@ -7,6 +7,7 @@ window.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 window.cursor = document.getElementById("cursor");
 
 let cursorHeight = window.cursor.style.height;
+let cursorOpacity = window.cursor.style.opacity;
 
 const soundCooldown = 50;
 let lastSoundTime = 0;
@@ -27,6 +28,19 @@ function initButtonEffects()
 {
     buttons.forEach(button =>
     {
+        // For keyboard compatibility
+        button.tabIndex = 0;
+        button.role = "button";
+
+        button.addEventListener("keydown", (event) =>
+        {
+            if (event.key === "Enter" || event.key === " ")
+            {
+                button.click();
+                event.preventDefault();
+            }
+        });
+        
         button.addEventListener("mouseenter", () =>
         {
             playSound("/sounds/hover.wav");
@@ -87,6 +101,14 @@ document.body.onpointermove = event =>
 document.body.onpointerdown = event =>
 {
     playSound("/sounds/click.wav");
+
+    cursorOpacity = window.cursor.style.opacity;
+    cursor.style.opacity = "0.7";
+};
+
+document.body.onpointerup = event =>
+{
+    cursor.style.opacity = cursorOpacity;
 };
 
 // #endregion

@@ -13,13 +13,8 @@ initHomeIcon();
 // #region Functions
 
 function initHomeIcon()
-{
-    homeIcon.addEventListener("mouseenter", () =>
-    {
-        playSound("/sounds/hover.wav");
-    });
-    
-    homeIcon.addEventListener("click", () =>
+{    
+    homeIcon.parentElement.addEventListener("click", () =>
     {
         window.location.href = "/";
     });

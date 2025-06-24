@@ -37,7 +37,7 @@
         --accent-color: #8fc9c9;
         --cursor-color: #19297c;
         --frosted-glass-color: #ffffff26;
-        --vignette-color: #ffffff;
+        --vignette-color: #fff1d8d0;
     }
 
     @font-face 
@@ -68,6 +68,12 @@
         --cursor-color: #e1e4f5;
         --frosted-glass-color: #00000044;
         --vignette-color: #000000;
+    }
+
+    .button.icon
+    {
+        height: fit-content;
+        width: fit-content;
     }
 
 /* #endregion */
@@ -106,7 +112,8 @@
         opacity: 0.4;
         pointer-events: none;
         transform: translate(-50%, -50%);
-        transition: height 0.3s ease;
+        transition: height 0.3s ease,
+                    opacity 0.3s ease;
     }
 
 /* #endregion */

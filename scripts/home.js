@@ -69,8 +69,8 @@ function initIcons()
 }
 
 function initProfileIcon()
-{
-    profileIcon.addEventListener("click", () =>
+{    
+    profileIcon.parentElement.addEventListener("click", () =>
     {
         window.location.href = "/profile/";
     });
@@ -78,56 +78,56 @@ function initProfileIcon()
 
 function initVolumeIcons()
 {
-    if (localStorage.getItem("isMute") === "true") volumeIcon.style.display = "none";
-    else muteIcon.style.display = "none";
+    if (localStorage.getItem("isMute") === "true") volumeIcon.parentElement.style.display = "none";
+    else muteIcon.parentElement.style.display = "none";
     
-    volumeIcon.addEventListener("click", () =>
+    volumeIcon.parentElement.addEventListener("click", () =>
     {
         localStorage.setItem("isMute", "true");
         
-        volumeIcon.style.display = "none";
-        muteIcon.style.display = "block";
+        volumeIcon.parentElement.style.display = "none";
+        muteIcon.parentElement.style.display = "block";
     });
 
-    muteIcon.addEventListener("click", () =>
+    muteIcon.parentElement.addEventListener("click", () =>
     {
         localStorage.setItem("isMute", "false");
         
-        muteIcon.style.display = "none";
-        volumeIcon.style.display = "block";
+        muteIcon.parentElement.style.display = "none";
+        volumeIcon.parentElement.style.display = "block";
     })
 }
 
 function initLightIcons()
 {
-    if (localStorage.getItem("isLightMode") === "true") darkIcon.style.display = "none";
-    else lightIcon.style.display = "none";
+    if (localStorage.getItem("isLightMode") === "true") darkIcon.parentElement.style.display = "none";
+    else lightIcon.parentElement.style.display = "none";
 
-    lightIcon.addEventListener("click", () =>
+    lightIcon.parentElement.addEventListener("click", () =>
     {
         toggleLightMode();
 
-        lightIcon.style.display = "none";
-        darkIcon.style.display = "block";
+        lightIcon.parentElement.style.display = "none";
+        darkIcon.parentElement.style.display = "block";
     });
 
-    darkIcon.addEventListener("click", () =>
+    darkIcon.parentElement.addEventListener("click", () =>
     {
         toggleLightMode();
 
-        darkIcon.style.display = "none";
-        lightIcon.style.display = "block";
+        darkIcon.parentElement.style.display = "none";
+        lightIcon.parentElement.style.display = "block";
     });
 }
 
 function initSettingsIcon()
 {
-    settingsIcon.addEventListener("click", () =>
+    settingsIcon.parentElement.addEventListener("click", () =>
     {
         settingsIcon.style.animation = "spin 1s ease-in-out";
     });
 
-    settingsIcon.addEventListener("animationend", () =>
+    settingsIcon.parentElement.addEventListener("animationend", () =>
     {
         settingsIcon.style.animation = "none";
     });
