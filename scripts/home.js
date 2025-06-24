@@ -197,7 +197,7 @@ function initGameInfo()
                 }
                 else
                 {
-                    discContainer.style.transform = "translateY(-90vw) rotateX(20deg) rotateY(-30deg)";
+                    discContainer.style.transform = "translateY(-150vw) rotateX(20deg) rotateY(-30deg)";
                     
                     gameTitle.style.transform = "translateX(100vw)";
                     gameDescription.style.transform = "translateX(100vw)";
