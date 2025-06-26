@@ -1,4 +1,4 @@
-/* #region Background Layers */
+/* #region Background/Foreground Layers */
 
     #frosted-glass
     {
@@ -11,7 +11,7 @@
         background: var(--frosted-glass-color);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        z-index: -5;
+        z-index: -9;
     }
 
     #vignette
@@ -23,7 +23,21 @@
         width: 135vw;
         pointer-events: none;
         background: radial-gradient(ellipse at 0% 50%, transparent 50%, var(--vignette-color));
-        z-index: -1;
+        z-index: -8;
+    }
+
+    #black-fade
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+        background: #000000;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 1s ease;
     }
 
 /* #endregion */
@@ -33,11 +47,11 @@
     :root
     {
         --background-color: #ebeae1;
-        --text-color: #363636;
+        --text-color: #000000;
         --accent-color: #8fc9c9;
         --cursor-color: #19297c;
         --frosted-glass-color: #ffffff26;
-        --vignette-color: #fff1d8d0;
+        --vignette-color: #fff1d875;
     }
 
     @font-face 

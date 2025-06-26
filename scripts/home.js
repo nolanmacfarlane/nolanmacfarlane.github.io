@@ -21,6 +21,8 @@ class BackgroundImage
 
 let backgroundImages = [];
 
+const blackFade = document.getElementById("black-fade");
+
 const profileIcon = document.getElementById("profile-icon");
 const shopIcon = document.getElementById("shop-icon");
 const photoGalleryIcon = document.getElementById("photo-gallery-icon");
@@ -144,11 +146,17 @@ function initPlayButton()
 
         discContainer.addEventListener("animationend", () =>
         {
+            blackFade.style.opacity = "1";
+        });
+
+        blackFade.addEventListener("transitionend", () =>
+        {
             window.location.href = playButton.dataset.link;
             document.body.style.pointerEvents = "auto";
             discContainer.classList.remove("enter");
             document.querySelector(".active").style.scale = 1;
             document.querySelector(".selected").style.order = "0";
+            blackFade.style.opacity = "0";
 
             games.forEach(item =>
             {

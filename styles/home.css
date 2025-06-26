@@ -1,4 +1,4 @@
-/* #region Background Layers */
+/* #region Background/Foreground Layers */
 
     .background-image
     {
@@ -203,6 +203,11 @@
         height: 100%;
         border-radius: 50%;
         background: radial-gradient(circle at 50% 50%, transparent 0 8%, black 8% 8.5%, rgba(170, 170, 170, 0.6) 8.5% 9%, black 9% 9.5%, rgba(170, 170, 170, 0.6) 9.5% 10%, black 10% 10.5%, transparent 10.5%);
+    }
+
+    #game-disc:hover
+    {
+        animation-play-state: paused;
     }
 
     #disc-image

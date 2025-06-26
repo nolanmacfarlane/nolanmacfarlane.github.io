@@ -1,33 +1,37 @@
 // #region Variables
 
-const continueButton = document.getElementById("continue-button");
-const newGameButton = document.getElementById("new-game-button");
-const homeButton = document.getElementById("home-button");
+const loadingScreen = document.getElementById("loading-screen");
 
-const contentContainer = document.getElementById("content-container");
+const homeButton = document.getElementById("home-button");
 
 // #endregion
 
 // #region Main
 
-initButtons();
+initHomeButton();
+
+setTimeout(fadeLoadingScreen, 5000);
 
 // #endregion
 
 // #region Functions
 
-function initButtons()
+function initHomeButton()
 {
-    continueButton.addEventListener("click", () =>
-    {
-        let target = contentContainer.offsetTop;
-        window.scrollTo({ top: target, behavior: 'smooth' });
-    });
-
     homeButton.addEventListener("click", () =>
     {
         window.location.href = "/";
     })
+}
+
+function fadeLoadingScreen()
+{
+    loadingScreen.style.opacity = "0";
+
+    loadingScreen.addEventListener("transitionend", () =>
+    {
+        loadingScreen.style.pointerEvents = "none";
+    });
 }
 
 // #endregion

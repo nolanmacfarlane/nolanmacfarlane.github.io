@@ -1,26 +1,4 @@
-/* #region Media Queries */
-
-    @media (max-width: 1400px)
-    {
-        .photo-container
-        {
-            display: none !important;
-        }
-
-        #text-container
-        {
-            width: 90vw !important;
-        }
-    }
-
-/* #endregion */
-
-/* #region Containers */
-
-    body
-    {
-        overflow: auto;
-    }
+/* #region Background/Foreground Layers */
 
     #background-image
     {
@@ -30,24 +8,124 @@
         height: 100vh;
         width: 100vw;
         pointer-events: none;
-        background: url(/images/botw_landscape.jpg) center / cover no-repeat fixed;
         z-index: -10;
     }
 
-    #title-screen
+    #loading-screen
     {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
         height: 100vh;
-        gap: 15vh;
+        width: 100vw;
+        background: #000000;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 1s ease;
     }
 
-    header
+    #spatula-icon
+    {
+        height: 6vh;
+        width: 6vh;
+        fill: #ffffff;
+        z-index: 3;
+        transform: translateX(3vh) translateY(2vh) rotateZ(200deg);
+        animation: stir 4s linear infinite;
+    }
+
+    @keyframes stir
+    {
+        0%, 3%, 97%, 100%
+        {
+            transform: translateX(3vh) translateY(2vh) rotateZ(200deg);
+            scale: 1;
+        }
+
+        20%, 60%
+        {
+            transform: translateX(1vh) translateY(6vh) rotateZ(170deg);
+            scale: 1;
+        }
+
+        30%, 70%
+        {
+            scale: 0.93;
+        }
+        
+        40%, 80%
+        {
+            transform: translateX(-2.5vh) translateY(6vh) rotateZ(170deg);
+            scale: 1;
+        }
+        
+        50%
+        {
+            scale: 1.07;
+        }
+    }
+
+    #cooking-pan-icon
+    {
+        height: 15vh;
+        width: 15vh;
+        z-index: 4;
+        fill: #ffffff;
+    }
+
+    #loading-text
+    {
+        position: absolute;
+        bottom: 1vh;
+        right: 1vh;
+        font-size: 2vh;
+        animation: fade 3s linear infinite;
+    }
+
+    @keyframes fade
+    {
+        0%, 100%
+        {
+            opacity: 1;
+        }
+
+        50%
+        {
+            opacity: 0;
+        }
+    }
+
+/* #endregion */
+
+/* #region Media Queries */
+
+    
+
+/* #endregion */
+
+/* #region Containers */
+
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 98vh;
+        padding: 1vh;
+        gap: 5vh;
+        overflow: hidden;
+    }
+
+    #title-container
     {
         display: flex;
         align-items: end;
         justify-content: center;
-        height: 40vh;
     }
 
     #game-title
@@ -61,6 +139,12 @@
     {
         letter-spacing: 0.7vh;
         color: var(--accent-color);
+    }
+
+    #text-container
+    {
+        width: 50vw;
+        font-size: 2vh;
     }
 
     #button-container
@@ -93,36 +177,6 @@
     .button:active
     {
         scale: 0.97;
-    }
-
-    main
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5vh;
-        gap: 1vh;
-        overflow: hidden;
-    }
-
-    #content-container
-    {
-        display: flex;
-        gap: 1vh;
-    }
-
-    .photo-container
-    {
-        display: flex;
-        flex: 1;
-    }
-
-    #text-container
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 768px;
     }
 
 /* #endregion */
