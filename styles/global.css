@@ -57,7 +57,15 @@
     @font-face 
     {
         font-family: "continuum";
-        src: url("../fonts/contm.woff2") format("woff2");
+        src: url("/fonts/contm.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face
+    {
+        font-family: "delius-swash-caps";
+        src: url("/fonts/delius-swash-caps.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
     }
@@ -88,6 +96,23 @@
     {
         height: fit-content;
         width: fit-content;
+    }
+
+/* #endregion */
+
+/* #region General Animations */
+
+    @keyframes border-effect 
+    {
+        0% 
+        { 
+            background-position: 95% 95%; 
+        }
+
+        100% 
+        { 
+            background-position: 5% 5%; 
+        }
     }
 
 /* #endregion */

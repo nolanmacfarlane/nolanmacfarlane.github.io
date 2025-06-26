@@ -428,19 +428,6 @@
         z-index: 1;
     }
 
-    @keyframes border-effect 
-    {
-        0% 
-        { 
-            background-position: 95% 95%; 
-        }
-
-        100% 
-        { 
-            background-position: 5% 5%; 
-        }
-    }
-
     .game-img
     {
         height: 100%;

@@ -237,7 +237,6 @@ function initGameInfo()
         {
             hoveredGameTitle.style.opacity = "1";
             hoveredGameTitle.textContent = game.dataset.name;
-            console.log(hoveredGameTitle.style.textContent);
         });
 
         game.addEventListener("mouseleave", () =>
