@@ -2,6 +2,8 @@
 
 const buttons = document.querySelectorAll(".button");
 
+const links = document.querySelectorAll("a");
+
 window.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 window.cursor = document.getElementById("cursor");
@@ -17,6 +19,7 @@ let lastSoundTime = 0;
 // #region Main
 
 initButtonEffects();
+initLinks();
 checkMobile();
 checkLightMode();
 
@@ -45,7 +48,6 @@ function initButtonEffects()
         {
             playSound("/sounds/hover.wav");
 
-            cursorHeight = window.cursor.style.height;
             window.cursor.style.height = "1.5vh";
         });
 
@@ -53,6 +55,22 @@ function initButtonEffects()
         {
             window.cursor.style.height = cursorHeight;
         })
+    });
+}
+
+function initLinks()
+{
+    links.forEach(link =>
+    {
+        link.addEventListener("mouseenter", () =>
+        {
+            window.cursor.style.display = "none";
+        });
+
+        link.addEventListener("mouseleave", () =>
+        {
+            window.cursor.style.display = "block";
+        });
     });
 }
 

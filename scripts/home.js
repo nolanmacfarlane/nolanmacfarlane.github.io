@@ -39,9 +39,7 @@ const clock = document.getElementById("clock");
 const discContainer = document.getElementById("game-disc-container");
 const discImage = document.getElementById("disc-image");
 
-const gameTitle = document.getElementById("game-title");
-const gameDescription = document.getElementById("game-description");
-const gameTags = document.getElementById("game-tags");
+const gameInfo = document.getElementById("game-info");
 
 const hoveredGameTitle = document.getElementById("hovered-game-title");
 
@@ -199,17 +197,21 @@ function initGameInfo()
                 {
                     discContainer.style.transform = "translateY(100vh) rotateX(20deg) rotateY(-30deg)";
 
-                    gameTitle.style.transform = "translateX(50vw)";
-                    gameDescription.style.transform = "translateX(50vw)";
-                    gameTags.style.transform = "translateX(50vw)";
+                    Array.from(gameInfo.children).forEach((infoElement, index) =>
+                    {
+                        infoElement.style.transition = `all ${1 + index * 0.1}s cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
+                        infoElement.style.transform = "translateX(50vw)";
+                    });
                 }
                 else
                 {
                     discContainer.style.transform = "translateY(-150vw) rotateX(20deg) rotateY(-30deg)";
-                    
-                    gameTitle.style.transform = "translateX(100vw)";
-                    gameDescription.style.transform = "translateX(100vw)";
-                    gameTags.style.transform = "translateX(100vw)";
+
+                    Array.from(gameInfo.children).forEach((infoElement, index) =>
+                    {
+                        infoElement.style.transition = `all ${1 + index * 0.1}s cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
+                        infoElement.style.transform = "translateX(100vw)";
+                    });
                 }
 
                 games.forEach(item => item.classList.remove("selected"));
@@ -221,12 +223,14 @@ function initGameInfo()
                 setTimeout(() => 
                 {
                     discImage.src = game.dataset.image;
-                    gameTitle.textContent = game.dataset.name;
-                    gameDescription.textContent = game.dataset.description;
-                    
-                    gameTitle.style.transform = "translateX(0vw)";
-                    gameDescription.style.transform = "translateX(0vw)";
-                    gameTags.style.transform = "translateX(0vw)";
+
+                    gameInfo.children[0].textContent = game.dataset.name;
+                    gameInfo.children[1].textContent = game.dataset.description;
+
+                    Array.from(gameInfo.children).forEach(infoElement =>
+                    {
+                        infoElement.style.transform = "translateX(0vw)";
+                    });
                     
                     discContainer.style.transform = "translateY(0vh) rotateX(20deg) rotateY(-30deg)";
                 }, 1000);
@@ -258,12 +262,12 @@ function initGameInfo()
         lowestOrderElement.click();
     }
 
-    gameTitle.addEventListener("mouseenter", () =>
+    gameInfo.firstElementChild.addEventListener("mouseenter", () =>
     {
         playSound("/sounds/game-title-hover.wav");
     });
 
-    gameTags.addEventListener("transitionend", () =>
+    gameInfo.lastElementChild.addEventListener("transitionend", () =>
     {
         isTransitioning = false;
         playButton.dataset.link = document.querySelector(".selected").dataset.link;

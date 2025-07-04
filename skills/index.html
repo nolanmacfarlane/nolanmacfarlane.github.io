@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Nolan MacFarlane - Skills</title>
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/game.css" />
+        <link rel="stylesheet" href="/styles/skills.css">
+        <script src="/scripts/global.js" defer></script>
+        <script src="/scripts/game.js" defer></script>
+        <script src="/scripts/skills.js" defer></script>
+    </head>
+    <body>
+        <!-- <section id="loading-screen">
+            <svg id="spatula-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <g>
+                    <g>
+                        <path d="M499.066,106.086L405.913,12.93C397.574,4.592,386.487,0,374.694,0c-11.795,0-22.882,4.594-31.219,12.933L230.558,125.848
+                                c-17.213,17.214-17.213,45.224,0,62.438l35.823,35.823l-47.001,47.001l-24.443-24.443L14.578,427.025
+                                c-19.407,19.407-19.408,50.985,0,70.395C23.98,506.822,36.481,512,49.776,512s25.796-5.178,35.197-14.58l180.359-180.359
+                                l-24.443-24.443l47.001-47l35.823,35.824c8.34,8.339,19.426,12.93,31.22,12.93c11.793,0,22.881-4.592,31.22-12.931
+                                l112.914-112.914C516.281,151.311,516.281,123.3,499.066,106.086z M63.465,475.911c-3.656,3.657-8.518,5.671-13.689,5.671
+                                c-5.171,0-10.034-2.015-13.689-5.671c-7.549-7.549-7.549-19.831,0-27.378l158.851-158.85l27.377,27.377L63.465,475.911z
+                                M477.559,147.018L364.646,259.932c-2.595,2.595-6.044,4.023-9.712,4.023c-3.669,0-7.119-1.429-9.712-4.022l-93.154-93.156
+                                c-5.354-5.354-5.354-14.068,0-19.422L364.985,34.44c2.594-2.595,6.042-4.023,9.709-4.023c3.668,0,7.118,1.429,9.711,4.022
+                                l93.153,93.156C482.914,132.949,482.914,141.664,477.559,147.018z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="259.236" y="98.459" transform="matrix(0.7071 -0.7071 0.7071 0.7071 16.6591 267.5525)" width="144.115" height="30.417"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="292.756" y="131.988" transform="matrix(0.7071 -0.7071 0.7071 0.7071 2.7674 301.0748)" width="144.115" height="30.417"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="326.284" y="165.505" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -11.1122 334.6001)" width="144.115" height="30.417"/>
+                    </g>
+                </g>
+            </svg>
+            <svg id="cooking-pan-icon" viewBox="0 -15.59 122.88 122.88" style="enable-background:new 0 0 122.88 91.69" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M 118.68,23.22 H 97.81 c -1.65,0 -3.09,0.97 -3.77,2.36 H 77.45 L 78,22.66 c 0.15,-0.82 -0.39,-1.61 -1.2,-1.76 -0.09,-0.02 -0.19,-0.03 -0.28,-0.03 v 0 H 13.49 c -0.83,0 -1.51,0.68 -1.51,1.51 0,0.17 0.03,0.34 0.08,0.49 l 2.26,8.57 c 0.66,2.48 1.76,4.83 3.42,6.49 1.51,1.51 3.43,2.45 5.84,2.45 h 43.49 c 2.46,0 4.5,-0.97 6.06,-2.53 1.66,-1.66 2.75,-3.99 3.23,-6.51 l 0.39,-2.08 h 17.29 c 0.69,1.39 2.12,2.36 3.77,2.36 h 20.87 c 2.31,0 4.2,-1.89 4.2,-4.2 0,-2.31 -1.89,-4.2 -4.2,-4.2 z"/>
+                    <path d="m 73.4,30.78 c -0.36,1.94 -1.18,3.7 -2.4,4.93 -1.02,1.02 -2.33,1.65 -3.92,1.65 h -43.5 c -1.52,0 -2.75,-0.6 -3.71,-1.56 -1.25,-1.25 -2.11,-3.11 -2.64,-5.12 L 15.44,23.9 H 74.7 c -0.44,2.3 -0.86,4.57 -1.3,6.88 z" style="enable-background:new 0 0 122.88 91.69;fill:#000000;fill-opacity:1"/>
+                    <path d="M 64.5429 43.8244 C 63.894463 43.824244 63.1599 43.8499 62.3199 43.8799 C 61.2299 43.9099 59.9099 43.96 57.9999 43.96 C 56.9799 43.96 56.16 44.7799 56.16 45.7999 C 56.16 46.8199 56.9799 47.6401 57.9999 47.6401 C 59.5899 47.6401 61.1599 47.5799 62.4399 47.5399 C 64.6499 47.4699 65.75 47.4299 65.85 47.5399 C 66.03 47.7399 65.9999 49.0299 65.9199 51.5899 C 65.8899 52.6399 65.8601 53.8401 65.8401 55.1101 L 44.9301 55.1101 L 44.9301 47.83 C 44.9301 47.04 44.1099 46.4101 43.0899 46.4101 C 42.0699 46.4101 41.25 47.05 41.25 47.83 L 41.25 55.1101 L 20.34 55.1101 C 20.33 53.8401 20.2899 52.6299 20.2599 51.5899 C 20.1899 49.0299 20.1501 47.7399 20.3301 47.5399 C 20.4301 47.4299 21.5299 47.4599 23.7399 47.5399 C 25.0299 47.5899 26.5899 47.6401 28.1799 47.6401 C 29.1999 47.6401 30.0201 46.8199 30.0201 45.7999 C 30.0201 44.7799 29.1999 43.96 28.1799 43.96 C 26.2799 43.96 24.9499 43.9199 23.8599 43.8799 C 20.4999 43.7699 18.8299 43.71 17.5899 45.1 C 16.4399 46.39 16.4999 48.16 16.5999 51.7 C 16.6199 52.63 16.6601 53.71 16.6701 55.12 L 5.4099 55.12 C 3.9199 55.12 2.57 55.7299 1.59 56.7199 C 0.61 57.6999 1.6930901e-17 59.0499 0 60.5299 L 0 83.5699 C 1.8189894e-16 85.0599 0.61 86.4099 1.59 87.3799 C 2.58 88.3599 3.9299 88.9699 5.4099 88.9699 L 11.16 88.9699 L 11.16 90.8899 C 11.16 91.3299 11.9799 91.6801 12.9999 91.6801 C 14.0199 91.6801 14.8401 91.3299 14.8401 90.8899 L 14.8401 88.9699 L 83.49 88.9699 L 83.49 90.8899 C 83.49 91.3299 84.3099 91.6801 85.3299 91.6801 C 86.3499 91.6801 87.1701 91.3299 87.1701 90.8899 L 87.1701 88.9699 L 95.88 88.9699 C 97.36 88.9699 98.71 88.3701 99.69 87.3901 C 100.67 86.4101 101.28 85.0601 101.28 83.5801 L 101.28 79.1599 C 105.01 79.1299 108.03 76.0899 108.03 72.3499 C 108.03 68.6099 105.01 65.5699 101.28 65.5399 L 101.28 60.5299 C 101.28 59.0999 100.72 57.8 99.81 56.83 C 99.78 56.79 99.7399 56.75 99.6999 56.71 C 98.7199 55.73 97.37 55.12 95.88 55.12 L 69.51 55.12 C 69.52 53.71 69.5499 52.63 69.5799 51.7 C 69.6799 48.16 69.7299 46.39 68.5899 45.1 C 67.6599 44.0575 66.488213 43.824869 64.5429 43.8244 z M 5.4099 58.8001 L 95.8899 58.8001 C 96.3699 58.8001 96.7999 59.0001 97.1199 59.3101 C 97.1399 59.3301 97.1701 59.3501 97.1901 59.3701 C 97.4601 59.6801 97.6299 60.0899 97.6299 60.5299 L 97.6299 83.56 C 97.6299 84.04 97.4401 84.4701 97.1301 84.7801 L 97.1199 84.79 C 96.8099 85.1 96.3801 85.2901 95.9001 85.2901 L 5.4099 85.2901 C 4.9299 85.2901 4.5001 85.1 4.1901 84.79 C 3.8801 84.48 3.6801 84.0399 3.6801 83.5699 L 3.6801 60.5299 C 3.6801 60.0599 3.8801 59.6201 4.1901 59.3101 C 4.5001 59.0001 4.9399 58.8001 5.4099 58.8001 z "/>
+                </g>
+            </svg>
+            <div id="loading-text">
+                Loading...
+            </div>
+        </section> -->
+
+        <main>            
+            <section id="title-screen">
+                <section id="title-container">
+                    <h1 id="game-title">Skills</h1>
+                </section>
+                <section id="summary-container">
+                    
+                </section>
+                <section id="link-container">
+                    <a href="/files/Resume.pdf" target="_blank">Download My Resume (PDF)</a>
+                    <a href="mailto:nolanmacfarlane05@gmail.com">Email Me: nolanmacfarlane05@gmail.com</a>
+                </section>
+                <section id="button-container">
+                    <div class="game-button button" id="continue-button">Continue</div>
+                    <div class="game-button button" id="home-button">Home</div>
+                </section>
+            </section>
+            <section id="content-container">
+                <div id="path"></div>
+                <section id="file-containers">
+                    <section id="left-file-container">
+                        <div class="button folder" id="skill">skills</div>
+                        <div class="button folder" id="tool">tools</div>
+                    </section>
+                    <section id="main-file-container">
+                        <div class="button file skill" id="C" data-logo="/images/c-logo.png" data-description="C programming language." data-experience="2" data-proficiency="2" data-usecases="1" data-recency="4">
+                            C.txt
+                            <div class="file-size">372.7 kB</div>
+                        </div>
+                        <div class="button file skill" id="C#" data-logo="/images/c-sharp-logo.png" data-description="C# programming language." data-experience="4" data-proficiency="3" data-usecases="3" data-recency="3">
+                            C#.txt
+                            <div class="file-size">238.5 kB</div>
+                        </div>
+                        <div class="button file skill" id="Java" data-logo="/images/java-logo.png" data-description="Java programming language." data-experience="4" data-proficiency="3" data-usecases="2" data-recency="4">
+                            Java.txt
+                            <div class="file-size">57.1 kB</div>
+                        </div>
+                        <div class="button file skill" id="JavaScript" data-logo="/images/javascript-logo.png" data-description="JavaScript programming language." data-experience="3" data-proficiency="3" data-usecases="4" data-recency="5">
+                            JavaScript.txt
+                            <div class="file-size">242.5 kB</div>
+                        </div>
+                        <div class="button file skill" id="HTML" data-logo="/images/html-logo.png" data-description="HTML programming language." data-experience="3" data-proficiency="4" data-usecases="4" data-recency="5">
+                            HTML.txt
+                            <div class="file-size">49.0 kB</div>
+                        </div>
+                        <div class="button file skill" id="CSS" data-logo="/images/css-logo.png" data-description="CSS programming language." data-experience="3" data-proficiency="4" data-usecases="4" data-recency="5">
+                            CSS.txt
+                            <div class="file-size">89.4 kB</div>
+                        </div>
+                        <div class="button file skill" id="Python" data-logo="/images/python-logo.png" data-description="Python programming language." data-experience="2" data-proficiency="4" data-usecases="2" data-recency="4">
+                            Python.txt
+                            <div class="file-size">29.9 kB</div>
+                        </div>
+                        <div class="button file skill" id="Unity" data-logo="/images/unity-logo.png" data-description="Unity game engine." data-experience="3" data-proficiency="3" data-usecases="3" data-recency="3">
+                            Unity.txt
+                            <div class="file-size">162.5 kB</div>
+                        </div>
+                        <div class="button file tool" id="Ubuntu" data-logo="/images/ubuntu-logo.png" data-description="Ubuntu linux distrobution." data-functionality="5" data-aesthetic="4" data-customizability="5" data-support="4">
+                            Ubuntu.txt
+                            <div class="file-size">10.3 kB</div>
+                        </div>
+                        <div class="button file tool" id="Zen Browser" data-logo="/images/zen-browser-logo.png" data-description="Zen browser." data-functionality="5" data-aesthetic="5" data-customizability="5" data-support="4">
+                            Zen Browser.txt
+                            <div class="file-size">392.5 kB</div>
+                        </div>
+                        <div class="button file tool" id="Visual Studio Code" data-logo="/images/vs-code-logo.png" data-description="Visual Studio Code code editor." data-functionality="5" data-aesthetic="4" data-customizability="3" data-support="5">
+                            Visual Studio Code.txt
+                            <div class="file-size">62.2 kB</div>
+                        </div>
+                    </section>
+                    <section id="info-container">
+                        <img id="file-logo" src="" alt="">
+                        <h1 id="file-title"></h1>
+                        <p id="file-description"></p>
+                        <section id="file-stats">
+                            <div id="stat-title-container">
+                                <div class="stat-title skill">Experience</div>
+                                <div class="stat-title skill">Proficiency</div>
+                                <div class="stat-title skill">Use Cases</div>
+                                <div class="stat-title skill">Recency</div>
+                                <div class="stat-title tool">Functionality</div>
+                                <div class="stat-title tool">Aesthetic</div>
+                                <div class="stat-title tool">Customizability</div>
+                                <div class="stat-title tool">Support</div>
+                            </div>
+                            <div id="stat-bar-container">
+                                <div class="stat skill" id="experience">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat skill" id="proficiency">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat skill" id="usecases">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat skill" id="recency">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat tool" id="functionality">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat tool" id="aesthetic">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat tool" id="customizability">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                                <div class="stat tool" id="support">
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                    <div class="stat-bar-segment"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <div id="footer">
+                    <div id="file-metadata"></div>
+                    <div id="credit">Created by Nolan MacFarlane - Inspired by Ranger</div>
+                    <div id="storage">324 GB free</div>
+                </div>
+            </section>
+        </main>
+
+        <div id="cursor"></div>
+    </body>
+</html>

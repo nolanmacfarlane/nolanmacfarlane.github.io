@@ -1,0 +1,205 @@
+/* #region General Styles and Variables */
+
+    :root
+    {
+        --skills-background-color: #000000;
+        --skills-text-color: #008000;
+    }
+
+    body
+    {
+        color: var(--skills-text-color);
+        background-color: var(--skills-background-color);
+        font-family: ubuntu-mono;
+        overflow: auto;
+    }
+
+/* #endregion */
+
+/* #region Media Queries */
+
+    @media (max-width: 1200px)
+    {
+        .file-size
+        {
+            display: none !important;
+        }
+
+        #file-logo
+        {
+            height: 10vh !important;
+        }
+
+        .stat
+        {
+            gap: 0.5vh !important;
+        }
+
+        .stat-bar-segment
+        {
+            width: 1vh !important;
+        }
+    }
+
+/* #endregion */
+
+/* #region Containers */
+
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+        padding: 1vh;
+        gap: 1vh;
+        overflow: hidden;
+    }
+
+    a
+    {
+        color: var(--skills-text-color);
+    }
+
+    .game-button
+    {
+        border: 0.2vh solid var(--skills-text-color);
+        border-radius: 0;
+    }
+
+    #content-container
+    {
+        align-items: start;
+        height: 98vh;
+        border: 0.2vh solid var(--skills-text-color);
+    }
+
+    #file-containers
+    {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        gap: 1vh;
+        font-weight: 700;
+    }
+
+    #left-file-container
+    {
+        width: 10%;
+    }
+
+    #main-file-container
+    {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .folder.selected, .folder:hover, .file.selected, .file:hover
+    {
+        color: var(--skills-background-color);
+        background-color: var(--skills-text-color);
+    }
+
+    .file
+    {
+        display: flex;
+    }
+
+    .file-size
+    {
+        display: flex;
+        flex: 1;
+        justify-content: end;
+    }
+
+    #info-container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        gap: 1vh;
+    }
+
+    #file-logo
+    {
+        height: 15vh;
+        width: fit-content;
+    }
+
+    #file-title
+    {
+        font-size: 3vh;
+    }
+
+    #file-stats
+    {
+        display: flex;
+        gap: 1vh;
+    }
+
+    #stat-title-container, #stat-bar-container
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .stat-title
+    {
+        display: flex;
+        height: 1.8vh;
+        align-items: center;
+    }
+
+    .stat
+    {
+        display: flex;
+        font-size: 1.5vh;
+        gap: 1vh;
+    }
+
+    .stat-bar-segment
+    {
+        height: 1.5vh;
+        width: 4vh;
+        background-color: var(--skills-background-color);
+        border: 0.2vh solid var(--skills-text-color);
+    }
+
+    .stat-bar-segment.fill
+    {
+        background-color: var(--skills-text-color);
+    }
+
+    #footer
+    {
+        display: flex;
+        width: 100%;
+    }
+
+    #file-metadata, #credit, #storage
+    {
+        display: flex;
+        flex: 1;
+        align-items: end;
+    }
+
+    #file-metadata
+    {
+        justify-content: start;
+    }
+
+    #credit
+    {
+        justify-content: center;
+    }
+
+    #storage
+    {
+        justify-content: end;
+    }
+
+/* #endregion */

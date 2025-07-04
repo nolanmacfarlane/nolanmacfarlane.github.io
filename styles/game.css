@@ -102,65 +102,13 @@
 
 /* #endregion */
 
-/* #region General Styles */
-
-    body
-    {
-        font-family: "delius-swash-caps";
-    }
-
-/* #endregion */
-
 /* #region Media Queries */
 
     @media (max-width: 1200px)
     {
-        body
-        {
-            overflow: auto !important;
-            cursor: default;
-        }
-        
-        main
-        {
-            height: max-content !important;
-            margin-top: 30vh;
-        }
-        
-        #text-container
+        #summary-container
         {
             width: 80vw !important;
-        }
-
-        #info-box-container
-        {
-            position: relative !important;
-            height: max-content !important;
-            grid-template-rows: 1fr 1fr 1fr !important;
-            row-gap: 2vh;
-            margin-bottom: 10vh;
-        }
-
-        .info-box
-        {
-            position: static !important;
-        }
-
-        .info-text
-        {
-            font-size: 1.8vh !important;
-        }
-
-        .middle-left
-        {
-            justify-self: center !important;
-            margin-left: 0 !important;
-        }
-
-        .middle-right
-        {
-            justify-self: center !important;
-            margin-right: 0 !important;
         }
     }
 
@@ -168,16 +116,15 @@
 
 /* #region Containers */
 
-    main
+    #title-screen
     {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 98vh;
-        padding: 1vh;
-        gap: 5vh;
-        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        gap: 3vh;
     }
 
     #title-container
@@ -194,16 +141,26 @@
         transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    #game-title:hover
-    {
-        letter-spacing: 0.7vh;
-        color: var(--accent-color);
-    }
-
-    #text-container
+    #summary-container
     {
         width: 50vw;
+        text-align: center;
         font-size: 2vh;
+    }
+
+    #link-container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1vh;
+    }
+    
+    a
+    {
+        width: fit-content;
+        font-size: 2vh;
+        color: var(--link-color);
     }
 
     #button-container
@@ -215,7 +172,7 @@
         gap: 2vh;
     }
 
-    .button
+    .game-button
     {
         display: flex;
         justify-content: center;
@@ -228,89 +185,22 @@
         transition: color 0.3s ease;
     }
 
-    .button:hover
-    {
-        color: var(--accent-color);
-    }
-
-    .button:active
+    .game-button:active
     {
         scale: 0.97;
     }
 
-    #info-box-container
-    {
-        position: absolute;
-        display: grid;
-        height: 100vh;
-        width: 100vw;
-        grid-template-rows: 30% 40% 30%;
-        grid-template-columns: 50% 50%;
-        pointer-events: none;
-    }
-
-    .info-box
+    #content-container
     {
         display: flex;
         flex-direction: column;
-        justify-self: center;
+        justify-content: center;
         align-items: center;
-        align-self: center;
-        height: 20vh;
-        width: 20vh;
+        box-sizing: border-box;
+        height: max-content;
+        width: 100%;
         gap: 1vh;
-    }
-
-    .info-img
-    {
-        height: 10vh;
-        width: 10vh;
-        pointer-events: none;
-    }
-
-    .info-text
-    {
-        font-size: 1.5vh;
-    }
-
-    .top-left
-    {
-        grid-row: 1;
-        grid-column: 1;
-    }
-
-    .top-right
-    {
-        grid-row: 1;
-        grid-column: 2;
-    }
-
-    .middle-left
-    {
-        grid-row: 2;
-        grid-column: 1;
-        justify-self: baseline;
-        margin-left: 5vh;
-    }
-
-    .middle-right
-    {
-        grid-row: 2;
-        grid-column: 2;
-        justify-self: end;
-        margin-right: 5vh;
-    }
-
-    .bottom-left
-    {
-        grid-row: 3;
-        grid-column: 1;
-    }
-
-    .bottom-right
-    {
-        grid-row: 3;
-        grid-column: 2;
+        padding: 1vh;
     }
 
 /* #endregion */

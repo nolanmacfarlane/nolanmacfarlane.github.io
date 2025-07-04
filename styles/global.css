@@ -48,6 +48,7 @@
     {
         --background-color: #ebeae1;
         --text-color: #000000;
+        --link-color: #bdbdff;
         --accent-color: #8fc9c9;
         --cursor-color: #19297c;
         --frosted-glass-color: #ffffff26;
@@ -70,6 +71,14 @@
         font-style: normal;
     }
 
+    @font-face
+    {
+        font-family: "ubuntu-mono";
+        src: url("/fonts/ubuntu-mono.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body 
     {
         display: flex;
@@ -85,7 +94,7 @@
 
     .dark-mode
     {
-        --background-color: #161422;
+        --background-color: #141a22;
         --text-color: #f7e5e8;
         --cursor-color: #e1e4f5;
         --frosted-glass-color: #00000044;
@@ -96,6 +105,11 @@
     {
         height: fit-content;
         width: fit-content;
+    }
+
+    img
+    {
+        pointer-events: none;
     }
 
 /* #endregion */

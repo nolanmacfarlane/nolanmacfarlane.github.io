@@ -2,16 +2,16 @@
 
 const loadingScreen = document.getElementById("loading-screen");
 
-const gameTitle = document.getElementById("game-title");
+const contentContainer = document.getElementById("content-container");
 
+const continueButton = document.getElementById("continue-button");
 const homeButton = document.getElementById("home-button");
 
 // #endregion
 
 // #region Main
 
-initGameTitle();
-initHomeButton();
+initButtons();
 
 setTimeout(fadeLoadingScreen, 5000);
 
@@ -19,16 +19,13 @@ setTimeout(fadeLoadingScreen, 5000);
 
 // #region Functions
 
-function initGameTitle()
+function initButtons()
 {
-    gameTitle.addEventListener("mouseenter", () =>
+    continueButton.addEventListener("click", () =>
     {
-        playSound("/sounds/game-title-hover.wav");
+        window.scrollTo({top: contentContainer.offsetHeight + contentContainer.offsetTop, behavior: "smooth"});
     });
-}
-
-function initHomeButton()
-{
+    
     homeButton.addEventListener("click", () =>
     {
         window.location.href = "/";
