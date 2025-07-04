@@ -30,6 +30,11 @@
             height: 10vh !important;
         }
 
+        #file-description
+        {
+            width: 90% !important;
+        }
+
         .stat
         {
             gap: 0.5vh !important;
@@ -134,6 +139,12 @@
         font-size: 3vh;
     }
 
+    #file-description
+    {
+        width: 50%;
+        text-align: center;
+    }
+
     #file-stats
     {
         display: flex;
@@ -195,6 +206,7 @@
     #credit
     {
         justify-content: center;
+        text-align: center;
     }
 
     #storage
