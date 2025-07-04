@@ -15,9 +15,6 @@
 
         <div id="black-fade"></div>
 
-        <!-- TODO: Add a layer here that changes depending on the selected game. It will feature foreground elements that
-            show up at the bottom of the screen. -->
-
         <!-- TODO: Make the homepage change depending on the time of day (Could be different pictures or sound effects or colors or ambience...). -->
 
         <header id="title-bar">
@@ -60,7 +57,7 @@
                 </div>
             </section>
             <section id="title-bar-center">
-                <!-- TODO: Add a radio element here that shows the current song that is playing (Need to add songs first). -->
+                <p id="clock"></p>
             </section>
             <section id="title-bar-right">
                 <div class="icon button">
@@ -184,7 +181,6 @@
                         </g>
                     </svg>
                 </div>
-                <p id="clock"></p>
             </section>
         </header>
 
@@ -199,12 +195,12 @@
                     <section id="game-info">
                         <h1 id="game-title">Game Title</h1>
                         <p id="game-description">Game description.</p>
-                    </section>
-                    <section id="game-tags">
-                        <div class="tag">Achievements: 0/10</div>
-                        <div class="tag">Progress: 0%</div>
-                        <div class="tag">Play Time: 0h</div>
-                        <div class="button" id="play-button" data-link="">Play</div>
+                        <div id="game-tags">
+                            <div class="tag">Achievements: 0/10</div>
+                            <div class="tag">Progress: 0%</div>
+                            <div class="tag">Play Time: 0h</div>
+                            <div class="button" id="play-button" data-link="">Play</div>
+                        </div>
                     </section>
                 </section>
             </section>
@@ -215,23 +211,26 @@
                 </section>
                 <section id="game-shelf-center">
                     <div class="game button" data-name="About Me" data-link="/about/" data-image="/images/ben-stuffy.jpg" data-bg-image="/images/wengen.jpg" 
-                        data-description="About me description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
-                        in culpa qui officia deserunt mollit anim id est laborum.">
+                        data-description="Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development. I am fluent in C# and learning HTML, CSS and JavaScript. Outside of school and coding I enjoy playing tennis, video games, violin and cooking.">
                         <img class="game-img" src=""/>
                     </div>
-                    <div class="game button" data-name="Skills" data-link="/skills/" data-image="/images/software-eng.jpg" data-bg-image="/images/computer-science-background.png" data-description="Skills description.">
+                    <div class="game button" data-name="Skills" data-link="/skills/" data-image="/images/software-eng.jpg" data-bg-image="/images/computer-science-background.png" 
+                        data-description="In the past 5 years of my coding experience I have learned many programming languages including: 
+- C 
+- C# 
+- Java 
+- JavaScript 
+- HTML 
+- CSS 
+- Python">
                         <img class="game-img" src=""/>
                     </div>
-                    <div class="game button" data-name="Passions" data-link="/passions/" data-image="/images/cherry-bandana.jpg" data-bg-image="/images/lake-como.jpg" data-description="Passions description.">
+                    <div class="game button" data-name="Project: Metroidvania Game" data-link="/projects/metroidvaniagame/" data-image="" data-bg-image="" 
+                        data-description="Since I completed my final project for game development in high school I have been working on this 2D metroidvania game. It is inspired by some of my favourite games like Hollow Knight, Elden Ring and Zelda.">
                         <img class="game-img" src=""/>
                     </div>
-                    <div class="game button" data-name="Project: Metroidvania Game" data-link="/projects/metroidvaniagame/" data-image="" data-bg-image="" data-description="Metroidvania description.">
-                        <img class="game-img" src=""/>
-                    </div>
-                    <div class="game button" data-name="More Projects" data-link="/projects/" data-image="" data-bg-image="" data-description="Projects description.">
+                    <div class="game button" data-name="More Projects" data-link="/projects/" data-image="" data-bg-image="" 
+                        data-description="Check out more of my other projects.">
                         <img class="game-img" src=""/>
                     </div>
                 </section>
