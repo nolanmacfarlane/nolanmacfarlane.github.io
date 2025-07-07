@@ -1,5 +1,19 @@
 // #region Global Variables
 
+const imagesToPreload = [
+    "/images/c-logo.webp",
+    "/images/c-sharp-logo.webp",
+    "/images/css-logo.webp",
+    "/images/html-logo.webp",
+    "/images/java-logo.webp",
+    "/images/javascript-logo.webp",
+    "/images/python-logo.webp",
+    "/images/ubuntu-logo.webp",
+    "/images/unity-logo.webp",
+    "/images/vs-code-logo.webp",
+    "/images/zen-browser-logo.webp"
+];
+
 const buttons = document.querySelectorAll(".button");
 
 const links = document.querySelectorAll("a");
@@ -26,6 +40,15 @@ checkLightMode();
 // #endregion
 
 // #region Functions
+
+function preloadImages()
+{
+    imagesToPreload.forEach(src =>
+    {
+        const img = new Image();
+        img.src = src;
+    });
+}
 
 function initButtonEffects()
 {
