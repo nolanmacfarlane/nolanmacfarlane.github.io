@@ -65,8 +65,8 @@
 
     @font-face
     {
-        font-family: "delius-swash-caps";
-        src: url("/fonts/delius-swash-caps.woff2") format("woff2");
+        font-family: "outfit";
+        src: url("/fonts/outfit.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
     }
@@ -156,8 +156,8 @@
     {
         height: 3vh;
         aspect-ratio: 1;
-        position: absolute;
-        z-index: 1;
+        position: fixed;
+        z-index: 10;
         left: 50%;
         top: 50%;
         border-radius: 50%;

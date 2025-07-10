@@ -1,6 +1,7 @@
 // #region Global Variables
 
-const imagesToPreload = [
+const imagesToPreload =
+[
     "/images/c-logo.webp",
     "/images/c-sharp-logo.webp",
     "/images/css-logo.webp",
@@ -32,6 +33,7 @@ let lastSoundTime = 0;
 
 // #region Main
 
+preloadImages();
 initButtonEffects();
 initLinks();
 checkMobile();
@@ -135,8 +137,8 @@ function toggleLightMode()
 
 document.body.onpointermove = event =>
 {
-    cursor.style.left = `${event.pageX}px`;
-    cursor.style.top = `${event.pageY}px`;
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
 };
 
 document.body.onpointerdown = event =>
