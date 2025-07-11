@@ -23,7 +23,7 @@ function initButtons()
 {
     continueButton.addEventListener("click", () =>
     {
-        window.scrollTo({top: contentContainer.offsetHeight + contentContainer.offsetTop, behavior: "smooth"});
+        window.scrollTo({top: contentContainer.offsetTop, behavior: "smooth"});
     });
     
     homeButton.addEventListener("click", () =>

@@ -35,7 +35,7 @@
         width: 100vw;
         pointer-events: none;
         background: #000000;
-        z-index: 2;
+        z-index: 999;
         opacity: 0;
         transition: opacity 1s ease;
     }

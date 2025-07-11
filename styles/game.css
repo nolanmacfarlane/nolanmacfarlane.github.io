@@ -23,7 +23,7 @@
         height: 100vh;
         width: 100vw;
         background: #000000;
-        z-index: 2;
+        z-index: 20;
         opacity: 1;
         transition: opacity 1s ease;
     }
@@ -116,6 +116,18 @@
 
 /* #region Containers */
 
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+        padding: 1vh;
+        gap: 1vh;
+        overflow: hidden;
+    }
+
     #title-screen
     {
         display: flex;
@@ -201,6 +213,12 @@
         width: 100%;
         gap: 1vh;
         padding: 1vh;
+    }
+
+    #footer
+    {
+        display: flex;
+        width: 100%;
     }
 
 /* #endregion */

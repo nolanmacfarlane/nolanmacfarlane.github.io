@@ -50,18 +50,6 @@
 
 /* #region Containers */
 
-    main
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: max-content;
-        padding: 1vh;
-        gap: 1vh;
-        overflow: hidden;
-    }
-
     a
     {
         color: var(--skills-text-color);
@@ -183,12 +171,6 @@
     .stat-bar-segment.fill
     {
         background-color: var(--skills-text-color);
-    }
-
-    #footer
-    {
-        display: flex;
-        width: 100%;
     }
 
     #file-metadata, #credit, #storage

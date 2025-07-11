@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/styles/about.css">
         <script src="/scripts/global.js" defer></script>
         <script src="/scripts/game.js" defer></script>
+        <script src="/scripts/about.js" defer></script>
     </head>
     <body>
         <section id="loading-screen">
@@ -53,68 +54,106 @@
             </div>
         </section>
 
-        <main>
-            <!-- TODO: Design and code the background effects for this page (Still not sure if I want to keep the background image).  -->
+        <!-- TODO: Update background to be more interesting -->
+        <div id="background"></div>
 
-            <!-- TODO: Reorganize page to be scrollable and each passion has it's own section with scrolling animations. -->
-            
-            <div id="background-image" style="background: url(/images/mt-douglas-beach.webp) center / cover no-repeat fixed"></div>
-            <div id="frosted-glass"></div>
-            <section id="title-container">
-                <h1 id="game-title">About</h1>
+        <main> 
+            <section id="title-screen">
+                <section id="title-container">
+                    <h1 id="game-title">About</h1>
+                </section>
+                <section id="summary-container">
+                    Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development.
+                    Check out some of my passions.
+                </section>
+                <section id="link-container">
+                    <a href="/files/Resume.pdf" target="_blank">Download My Resume (PDF)</a>
+                    <a href="mailto:nolanmacfarlane05@gmail.com">Email Me: nolanmacfarlane05@gmail.com</a>
+                </section>
+                <section id="button-container">
+                    <div class="game-button button" id="continue-button">Continue</div>
+                    <div class="game-button button" id="home-button">Home</div>
+                </section>
             </section>
-            <section id="summary-container">
-                Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development.
-                Check out some of my passions.
-            </section>
-            <section id="link-container">
-                <a href="/files/Resume.pdf" target="_blank">Download My Resume (PDF)</a>
-                <a href="mailto:nolanmacfarlane05@gmail.com">Email Me: nolanmacfarlane05@gmail.com</a>
-            </section>
-            <section id="button-container">
-                <div class="game-button button" id="continue-button">Continue</div>
-                <div class="game-button button" id="home-button">Home</div>
-            </section>
-            <section id="info-box-container">
-                <div class="info-box top-left">
-                    <img class="info-img" src="" alt="">
+            <section id="content-container">
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/cooking-background.jpg) center / cover no-repeat fixed;"></div>
+                    </div>
                     <div class="info-text">
                         I love cooking! Decadent dishes are my favourite. I try to make new recipes every week.
                         Latest recipe: Margherita Pizza
                     </div>
-                </div>
-                <div class="info-box top-right">
-                    <img class="info-img" src="" alt="">
-                    <div class="info-text">
-                        Tennis is my main sport. I have been playing since I was 5 years old. I play several times a week and I'm also a certified Tennis Canada instructor. 
+                    <div class="info-image-container">
+                        <img class="info-image" id="frying-pan" src="/images/frying-pan.png" alt="">
+                        <img class="info-image" id="pancake" src="/images/pancake.png" alt="">
                     </div>
-                </div>
-                <div class="info-box middle-left">
-                    <img class="info-img" src="" alt="">
-                    <div class="info-text">
-                        Music is a major part of my life. For 12 years I've been playing violin and I completed my ARCT violin a couple years ago. 
+                </section>
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/tennis-background.jpg) center / cover no-repeat fixed;"></div>
                     </div>
-                </div>
-                <div class="info-box middle-right">
-                    <img class="info-img" src="" alt="">
-                    <div class="info-text">
-                        Some of my favourite memories from growing up are playing Nintendo games. The nostalgic vibe of game console home screens is what inspired the design of this website. 
+                    <div class="info-image-container">
+                        <img class="info-image" id="tennis-ball" src="/images/tennis-ball.png" alt="">
                     </div>
-                </div>
-                <div class="info-box bottom-left">
-                    <img class="info-img" src="" alt="">
+                    <div class="info-text">
+                        Tennis is my main sport. I have been playing since I was 5 years old. I play several times a week and I'm also a certified Tennis Canada instructor.
+                    </div>
+                </section>
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/violin-background.jpg) center / cover no-repeat fixed;"></div>
+                    </div>
+                    <div class="info-text">
+                        Music is a major part of my life. For 12 years I've been playing violin and I completed my ARCT violin a couple years ago.
+                    </div>
+                    <div class="info-image-container">
+                        <img class="info-image" id="violin" src="/images/violin.png" alt="">
+                        <img class="info-image" id="violin-bow" src="/images/violin-bow.png" alt="">
+                    </div>
+                </section>
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/wii-sports-resort-background.jpg) center / cover no-repeat fixed;"></div>
+                    </div>
+                    <div class="info-image-container">
+                        <img class="info-image" src="/images/wii.png" alt="">
+                        <img class="info-image" id="wii-disc" src="/images/wii-disc.png" alt="">
+                    </div>
+                    <div class="info-text">
+                        Some of my favourite memories from growing up are playing Nintendo games. The nostalgic vibe of game console home screens is what inspired the design of this website.
+                    </div>
+                </section>
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/ui-background.jpg) center / cover no-repeat fixed;"></div>
+                    </div>
                     <div class="info-text">
                         Designing user interfaces is one of my favourite things to do in my projects. I love tinkering with the UI of any software that give me the chance.
                     </div>
-                </div>
-                <div class="info-box bottom-right">
-                    <img class="info-img" src="" alt="">
-                    <div class="info-text">
-                        <!-- TODO: Finish the description of the game dev passion. -->
+                    <div class="info-image-container">
+                        <img class="info-image" id="ui-icon" src="/images/ui-icon.png" alt="">
+                        <img class="info-image" id="cursor-img" src="/images/cursor.png" alt="">
                     </div>
-                </div>
-            </section>
+                </section>
+                <section class="info-container">
+                    <div class="blur-wrapper">
+                        <div class="blur-background" style="background: url(/images/unity-game-engine-background.jpg) center / cover no-repeat fixed;"></div>
+                    </div>
+                    <div class="info-image-container">
+                        <img class="info-image" id="mario" src="/images/mario.png" alt="">
+                        <img class="info-image" id="question-block" src="/images/question-block.png" alt="">
+                    </div>
+                    <div class="info-text">
+                        For the last 3 years, I have been learning the Unity game engine and the C# programming language to develop video games. I am currently working my own metroidvania game. It would be incredible to release my own indie game one day.
+                    </div>
+                </section>
+            </section>  
         </main>
+
+        <footer id="footer">
+            Created by Nolan MacFarlane
+        </footer>
 
         <div id="cursor"></div>
     </body>
