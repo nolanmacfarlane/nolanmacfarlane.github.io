@@ -138,7 +138,7 @@ function initPlayButton()
     playButton.addEventListener("click", () =>
     {
         document.body.style.pointerEvents = "none";
-        playSound("sounds/play.wav");
+        playSound("/sounds/play.wav");
         discContainer.classList.add("enter");
         document.querySelector(".active").style.scale = 1.1;
 

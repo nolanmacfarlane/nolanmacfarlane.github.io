@@ -15,6 +15,14 @@ const imagesToPreload =
     "/images/zen-browser-logo.webp"
 ];
 
+const loadedSoundsMap =
+{
+    "/sounds/click.wav": new Audio("/sounds/click.wav"),
+    "/sounds/game-title-hover.wav": new Audio("/sounds/game-title-hover.wav"),
+    "/sounds/hover.wav": new Audio("/sounds/hover.wav"),
+    "/sounds/play.wav": new Audio("/sounds/play.wav")
+};
+
 const buttons = document.querySelectorAll(".button");
 
 const links = document.querySelectorAll("a");
@@ -34,6 +42,7 @@ let lastSoundTime = 0;
 // #region Main
 
 preloadImages();
+preloadSounds();
 initButtonEffects();
 initLinks();
 checkMobile();
@@ -104,6 +113,15 @@ function checkMobile()
     if (isMobile) cursor.style.display = "none";
 }
 
+function preloadSounds()
+{
+    for (const sound of Object.values(loadedSoundsMap))
+    {
+        sound.preload = "auto";
+        sound.load();
+    }
+}
+
 function playSound(url)
 {
     if (localStorage.getItem("isMute") === "true") return;
@@ -112,11 +130,20 @@ function playSound(url)
 
     if (now - lastSoundTime >= soundCooldown)
     {
-        const audio = new Audio(url);
-        audio.play().catch(e => console.warn("Playback failed:", e));
+        const audio = getLoadedSound(url);
 
-        lastSoundTime = now;
+        if (audio)
+        {
+            audio.play().catch(e => console.warn("Playback failed:", e));
+            lastSoundTime = now;
+        }
     }
+}
+
+function getLoadedSound(url)
+{
+    const sound = loadedSoundsMap[url];
+    return sound ? sound.cloneNode() : null;
 }
 
 function checkLightMode()
