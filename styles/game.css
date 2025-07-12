@@ -1,16 +1,5 @@
 /* #region Background/Foreground Layers */
 
-    #background-image
-    {
-        position: fixed;
-        top: 0; 
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        pointer-events: none;
-        z-index: -10;
-    }
-
     #loading-screen
     {
         display: flex;

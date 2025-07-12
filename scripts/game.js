@@ -38,6 +38,7 @@ function fadeLoadingScreen()
 
     loadingScreen.addEventListener("transitionend", () =>
     {
+        document.body.style.overflow = "auto";
         loadingScreen.style.pointerEvents = "none";
     });
 }

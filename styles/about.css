@@ -42,7 +42,6 @@
         color: var(--about-text-color);
         background-color: var(--about-background-color);
         font-family: outfit;
-        overflow: auto;
     }
 
 /* #endregion */
