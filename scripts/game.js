@@ -13,7 +13,7 @@ const homeButton = document.getElementById("home-button");
 
 initButtons();
 
-setTimeout(fadeLoadingScreen, 5000);
+setTimeout(fadeLoadingScreen, 3000);
 
 // #endregion
 
