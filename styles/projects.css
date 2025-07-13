@@ -1,0 +1,25 @@
+/* #region General Styles and Variables */
+
+    :root
+    {
+        
+    }
+
+    body
+    {
+        font-family: jacquard;
+    }
+
+/* #endregion */
+
+/* #region Containers */
+
+    #footer
+    {
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 1vh;
+        font-size: 24px;
+    }
+
+/* #endregion */
