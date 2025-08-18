@@ -54,31 +54,86 @@
             </div>
         </section>
 
+        <div id="message-screen">
+            <div id="message">
+                <div id="message-title">
+                    This project is paused!
+                </div>
+                <div id="message-text">
+                    The development of this project is paused, but I have plans to continue later.
+                </div>
+                <div class="game-button button background-glow" id="message-button">
+                    Ok   
+                </div>
+            </div>
+        </div>
+
         <main> 
             <section id="title-screen">
                 <section id="title-container">
                     <h1 id="game-title">Projects</h1>
                 </section>
                 <section id="summary-container">
-                    
+                    Explore my completed and pending projects.
                 </section>
                 <section id="link-container">
                     <a href="/files/Resume.pdf" target="_blank">Download My Resume (PDF)</a>
                     <a href="mailto:nolanmacfarlane05@gmail.com">Email Me: nolanmacfarlane05@gmail.com</a>
                 </section>
                 <section id="button-container">
-                    <div class="game-button button" id="continue-button">Continue</div>
-                    <div class="game-button button" id="home-button">Home</div>
+                    <div class="game-button button background-glow" id="continue-button">Continue</div>
+                    <div class="game-button button background-glow" id="home-button">Home</div>
                 </section>
             </section>
             <section id="content-container">
-                
+                <section id="project-grid-container">
+                    <div class="project-card inactive"></div>
+                    <div class="project-card button" id="portfolio-site">
+                        <img class="project-image pixel-art" src="/images/web-development.gif" alt="">
+                        <div class="project-title">
+                            Portfolio Site
+                        </div>
+                        <div class="project-text">
+                            You are on the site right now!
+                        </div>
+                    </div>
+                    <div class="project-card inactive"></div>
+                    <div class="project-card button" id="chess-engine">
+                        <img class="project-image pixel-art" src="/images/chess-knight.gif" alt="">
+                        <div class="project-title">
+                            Chess Engine
+                        </div>
+                        <div class="project-text">
+                            Challenge my chess bot
+                        </div>
+                    </div>
+                    <img class="pixel-art background-glow" src="/images/bonfire.gif" alt="">
+                    <div class="project-card button" id="metroidvania">
+                        <img class="project-image pixel-art" src="/images/game-disc.gif" alt="">
+                        <div class="project-title">
+                            Metroidvania
+                        </div>
+                        <div class="project-text">
+                            Explore a vast underground society
+                        </div>
+                    </div>
+                    <div class="project-card inactive"></div>
+                    <div class="project-card button">
+                        <img class="project-image pixel-art" src="/images/question-mark.gif" alt="">
+                        <div class="project-title">
+                            Unknown
+                        </div>  
+                        <div class="project-text">
+                            Not discovered yet
+                        </div>
+                    </div>
+                    <div class="project-card inactive"></div>
+                </section>
+                <div class="background-glow" id="footer">
+                    Created by Nolan MacFarlane
+                </div>
             </section>  
         </main>
-
-        <footer id="footer">
-            Created by Nolan MacFarlane
-        </footer>
 
         <div id="cursor"></div>
     </body>

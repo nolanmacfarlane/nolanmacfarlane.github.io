@@ -61,6 +61,15 @@ function preloadImages()
     });
 }
 
+function preloadSounds()
+{
+    for (const sound of Object.values(loadedSoundsMap))
+    {
+        sound.preload = "auto";
+        sound.load();
+    }
+}
+
 function initButtonEffects()
 {
     buttons.forEach(button =>
@@ -111,15 +120,6 @@ function initLinks()
 function checkMobile()
 {
     if (isMobile) cursor.style.display = "none";
-}
-
-function preloadSounds()
-{
-    for (const sound of Object.values(loadedSoundsMap))
-    {
-        sound.preload = "auto";
-        sound.load();
-    }
 }
 
 function playSound(url)

@@ -79,12 +79,20 @@
         font-style: normal;
     }
 
-    @font-face
+    @font-face 
     {
         font-family: "jacquard";
         src: url("/fonts/jacquard24.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
+    }
+
+    @font-face
+    {
+        font-family: "im-fell-english";
+        src: url("/fonts/im-fell-english.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;    
     }
 
     body 
@@ -162,9 +170,9 @@
 
     #cursor
     {
+        position: fixed;
         height: 3vh;
         aspect-ratio: 1;
-        position: fixed;
         z-index: 10;
         left: 50%;
         top: 50%;
