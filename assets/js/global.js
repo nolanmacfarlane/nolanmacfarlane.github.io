@@ -2,25 +2,25 @@
 
 const imagesToPreload =
 [
-    "/images/c-logo.webp",
-    "/images/c-sharp-logo.webp",
-    "/images/css-logo.webp",
-    "/images/html-logo.webp",
-    "/images/java-logo.webp",
-    "/images/javascript-logo.webp",
-    "/images/python-logo.webp",
-    "/images/ubuntu-logo.webp",
-    "/images/unity-logo.webp",
-    "/images/vs-code-logo.webp",
-    "/images/zen-browser-logo.webp"
+    "/assets/images/c-logo.webp",
+    "/assets/images/c-sharp-logo.webp",
+    "/assets/images/css-logo.webp",
+    "/assets/images/html-logo.webp",
+    "/assets/images/java-logo.webp",
+    "/assets/images/javascript-logo.webp",
+    "/assets/images/python-logo.webp",
+    "/assets/images/ubuntu-logo.webp",
+    "/assets/images/unity-logo.webp",
+    "/assets/images/vs-code-logo.webp",
+    "/assets/images/zen-browser-logo.webp"
 ];
 
 const loadedSoundsMap =
 {
-    "/sounds/click.wav": new Audio("/sounds/click.wav"),
-    "/sounds/game-title-hover.wav": new Audio("/sounds/game-title-hover.wav"),
-    "/sounds/hover.wav": new Audio("/sounds/hover.wav"),
-    "/sounds/play.wav": new Audio("/sounds/play.wav")
+    "/assets/sounds/click.wav": new Audio("/assets/sounds/click.wav"),
+    "/assets/sounds/game-title-hover.wav": new Audio("/assets/sounds/game-title-hover.wav"),
+    "/assets/sounds/hover.wav": new Audio("/assets/sounds/hover.wav"),
+    "/assets/sounds/play.wav": new Audio("/assets/sounds/play.wav")
 };
 
 const buttons = document.querySelectorAll(".button");
@@ -89,7 +89,7 @@ function initButtonEffects()
         
         button.addEventListener("mouseenter", () =>
         {
-            playSound("/sounds/hover.wav");
+            playSound("/assets/sounds/hover.wav");
 
             window.cursor.style.height = "1.5vh";
         });
@@ -170,7 +170,7 @@ document.body.onpointermove = event =>
 
 document.body.onpointerdown = event =>
 {
-    playSound("/sounds/click.wav");
+    playSound("/assets/sounds/click.wav");
 
     cursorOpacity = window.cursor.style.opacity;
     cursor.style.opacity = "0.7";

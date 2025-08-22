@@ -3,6 +3,9 @@
 const gameTitle = document.getElementById("game-title");
 let isRandomizingTitleText = false;
 
+let isRandomizingContinueButton = false;
+let isRandomizingHomeButton = false;
+
 const path = document.getElementById("path");
 const fileMetadata = document.getElementById("file-metadata");
 
@@ -39,6 +42,31 @@ function initGameTitle()
         await randomizeTextEffect(gameTitle, 20);
 
         isRandomizingTitleText = false;
+    });
+}
+
+function initButtonEffects()
+{
+    continueButton.addEventListener("mouseenter", async () =>
+    {
+        if (isRandomizingContinueButton) return;
+
+        isRandomizingContinueButton = true;
+
+        await randomizeTextEffect(continueButton, 20);
+
+        isRandomizingContinueButton = false;
+    });
+
+    homeButton.addEventListener("mouseenter", async () =>
+    {
+        if (isRandomizingHomeButton) return;
+
+        isRandomizingHomeButton = true;
+
+        await randomizeTextEffect(homeButton, 20);
+
+        isRandomizingHomeButton = false;
     });
 }
 

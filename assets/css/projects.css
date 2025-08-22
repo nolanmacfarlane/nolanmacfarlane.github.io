@@ -155,7 +155,7 @@
         height: 150px;
         width: max-content;
         border: 12px solid transparent;
-        border-image: url(/images/projects-border-image.png) 4 stretch;
+        border-image: url(/assets/images/projects-border-image.png) 4 stretch;
         border-radius: 10px;
     }
 

@@ -62,18 +62,9 @@ initGameInfo();
 
 function initIcons()
 {
-    initProfileIcon();
     initVolumeIcons();
     initLightIcons();
     initSettingsIcon();
-}
-
-function initProfileIcon()
-{    
-    profileIcon.parentElement.addEventListener("click", () =>
-    {
-        window.location.href = "/profile/";
-    });
 }
 
 function initVolumeIcons()
@@ -138,7 +129,7 @@ function initPlayButton()
     playButton.addEventListener("click", () =>
     {
         document.body.style.pointerEvents = "none";
-        playSound("/sounds/play.wav");
+        playSound("/assets/sounds/play.wav");
         discContainer.classList.add("enter");
         document.querySelector(".active").style.scale = 1.1;
 
@@ -264,7 +255,7 @@ function initGameInfo()
 
     gameInfo.firstElementChild.addEventListener("mouseenter", () =>
     {
-        playSound("/sounds/game-title-hover.wav");
+        playSound("/assets/sounds/game-title-hover.wav");
     });
 
     gameInfo.lastElementChild.addEventListener("transitionend", () =>

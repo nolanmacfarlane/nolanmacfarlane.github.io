@@ -45,8 +45,8 @@ const scrollAnimations =
         
         element.style.transform = `translateY(${Math.sin(actualProgress * Math.PI) * -46}vh)`;
         
-        if (actualProgress > 0.05 && actualProgress < 0.95) element.src = "/images/mario-jump.png";
-        else element.src = "/images/mario.png";
+        if (actualProgress > 0.05 && actualProgress < 0.95) element.src = "/assets/images/mario-jump.png";
+        else element.src = "/assets/images/mario.png";
     },
 
     "question-block": (element, progress) =>
