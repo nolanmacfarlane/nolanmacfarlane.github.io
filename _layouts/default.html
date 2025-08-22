@@ -3,10 +3,10 @@
     <head>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <title>{{ page.title }} - {{ site.title }}</title>
-        <link rel="stylesheet" href="/assets/css/global.css">
-        <link rel="stylesheet" href="/assets/css/home.css">
-        <script src="/assets/js/global.js" defer></script>
-        <script src="/assets/js/home.js" defer></script>
+        <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+        <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+        <script src="{{ '/assets/js/global.js' | relative_url }}" defer></script>
+        <script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
     </head>
     <body>
         <div id="frosted-glass"></div>
