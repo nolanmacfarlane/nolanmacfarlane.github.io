@@ -54,11 +54,16 @@
 
     @media (max-width: 600px), (max-height: 800px)
     {
+        #content-container
+        {
+            height: max-content !important;
+        }
+        
         #file-logo
         {
             height: 80px !important;
         }
-        
+
         #footer
         {
             display: none !important;
