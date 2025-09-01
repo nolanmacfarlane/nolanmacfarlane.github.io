@@ -34,6 +34,7 @@
         #info-container
         {
             grid-column: 1 / span 2;
+            margin-bottom: 50px;
         }
 
         #file-title
@@ -52,7 +53,7 @@
         }
     }
 
-    @media (max-width: 600px), (max-height: 800px)
+    @media (max-width: 600px), (max-height: 900px)
     {
         #content-container
         {
@@ -61,7 +62,7 @@
         
         #file-logo
         {
-            height: 80px !important;
+            height: 100px !important;
         }
 
         #footer
