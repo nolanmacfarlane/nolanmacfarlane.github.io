@@ -161,7 +161,7 @@
 
     p
     {
-        font-size: 1.5vh;
+        font-size: min(18px, 1.7vh);
     }
 
 /* #endregion */
