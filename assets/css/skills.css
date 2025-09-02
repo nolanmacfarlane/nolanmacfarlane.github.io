@@ -52,8 +52,13 @@
         }
     }
 
-    @media (max-width: 600px), (max-height: 900px)
+    @media (max-width: 600px), (max-height: 800px)
     {
+        #path
+        {
+            display: none;
+        }
+        
         #info-container
         {
             margin-top: 25px;
@@ -74,6 +79,19 @@
         #footer
         {
             display: none !important;
+        }
+    }
+
+    @media (orientation: landscape) and (max-width: 1000px)
+    {
+        #title-screen
+        {
+            height: 120vh !important;
+        }
+        
+        #content-container
+        {
+            height: max-content !important;
         }
     }
 
