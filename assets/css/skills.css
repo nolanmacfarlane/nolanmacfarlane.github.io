@@ -54,20 +54,21 @@
 
     @media (max-width: 600px), (max-height: 900px)
     {
-        #content-container
-        {
-            height: max-content !important;
-        }
-
         #info-container
         {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            margin-top: 25px;
+            margin-bottom: 25px;
         }
         
         #file-logo
         {
             height: 100px !important;
+        }
+
+        #file-description
+        {
+            height: 150px;
+            overflow: auto;
         }
 
         #footer
