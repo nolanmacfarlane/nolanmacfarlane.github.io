@@ -2,6 +2,8 @@
 
 const themeInput = document.getElementById("theme-input");
 
+let timeout;
+
 // #endregion
 
 // #region Main
@@ -27,7 +29,7 @@ function updateTheme()
         if (splitLine[0] === "theme")
         {
             document.body.className = "";
-            if (splitLine[1] !== "") document.body.classList.add(splitLine[1]);
+            if (splitLine[1] !== "") document.body.classList.add(splitLine[1].trim());
         }
     });
 }
@@ -36,6 +38,10 @@ function updateTheme()
 
 // #region Events
 
-themeInput.addEventListener("input", updateTheme);
+themeInput.addEventListener("input", () =>
+{
+    clearTimeout(timeout);
+    timeout = setTimeout(updateTheme, 100);
+});
 
 // #endregion

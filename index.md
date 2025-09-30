@@ -97,7 +97,7 @@ script:
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
         </div>
         <form id="theme-form">
-            <textarea id="theme-input" name="theme" rows="8" cols="60" spellcheck="false">
+            <textarea id="theme-input" name="theme" rows="8" cols="60" spellcheck="false" maxlength="500">
 # Uncomment the theme you want to select
 # If multiple themes are selected then the bottom-most theme takes priority
 
