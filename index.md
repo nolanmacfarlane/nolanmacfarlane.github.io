@@ -108,7 +108,9 @@ script:
 theme=default
 # theme=solarized
 # theme=solarized-dark
-# theme=rosepine-moon</textarea>
+# theme=rosepine-moon
+# theme=dark-forest
+# theme=mocha</textarea>
             <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500">
 # Change the value to true or false to enable/disable visibility
 
