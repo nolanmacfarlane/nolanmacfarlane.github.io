@@ -20,7 +20,7 @@ script: home.js
         <div class="button folder" id="tool">tools</div>
     </section>
     <section id="main-file-container">
-        <div class="button file about" id="Nolan MacFarlane" data-logo="/assets/images/nolan.txt" data-description="Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development. I have experience with C# and learning HTML, CSS and JavaScript. Outside of school and coding I enjoy playing tennis, video games, violin and cooking." data-links="resume github email">
+        <div class="button file about" id="Nolan MacFarlane" data-logo="/assets/images/nolan.txt" data-description="Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development. I have experience with C# and I am learning HTML, CSS and JavaScript. Outside of school and coding I enjoy playing tennis, video games, violin and cooking." data-links="resume github email">
             Nolan MacFarlane.txt
             <div class="file-size">27.4 kB</div>
         </div>
