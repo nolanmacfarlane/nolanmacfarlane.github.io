@@ -1,75 +1,4 @@
-/* #region Background/Foreground Layers */
-
-    #frosted-glass
-    {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        pointer-events: none;
-        background: var(--frosted-glass-color);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        z-index: -9;
-    }
-
-    #vignette
-    {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 135vw;
-        pointer-events: none;
-        background: radial-gradient(ellipse at 0% 50%, transparent 50%, var(--vignette-color));
-        z-index: -8;
-    }
-
-    #black-fade
-    {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        pointer-events: none;
-        background: #000000;
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 1s ease;
-    }
-
-/* #endregion */
-
 /* #region General Styles and Global Variables */
-
-    :root
-    {
-        --background-color: #ebeae1;
-        --text-color: #000000;
-        --link-color: #bdbdff;
-        --accent-color: #8fc9c9;
-        --cursor-color: #19297c;
-        --frosted-glass-color: #ffffff26;
-        --vignette-color: #fff1d875;
-    }
-
-    @font-face 
-    {
-        font-family: "continuum";
-        src: url("/assets/fonts/contm.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face
-    {
-        font-family: "outfit";
-        src: url("/assets/fonts/outfit.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
 
     @font-face
     {
@@ -77,22 +6,6 @@
         src: url("/assets/fonts/ubuntu-mono.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
-    }
-
-    @font-face 
-    {
-        font-family: "jacquard";
-        src: url("/assets/fonts/jacquard24.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face
-    {
-        font-family: "excalifont";
-        src: url("/assets/fonts/excalifont.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;    
     }
 
     body 
@@ -105,84 +18,11 @@
         color: var(--text-color);
         background-color: var(--background-color);
         overflow: hidden;
-        cursor: none;
     }
 
-    .dark-mode
+    .button
     {
-        --background-color: #141a22;
-        --text-color: #f7e5e8;
-        --cursor-color: #e1e4f5;
-        --frosted-glass-color: #00000044;
-        --vignette-color: #000000;
-    }
-
-    .button.icon
-    {
-        height: fit-content;
-        width: fit-content;
-    }
-
-    img
-    {
-        pointer-events: none;
-    }
-
-/* #endregion */
-
-/* #region General Animations */
-
-    @keyframes border-effect 
-    {
-        0% 
-        { 
-            background-position: 95% 95%; 
-        }
-
-        100% 
-        { 
-            background-position: 5% 5%; 
-        }
-    }
-
-/* #endregion */
-
-/* #region Text */
-
-    h1
-    {
-        font-size: 2.5vh;
-    }
-
-    h2
-    {
-        font-size: 2vh;
-    }
-
-    p
-    {
-        font-size: 18px;
-    }
-
-/* #endregion */
-
-/* #region Cursor */
-
-    #cursor
-    {
-        position: fixed;
-        height: 3vh;
-        aspect-ratio: 1;
-        z-index: 10;
-        left: 50%;
-        top: 50%;
-        border-radius: 50%;
-        background: var(--cursor-color);
-        opacity: 0.4;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        transition: height 0.3s ease,
-                    opacity 0.3s ease;
+        cursor: pointer;
     }
 
 /* #endregion */

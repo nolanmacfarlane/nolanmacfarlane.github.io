@@ -1,280 +1,196 @@
-// #region Classes
-
-class BackgroundImage
-{
-    constructor(src)
-    {
-        this.src = src;
-
-        this.element = document.createElement("div");
-        this.element.className = "background-image";
-
-        this.element.style.background = `url(${this.src}) center / cover no-repeat fixed`;
-
-        document.body.appendChild(this.element);
-    }
-}
-
-// #endregion
-
 // #region Variables
 
-let backgroundImages = [];
+const path = document.getElementById("path");
+const currentFile = document.getElementById("current-file");
+const fileMetadata = document.getElementById("file-metadata");
 
-const blackFade = document.getElementById("black-fade");
+const folders = document.querySelectorAll(".folder");
+const files = document.querySelectorAll(".file");
 
-const profileIcon = document.getElementById("profile-icon");
-const shopIcon = document.getElementById("shop-icon");
-const photoGalleryIcon = document.getElementById("photo-gallery-icon");
-const volumeIcon = document.getElementById("volume-icon");
-const muteIcon = document.getElementById("mute-icon");
-const lightIcon = document.getElementById("light-icon");
-const darkIcon = document.getElementById("dark-icon");
-const settingsIcon = document.getElementById("settings-icon");
-
-const playButton = document.getElementById("play-button");
-
-const clock = document.getElementById("clock");
-
-const discContainer = document.getElementById("game-disc-container");
-const discImage = document.getElementById("disc-image");
-
-const gameInfo = document.getElementById("game-info");
-
-const hoveredGameTitle = document.getElementById("hovered-game-title");
-
-const games = document.querySelectorAll(".game");
-
-let isTransitioning = false;
+const fileLogo = document.getElementById("file-logo");
+const fileTitle = document.getElementById("file-title");
+const fileDescription = document.getElementById("file-description");
+const fileLinks = document.getElementById("links");
 
 // #endregion
 
 // #region Main
 
-initIcons();
-initPlayButton();
-initClock();
-initGameInfo();
+// initGameTitle();
+initButtonEffects();
+initFolders();
+initFiles();
 
 // #endregion
 
 // #region Functions
 
-function initIcons()
+async function randomizeTextEffect(stringElement)
 {
-    initVolumeIcons();
-    initLightIcons();
-    initSettingsIcon();
-}
+    let elementText = stringElement.textContent;
+    let textLength = elementText.length;
+    let startTimeMilli = Date.now();
+    let totalDuration = 500;
+    let delay = 30;
 
-function initVolumeIcons()
-{
-    if (localStorage.getItem("isMute") === "true") volumeIcon.parentElement.style.display = "none";
-    else muteIcon.parentElement.style.display = "none";
-    
-    volumeIcon.parentElement.addEventListener("click", () =>
+    while (Date.now() - startTimeMilli < totalDuration)
     {
-        localStorage.setItem("isMute", "true");
-        
-        volumeIcon.parentElement.style.display = "none";
-        muteIcon.parentElement.style.display = "block";
-    });
-
-    muteIcon.parentElement.addEventListener("click", () =>
-    {
-        localStorage.setItem("isMute", "false");
-        
-        muteIcon.parentElement.style.display = "none";
-        volumeIcon.parentElement.style.display = "block";
-    })
-}
-
-function initLightIcons()
-{
-    if (localStorage.getItem("isLightMode") === "true") darkIcon.parentElement.style.display = "none";
-    else lightIcon.parentElement.style.display = "none";
-
-    lightIcon.parentElement.addEventListener("click", () =>
-    {
-        toggleLightMode();
-
-        lightIcon.parentElement.style.display = "none";
-        darkIcon.parentElement.style.display = "block";
-    });
-
-    darkIcon.parentElement.addEventListener("click", () =>
-    {
-        toggleLightMode();
-
-        darkIcon.parentElement.style.display = "none";
-        lightIcon.parentElement.style.display = "block";
-    });
-}
-
-function initSettingsIcon()
-{
-    settingsIcon.parentElement.addEventListener("click", () =>
-    {
-        settingsIcon.style.animation = "spin 1s ease-in-out";
-    });
-
-    settingsIcon.parentElement.addEventListener("animationend", () =>
-    {
-        settingsIcon.style.animation = "none";
-    });
-}
-
-function initPlayButton()
-{
-    playButton.addEventListener("click", () =>
-    {
-        document.body.style.pointerEvents = "none";
-        playSound("/assets/sounds/play.wav");
-        discContainer.classList.add("enter");
-        document.querySelector(".active").style.scale = 1.1;
-
-        discContainer.addEventListener("animationend", () =>
-        {
-            blackFade.style.opacity = "1";
-        });
-
-        blackFade.addEventListener("transitionend", () =>
-        {
-            window.location.href = playButton.dataset.link;
-            document.body.style.pointerEvents = "auto";
-            discContainer.classList.remove("enter");
-            document.querySelector(".active").style.scale = 1;
-            document.querySelector(".selected").style.order = "0";
-            blackFade.style.opacity = "0";
-
-            games.forEach(item =>
-            {
-                if (!item.classList.contains("selected")) item.style.order++;
-
-                localStorage.setItem(item.dataset.name, item.style.order.toString());
-            });
-        });
-    });
-}
-
-function initClock()
-{
-    let time = new Date();
-
-    clock.textContent = time.toLocaleTimeString();
-
-    setTimeout(initClock, 1000);
-}
-
-function initGameInfo()
-{
-    games.forEach(game =>
-    {
-        Array.from(game.children)[0].src = game.dataset.image;
-
-        const backgroundImage = new BackgroundImage(game.dataset.bgImage);
-        backgroundImages.push(backgroundImage);
-
-        if (localStorage.getItem(game.dataset.name) !== null) game.style.order = localStorage.getItem(game.dataset.name);
-
-        game.addEventListener("click", () =>
-        {
-            if (!game.classList.contains("selected") && !isTransitioning)
-            {
-                isTransitioning = true;
-                playButton.dataset.link = "";
-
-                if (window.innerWidth > 1079)
-                {
-                    discContainer.style.transform = "translateY(100vh) rotateX(20deg) rotateY(-30deg)";
-
-                    Array.from(gameInfo.children).forEach((infoElement, index) =>
-                    {
-                        infoElement.style.transition = `all ${1 + index * 0.1}s cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
-                        infoElement.style.transform = "translateX(50vw)";
-                    });
-                }
-                else
-                {
-                    discContainer.style.transform = "translateY(-150vw) rotateX(20deg) rotateY(-30deg)";
-
-                    Array.from(gameInfo.children).forEach((infoElement, index) =>
-                    {
-                        infoElement.style.transition = `all ${1 + index * 0.1}s cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
-                        infoElement.style.transform = "translateX(100vw)";
-                    });
-                }
-
-                games.forEach(item => item.classList.remove("selected"));
-                game.classList.add("selected");
-
-                backgroundImages.forEach(bgImage => bgImage.element.classList.remove("active"));
-                backgroundImage.element.classList.add("active");
-
-                setTimeout(() => 
-                {
-                    discImage.src = game.dataset.image;
-
-                    gameInfo.children[0].textContent = game.dataset.name;
-                    gameInfo.children[1].textContent = game.dataset.description;
-
-                    Array.from(gameInfo.children).forEach(infoElement =>
-                    {
-                        infoElement.style.transform = "translateX(0vw)";
-                    });
-                    
-                    discContainer.style.transform = "translateY(0vh) rotateX(20deg) rotateY(-30deg)";
-                }, 1000);
-            }
-        });
-
-        game.addEventListener("mouseenter", () =>
-        {
-            hoveredGameTitle.style.opacity = "1";
-            hoveredGameTitle.textContent = game.dataset.name;
-        });
-
-        game.addEventListener("mouseleave", () =>
-        {
-            hoveredGameTitle.style.opacity = "0";
-        });
-    });
-
-    if (games.length > 0)
-    {
-        const lowestOrderElement = Array.from(games).reduce((lowest, current) =>
-        {
-            const currentOrder = parseInt(current.style.order) || 0;
-            const lowestOrder = parseInt(lowest.style.order) || 0;
-
-            return currentOrder < lowestOrder ? current : lowest;
-        });
-
-        lowestOrderElement.click();
+        stringElement.textContent = Array.from(elementText, ch => ch === " " ? " " : getRandomChar()).join("");
+        await new Promise(resolve => setTimeout(resolve, delay));
     }
 
-    gameInfo.firstElementChild.addEventListener("mouseenter", () =>
-    {
-        playSound("/assets/sounds/game-title-hover.wav");
-    });
-
-    gameInfo.lastElementChild.addEventListener("transitionend", () =>
-    {
-        isTransitioning = false;
-        playButton.dataset.link = document.querySelector(".selected").dataset.link;
-    });
+    stringElement.textContent = elementText;
 }
 
-function onResize()
+function getRandomChar()
 {
-    if (window.innerWidth > 1080)
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()";
+    return characters[Math.floor(Math.random() * (characters.length))];
 }
 
-// #endregion
+function initFolders()
+{    
+    folders.forEach(folder =>
+    {
+        folder.addEventListener("click", () =>
+        {
+            if (!folder.classList.contains("selected"))
+            {
+                folders.forEach(item => item.classList.remove("selected"));
+                folder.classList.add("selected");
 
-// #region Events
+                path.textContent = "/home/nolanmacfarlane/" + folder.textContent + "/";
+                currentFile.style.display = "none";
 
-window.addEventListener("resize", onResize);
+                fileMetadata.textContent = "/" + folder.textContent + "/ - " + getNumItems(folder) + " items";
+
+                fileLogo.textContent = "";
+                fileTitle.textContent = "";
+                fileDescription.textContent = "";
+
+                Array.from(fileLinks.children).forEach(link =>
+                {
+                    link.style.display = "none";
+                });
+
+                files.forEach(file =>
+                {
+                    file.classList.remove("selected");
+                    
+                    if (file.classList.contains(folder.id)) file.style.display = "flex";
+                    else file.style.display = "none";
+                });
+            }
+        });
+    });
+
+    folders[0].click();
+}
+
+function getNumItems(folder)
+{
+    let numItems = 0;
+    
+    files.forEach(file =>
+    {
+        if (file.classList.contains(folder.id)) numItems++;
+    });
+
+    return numItems;
+}
+
+function initFiles()
+{
+    files.forEach(file =>
+    {
+        file.addEventListener("click", async () =>
+        {
+            if (file.classList.contains("selected")) return;
+
+            files.forEach(item => item.classList.remove("selected"));
+            file.classList.add("selected");
+
+            path.textContent = "/home/nolanmacfarlane/" + getCurrentFolder().textContent + "/";
+            currentFile.style.display = "flex";
+            currentFile.textContent = file.id + ".txt";
+            
+            fileMetadata.textContent = file.id + ".txt - " + getFileIndex(file) + "/" + getNumItems(getCurrentFolder()) + " items";
+
+            fileLogo.textContent = await loadAsciiImage(file.dataset.logo);
+            fileTitle.textContent = file.id;
+            fileDescription.textContent = file.dataset.description;
+
+            Array.from(fileLinks.children).forEach(link =>
+            {
+                link.style.display = "none";
+            });
+
+            if (file.dataset.links != null)
+            {
+                const currentFileLinks = file.dataset.links.split(" ");
+
+                currentFileLinks.forEach(link =>
+                {
+                    document.getElementById(link).style.display = "flex";
+                });
+            }
+
+            randomizeTextEffect(fileTitle);
+        });
+    });
+
+    files[0].click();
+}
+
+function getCurrentFolder()
+{
+    return document.querySelector(".folder.selected");
+}
+
+function getFileIndex(file)
+{
+    let fileIndex = 0;
+    let isFileFound = false;
+
+    files.forEach(currentFile =>
+    {
+        if (currentFile.classList.contains(getCurrentFolder().id) && !isFileFound)
+        {
+            fileIndex++;
+            
+            if (currentFile === file) isFileFound = true;
+        }
+    });
+
+    return fileIndex;
+}
+
+async function loadAsciiImage(path)
+{
+    if (path === "")
+    {
+        console.warn("No file selected!");
+        return "[Error loading ASCII art]";
+    }
+    else if (path.split(".")[1] !== "txt")
+    {
+        console.warn("Invalid file type!");
+        return "[Error loading ASCII art]";
+    }
+    
+    try
+    {
+        const response = await fetch(path);
+        
+        if (!response.ok) throw new Error(`Failed to load ${path}`);
+
+        return response.text();
+    }
+    catch (err)
+    {
+        console.error(err);
+        return "[Error loading ASCII art]";
+    }
+}
 
 // #endregion

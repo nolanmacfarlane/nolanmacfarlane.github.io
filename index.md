@@ -1,9 +1,8 @@
 ---
-layout: game
+layout: home
 title: Home
-description: Check out the skills I have learned in the past 5 years of my programming journey.
-style: skills.css
-script: skills.js
+style: home.css
+script: home.js
 ---
 
 <div id="path-container">
@@ -58,7 +57,7 @@ script: skills.js
         <!-- TODO: Add API call to get real github repo description. -->
         <div class="button file project" id="Portfolio Website" data-logo="/assets/images/ui.txt" data-description="" data-links="github-portfolio">
             Porfolio Website.txt
-            <div class="file-size">111 MB</div>
+            <div class="file-size">55 MB</div>
         </div>
         <div class="button file project" id="Chess Engine" data-logo="/assets/images/chess-knight.txt" data-description="nmacBot is a simple chess engine in Java. The chess engine features a basic Java gui for local games against other players or the bot. The engine uses the lichess-bot github repository to connect to lichess online." data-links="github-chess">
             Chess Engine.txt
