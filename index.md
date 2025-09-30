@@ -60,7 +60,7 @@ script:
             <div class="file-size">162.5 kB</div>
         </div>
         <!-- TODO: Add API call to get real github repo description. -->
-        <div class="button file project" id="Portfolio Website" data-logo="/assets/images/ui.txt" data-description="" data-links="github-portfolio">
+        <div class="button file project" id="Portfolio Website" data-logo="/assets/images/ui.txt" data-description="I built this site to host my projects, skills and experiences as well as, practice my HTML, CSS and JavaScript skills. It has gone through many iterations and will continue to evolve as my skills improve. I am always trying to learn something new; Let me know if you have any suggestions for my site! :)" data-links="github-portfolio">
             Porfolio Website.txt
             <div class="file-size">55 MB</div>
         </div>
