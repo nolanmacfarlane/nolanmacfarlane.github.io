@@ -223,6 +223,60 @@
         padding: 1vh;
     }
 
+    #grid-container
+    {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template: repeat(3, 300px) / repeat(3, 300px);
+    }
+
+    .info-card
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 200px;
+        width: 200px;
+        padding: 15px;
+        background: #ffffff4f;
+        border-radius: 30px;
+    }
+
+    .info-card:hover
+    {
+        background: #ffffff3f;
+    }
+
+    .info-image
+    {
+        display: flex;
+        height: 125px;
+        width: max-content;
+        border: 12px solid transparent;
+        border-image: url(/assets/images/projects-border-image.png) 4 stretch;
+        border-radius: 10px;
+    }
+
+    .info-title, .info-text
+    {
+        display: flex;
+        justify-content: center;
+        height: max-content;
+        width: 100%;
+    }
+
+    .info-title
+    {
+        font-size: 36px;
+    }
+
+    .info-text
+    {
+        font-size: 18px;
+    }
+
     #footer
     {
         display: flex;

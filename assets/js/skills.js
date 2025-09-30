@@ -1,12 +1,13 @@
 // #region Variables
 
 const gameTitle = document.getElementById("game-title");
-let isRandomizingTitleText = false;
 
+let isRandomizingTitleText = false;
 let isRandomizingContinueButton = false;
 let isRandomizingHomeButton = false;
 
 const path = document.getElementById("path");
+const currentFile = document.getElementById("current-file");
 const fileMetadata = document.getElementById("file-metadata");
 
 const folders = document.querySelectorAll(".folder");
@@ -15,8 +16,9 @@ const files = document.querySelectorAll(".file");
 const fileLogo = document.getElementById("file-logo");
 const fileTitle = document.getElementById("file-title");
 const fileDescription = document.getElementById("file-description");
-const fileStats = document.getElementById("file-stats");
-const statTitles = document.querySelectorAll(".stat-title");
+const fileLinks = document.getElementById("links");
+// const fileStats = document.getElementById("file-stats");
+// const statTitles = document.querySelectorAll(".stat-title");
 
 // #endregion
 
@@ -39,7 +41,7 @@ function initGameTitle()
 
         isRandomizingTitleText = true;
 
-        await randomizeTextEffect(gameTitle, 20);
+        await randomizeTextEffect(gameTitle);
 
         isRandomizingTitleText = false;
     });
@@ -53,7 +55,7 @@ function initButtonEffects()
 
         isRandomizingContinueButton = true;
 
-        await randomizeTextEffect(continueButton, 20);
+        await randomizeTextEffect(continueButton);
 
         isRandomizingContinueButton = false;
     });
@@ -64,34 +66,33 @@ function initButtonEffects()
 
         isRandomizingHomeButton = true;
 
-        await randomizeTextEffect(homeButton, 20);
+        await randomizeTextEffect(homeButton);
 
         isRandomizingHomeButton = false;
     });
 }
 
-async function randomizeTextEffect(stringElement, loops)
+async function randomizeTextEffect(stringElement)
 {
-    let stringText = stringElement.textContent;
+    let elementText = stringElement.textContent;
+    let textLength = elementText.length;
+    let startTimeMilli = Date.now();
+    let totalDuration = 500;
+    let delay = 30;
 
-    for (let i = loops; i >= 0; i--)
+    while (Date.now() - startTimeMilli < totalDuration)
     {
-        stringElement.textContent = stringText.substring(0, stringText.length - i) + getRandomString(Math.min(stringText.length, i));
-        await new Promise(resolve => setTimeout(resolve, 50));
+        stringElement.textContent = Array.from(elementText, ch => ch === " " ? " " : getRandomChar()).join("");
+        await new Promise(resolve => setTimeout(resolve, delay));
     }
+
+    stringElement.textContent = elementText;
 }
 
-function getRandomString(length)
+function getRandomChar()
 {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()";
-    let randomString = "";
-
-    for (let i = 0; i < length; i++)
-    {
-        randomString += characters[Math.round(Math.random() * (characters.length - 1))];
-    }
-
-    return randomString;
+    return characters[Math.floor(Math.random() * (characters.length))];
 }
 
 function initFolders()
@@ -105,14 +106,21 @@ function initFolders()
                 folders.forEach(item => item.classList.remove("selected"));
                 folder.classList.add("selected");
 
-                path.textContent = "nolanmacfarlane@portfolioOS:~$ /home/nolanmacfarlane/" + folder.textContent + "/";
+                path.textContent = "/home/nolanmacfarlane/" + folder.textContent + "/";
+                currentFile.style.display = "none";
 
                 fileMetadata.textContent = "/" + folder.textContent + "/ - " + getNumItems(folder) + " items";
 
-                fileLogo.src = "";
+                fileLogo.textContent = "";
                 fileTitle.textContent = "";
                 fileDescription.textContent = "";
-                fileStats.style.display = "none";
+
+                Array.from(fileLinks.children).forEach(link =>
+                {
+                    link.style.display = "none";
+                });
+
+                // fileStats.style.display = "none";
 
                 files.forEach(file =>
                 {
@@ -151,36 +159,56 @@ function initFiles()
             files.forEach(item => item.classList.remove("selected"));
             file.classList.add("selected");
 
-            path.textContent = "nolanmacfarlane@portfolioOS:~$ /home/nolanmacfarlane/" + getCurrentFolder().textContent + "/" + file.id + ".txt";
+            path.textContent = "/home/nolanmacfarlane/" + getCurrentFolder().textContent + "/";
+            currentFile.style.display = "flex";
+            currentFile.textContent = file.id + ".txt";
             
             fileMetadata.textContent = file.id + ".txt - " + getFileIndex(file) + "/" + getNumItems(getCurrentFolder()) + " items";
 
-            fileLogo.src = file.dataset.logo;
+            fileLogo.textContent = await loadAsciiImage(file.dataset.logo);
             fileTitle.textContent = file.id;
             fileDescription.textContent = file.dataset.description;
-            fileStats.style.display = "flex";
 
-            for (const statTitle of statTitles)
+            Array.from(fileLinks.children).forEach(link =>
             {
-                if (statTitle.classList.contains(getCurrentFolder().id)) statTitle.style.display = "flex";
-                else statTitle.style.display = "none";
-            }
+                link.style.display = "none";
+            });
 
-            for (const statBar of Array.from(fileStats.lastElementChild.children))
+            if (file.dataset.links != null)
             {
-                if (statBar.classList.contains(getCurrentFolder().id)) statBar.style.display = "flex";
-                else statBar.style.display = "none";
+                const currentFileLinks = file.dataset.links.split(" ");
 
-                const statValue = Number.parseInt(file.dataset[statBar.id] ?? "0");
-
-                for (const [j, statBarSegment] of Array.from(statBar.children).entries())
+                currentFileLinks.forEach(link =>
                 {
-                    if (j < statValue) statBarSegment.classList.add("fill");
-                    else statBarSegment.classList.remove("fill");
-
-                    await new Promise(resolve => setTimeout(resolve, 10));
-                }
+                    document.getElementById(link).style.display = "flex";
+                });
             }
+            
+            // fileStats.style.display = "flex";
+
+            randomizeTextEffect(fileTitle);
+
+            // for (const statTitle of statTitles)
+            // {
+            //     if (statTitle.classList.contains(getCurrentFolder().id)) statTitle.style.display = "flex";
+            //     else statTitle.style.display = "none";
+            // }
+
+            // for (const statBar of Array.from(fileStats.lastElementChild.children))
+            // {
+            //     if (statBar.classList.contains(getCurrentFolder().id)) statBar.style.display = "flex";
+            //     else statBar.style.display = "none";
+
+            //     const statValue = Number.parseInt(file.dataset[statBar.id] ?? "0");
+
+            //     for (const [j, statBarSegment] of Array.from(statBar.children).entries())
+            //     {
+            //         if (j < statValue) statBarSegment.classList.add("fill");
+            //         else statBarSegment.classList.remove("fill");
+
+            //         await new Promise(resolve => setTimeout(resolve, 10));
+            //     }
+            // }
         });
     });
 
@@ -208,6 +236,34 @@ function getFileIndex(file)
     });
 
     return fileIndex;
+}
+
+async function loadAsciiImage(path)
+{
+    if (path === "")
+    {
+        console.warn("No file selected!");
+        return "[Error loading ASCII art]";
+    }
+    else if (path.split(".")[1] !== "txt")
+    {
+        console.warn("Invalid file type!");
+        return "[Error loading ASCII art]";
+    }
+    
+    try
+    {
+        const response = await fetch(path);
+        
+        if (!response.ok) throw new Error(`Failed to load ${path}`);
+
+        return response.text();
+    }
+    catch (err)
+    {
+        console.error(err);
+        return "[Error loading ASCII art]";
+    }
 }
 
 // #endregion

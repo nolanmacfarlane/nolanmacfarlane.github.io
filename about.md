@@ -6,9 +6,7 @@ style: about.css
 script: about.js
 ---
 
-<div id="background"></div>
-
-<section class="info-container">
+<!-- <section class="info-container">
     <div class="blur-wrapper">
         <div class="blur-background" style="background: url(/assets/images/cooking-background.jpg) center / cover no-repeat fixed;"></div>
     </div>
@@ -79,6 +77,4 @@ script: about.js
     <div class="info-text">
         For the last 3 years, I have been learning the Unity game engine and the C# programming language to develop video games. I am currently working my own metroidvania game. It would be incredible to release my own indie game one day.
     </div>
-</section>
-
-<div id="footer"></div>
+</section> -->

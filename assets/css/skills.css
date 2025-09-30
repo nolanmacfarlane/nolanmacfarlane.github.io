@@ -54,9 +54,9 @@
 
     @media (max-width: 600px), (max-height: 800px)
     {
-        #path
+        #path-container
         {
-            display: none;
+            display: none !important;
         }
         
         #info-container
@@ -67,7 +67,7 @@
         
         #file-logo
         {
-            height: 100px !important;
+            font-size: 8px !important;
         }
 
         #file-description
@@ -115,6 +115,22 @@
         align-items: start;
         height: 98vh;
         border: 2px solid var(--skills-text-color);
+    }
+
+    #path-container
+    {
+        display: flex;
+    }
+
+    #user
+    {
+        color: #234e86;
+        white-space: pre;
+    }
+
+    #current-file
+    {
+        color: #cecece;
     }
 
     #file-containers
@@ -166,19 +182,35 @@
 
     #file-logo
     {
-        height: 200px;
-        transition: height 0.5s ease-in-out;
+        font-size: 12px;
+        white-space: pre;
     }
 
     #file-title
     {
         font-size: 48px;
+        margin-top: 20px; 
+        margin-bottom: 15px;
     }
 
     #file-description
     {
         width: 50%;
         text-align: center;
+    }
+
+    #links
+    {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    a
+    {
+        text-decoration: none;
+        padding: 10px;
+        border: 3px dotted var(--skills-text-color) ;
     }
 
     #file-stats

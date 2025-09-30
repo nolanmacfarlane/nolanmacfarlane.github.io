@@ -8,21 +8,8 @@
         width: 100vw;
         pointer-events: none;
         z-index: -10;
-        background: url("/assets/images/blockwavemoon-ng-hai.png") center / cover no-repeat;
-        animation: rotate-hue 50s linear infinite;
-    }
-
-    @keyframes rotate-hue
-    {
-        0%
-        {
-            filter: blur(12px) hue-rotate(0deg);
-        }
-
-        100%
-        {
-            filter: blur(12px) hue-rotate(360deg);
-        }
+        background: url("/assets/images/mt-douglas-beach.webp") center / cover no-repeat;
+        filter: blur(12px);
     }
 
 /* #endregion */
@@ -31,7 +18,7 @@
 
     :root
     {
-        --about-background-color: #000000;
+        --about-background-color: #383838;
         --about-text-color: #fdf6e3;
 
         --info-container-angle: -10deg;
@@ -41,35 +28,49 @@
     {
         color: var(--about-text-color);
         background-color: var(--about-background-color);
-        font-family: im-fell-english;
+        font-family: excalifont;
     }
 
 /* #endregion */
 
 /* #region Media Queries */
 
-    @media (max-width: 1200px)
+    @media (max-width: 900px), (max-height: 900px)
     {
-        body
-        {
-            overflow: auto !important;
-            cursor: default;
-        }
-        
-        main
+        #content-container
         {
             height: max-content !important;
+        }
+        
+        #grid-container
+        {
+            grid-template: repeat(27, 100px) / repeat(3, 100px) !important;
+        }
+
+        #ben
+        {
+            grid-area: 1 / 1 / span 4 / span 3;
+        }
+
+        #mt-douglas
+        {
+            grid-area: 5 / 1 / span 2 / span 3;
+        }
+
+        #lake-como
+        {
+            grid-area: 8 / 1 / span 3 / span 3;
+        }
+
+        #cherry
+        {
+            grid-area: 11 / 1 / span 3 / span 3;
         }
     }
 
 /* #endregion */
 
 /* #region Containers */
-
-    main
-    {
-        padding: 0;
-    }
 
     #game-title:hover
     {
@@ -90,7 +91,7 @@
         border: 0.3vh solid var(--about-text-color);
     }
 
-    #content-container
+    /* #content-container
     {
         padding: 0;
         padding-top: 15vh; padding-bottom: 20vh;
@@ -150,13 +151,57 @@
         width: 50%;
         z-index: 2;
         transform: rotate(calc(var(--info-container-angle) * -1));
+    } */
+
+    #content-container
+    {
+        height: 98vh;
+    }
+
+    #grid-container
+    {
+        grid-template: repeat(9, 100px) / repeat(9, 100px);
+    }
+
+    img
+    {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        pointer-events: all;
+        transition: all 0.3s ease-in-out;
+    }
+
+    img:hover
+    {
+        scale: 1.05;
+        filter: blur(12px);
+    }
+
+    #ben
+    {
+        grid-area: 1 / 1 / span 4 / span 3;
+    }
+
+    #mt-douglas
+    {
+        grid-area: 1 / 4 / span 2 / span 4;
+    }
+
+    #lake-como
+    {
+        grid-area: 5 / 1 / span 3 / span 6;
+    }
+
+    #cherry
+    {
+        grid-area: 3 / 7 / span 3 / span 3;
     }
 
     #footer
     {
         justify-content: center;
-        box-sizing: border-box;
-        padding: 1vh;
         font-size: 24px;
     }
 
@@ -164,7 +209,7 @@
 
 /* #region Images */
 
-    .info-image
+    /* .info-image
     {
         position: absolute;
         display: flex;
@@ -213,6 +258,6 @@
         top: -49%;
         left: 31%;
         scale: 0.65;
-    }
+    } */
 
 /* #endregion */

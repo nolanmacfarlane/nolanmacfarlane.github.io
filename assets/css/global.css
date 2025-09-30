@@ -89,8 +89,8 @@
 
     @font-face
     {
-        font-family: "im-fell-english";
-        src: url("/assets/fonts/im-fell-english.ttf") format("truetype");
+        font-family: "excalifont";
+        src: url("/assets/fonts/excalifont.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;    
     }

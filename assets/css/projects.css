@@ -35,7 +35,7 @@
 
 /* #region Media Queries */
 
-    @media (max-width: 1200px)
+    @media (max-width: 900px), (max-height: 900px)
     {
         .inactive
         {
@@ -47,7 +47,7 @@
             height: max-content !important;
         }
 
-        #project-grid-container
+        #grid-container
         {
             display: flex !important;
             flex-direction: column;
@@ -120,61 +120,16 @@
         height: 98vh;
     }
 
-    #project-grid-container
+    .info-card
     {
-        display: grid;
-        justify-items: center;
-        align-items: center;
-        grid-template-rows: 400px 400px 400px;
-        grid-template-columns: 400px 400px 400px;
-    }
-
-    .project-card
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 300px;
-        width: 300px;
-        padding: 15px;
         background: var(--projects-neutral-color);
-        border-radius: 30px;
         box-shadow: 0 0 5px 5px var(--projects-neutral-color);
     }
 
-    .project-card:hover
+    .info-card:hover
     {
         background: var(--projects-hover-color);
         box-shadow: 0 0 5px 5px var(--projects-hover-color);
-    }
-
-    .project-image
-    {
-        display: flex;
-        height: 150px;
-        width: max-content;
-        border: 12px solid transparent;
-        border-image: url(/assets/images/projects-border-image.png) 4 stretch;
-        border-radius: 10px;
-    }
-
-    .project-title, .project-text
-    {
-        display: flex;
-        justify-content: center;
-        height: max-content;
-        width: 100%;
-    }
-
-    .project-title
-    {
-        font-size: 48px;
-    }
-
-    .project-text
-    {
-        font-size: 24px;
     }
 
     #footer
