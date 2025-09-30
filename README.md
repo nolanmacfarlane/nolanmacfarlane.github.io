@@ -1,5 +1,6 @@
 <div align="center">
 	<h1>Portfolio Website</h1>
+	[Homepage](https://nolanmacfarlane.github.io)
 </div>
 
 ## Introduction
@@ -7,9 +8,6 @@ Hi, I'm Nolan MacFarlane! I am currently a software engineering student at UVic 
 I built this site to host my projects, skills and experiences as well as, practice my HTML, CSS and JavaScript skills.
 It has gone through many iterations and will continue to evolve as my skills improve. I am always trying to learn something new;
 Let me know if you have any suggestions for my site! :)
-
-## Link
-[Portfolio Website](https://nolanmacfarlane.github.io)
 
 ## Design
 When I was initially designing the website, the concept was to look like a game console home screen. The user would navigate this home screen and select a "game",
