@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>Portfolio Website</h1>
-	[Homepage](https://nolanmacfarlane.github.io)
+	<a href="https://nolanmacfarlane.github.io" target="_blank"></a>
 </div>
 
 ## Introduction
