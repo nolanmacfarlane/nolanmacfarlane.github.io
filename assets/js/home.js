@@ -12,7 +12,8 @@ const files = document.querySelectorAll(".file");
 const fileLogo = document.getElementById("file-logo");
 const fileTitle = document.getElementById("file-title");
 const fileDescription = document.getElementById("file-description");
-const fileLinks = document.getElementById("links");
+const fileLinks = document.getElementById("link-container");
+const fileInput = document.getElementById("theme-form");
 
 // #endregion
 
@@ -81,6 +82,8 @@ function initFolders()
                     link.style.display = "none";
                 });
 
+                fileInput.style.display = "none";
+
                 files.forEach(file =>
                 {
                     file.classList.remove("selected");
@@ -143,6 +146,8 @@ function initFiles()
                 });
             }
 
+            fileInput.style.display = file.dataset.input === "true" ? "flex" : "none";
+
             randomizeTextEffect(fileTitle);
         });
     });
@@ -178,7 +183,7 @@ async function loadAsciiImage(path)
     if (path === "")
     {
         console.warn("No file selected!");
-        return "[Error loading ASCII art]";
+        return "";
     }
     else if (path.split(".")[1] !== "txt")
     {

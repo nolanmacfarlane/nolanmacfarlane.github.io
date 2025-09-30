@@ -12,7 +12,9 @@
         <script src="{{ '/assets/js/global.js' | relative_url }}" defer></script>
 
         {% if page.script %}
-        <script src="{{ '/assets/js/' | append: page.script | relative_url }}" defer></script>
+            {% for js in page.script %}
+                <script src="{{ '/assets/js/' | append: js | relative_url }}" defer></script>
+            {% endfor %}
         {% endif %}
     </head>
     <body>

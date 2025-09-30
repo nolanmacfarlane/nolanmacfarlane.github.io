@@ -4,6 +4,38 @@
     {
         --background-color: #000000;
         --text-color: #008000;
+        --user-color: #234e86;
+        --current-file-color: #cecece;
+    }
+
+    .default
+    {
+        --background-color: #000000;
+        --text-color: #008000;
+    }
+
+    .solarized
+    {
+        --background-color: #FDF6E3;
+        --text-color: #002B36;
+        --user-color: #4e7afb;
+        --current-file-color: #fb784e;
+    }
+
+    .solarized-dark
+    {
+        --background-color: #002B36;
+        --text-color: #FDF6E3;
+        --user-color: #4e7afb;
+        --current-file-color: #fb784e;
+    }
+
+    .rosepine-moon
+    {
+        --background-color: #232136;
+        --text-color: #e0def4;
+        --user-color: #f6c177;
+        --current-file-color: #ea9a97;
     }
 
     body
@@ -11,6 +43,7 @@
         color: var(--text-color);
         background-color: var(--background-color);
         font-family: ubuntu-mono;
+        transition: background-color 0.3s, color 0.3s;
     }
 
 /* #endregion */
@@ -104,6 +137,7 @@
         gap: 1vh;
         padding: 1vh;
         border: 0.2vh solid var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
     }
 
     #title, #clock
@@ -113,6 +147,7 @@
         background: var(--background-color);
         padding: 0 0.4vh;
         font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
     }
 
     #title
@@ -133,13 +168,15 @@
 
     #user
     {
-        color: #234e86;
+        color: var(--user-color);
         white-space: pre;
+        transition: color 0.3s;
     }
 
     #current-file
     {
-        color: #cecece;
+        color: var(--current-file-color);
+        transition: color 0.3s;
     }
 
     #file-containers
@@ -163,10 +200,21 @@
         width: 30%;
     }
 
-    .folder.selected, .folder:hover, .file.selected, .file:hover
+    .folder.selected, 
+    .folder:hover, 
+    .file.selected, 
+    .file:hover
     {
         color: var(--background-color);
         background-color: var(--text-color);
+    }
+
+    .folder:focus,
+    .file:focus
+    {
+        color: var(--background-color);
+        background-color: var(--current-file-color);
+        outline: none;
     }
 
     .file
@@ -208,7 +256,7 @@
         text-align: center;
     }
 
-    #links
+    #link-container
     {
         display: flex;
         align-items: center;
@@ -222,6 +270,35 @@
         text-decoration: none;
         padding: 10px;
         border: 3px dotted var(--text-color) ;
+    }
+
+    #theme-form
+    {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    #theme-input
+    {
+        font-family: monospace;
+        width: 60%;
+        height: 200px;
+        resize: none;
+        padding: 10px;
+        color: var(--text-color);
+        background: transparent;
+        border: 3px solid var(--text-color);
+        transition: border 0.3s;
+    }
+
+    #theme-input:focus
+    {
+        outline: none;
+        border: 3px solid var(--current-file-color);
     }
 
     #footer
