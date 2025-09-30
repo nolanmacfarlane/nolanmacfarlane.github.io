@@ -1,46 +1,46 @@
-// #region Variables
+// // #region Variables
 
-const loadingScreen = document.getElementById("loading-screen");
+// const loadingScreen = document.getElementById("loading-screen");
 
-const contentContainer = document.getElementById("content-container");
+// const contentContainer = document.getElementById("content-container");
 
-const continueButton = document.getElementById("continue-button");
-const homeButton = document.getElementById("home-button");
+// const continueButton = document.getElementById("continue-button");
+// const homeButton = document.getElementById("home-button");
 
-// #endregion
+// // #endregion
 
-// #region Main
+// // #region Main
 
-initButtons();
+// initButtons();
 
-setTimeout(fadeLoadingScreen, 1000);
+// setTimeout(fadeLoadingScreen, 1000);
 
-// #endregion
+// // #endregion
 
-// #region Functions
+// // #region Functions
 
-function initButtons()
-{
-    continueButton.addEventListener("click", () =>
-    {
-        window.scrollTo({top: contentContainer.offsetTop, behavior: "smooth"});
-    });
+// function initButtons()
+// {
+//     continueButton.addEventListener("click", () =>
+//     {
+//         window.scrollTo({top: contentContainer.offsetTop, behavior: "smooth"});
+//     });
     
-    homeButton.addEventListener("click", () =>
-    {
-        window.location.href = "/";
-    })
-}
+//     homeButton.addEventListener("click", () =>
+//     {
+//         window.location.href = "/";
+//     })
+// }
 
-function fadeLoadingScreen()
-{
-    loadingScreen.style.opacity = "0";
+// function fadeLoadingScreen()
+// {
+//     loadingScreen.style.opacity = "0";
 
-    loadingScreen.addEventListener("transitionend", () =>
-    {
-        document.body.style.overflow = "auto";
-        loadingScreen.style.pointerEvents = "none";
-    });
-}
+//     loadingScreen.addEventListener("transitionend", () =>
+//     {
+//         document.body.style.overflow = "auto";
+//         loadingScreen.style.pointerEvents = "none";
+//     });
+// }
 
-// #endregion
+// // #endregion

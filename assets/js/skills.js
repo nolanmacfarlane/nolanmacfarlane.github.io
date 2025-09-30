@@ -1,10 +1,10 @@
 // #region Variables
 
-const gameTitle = document.getElementById("game-title");
+// const gameTitle = document.getElementById("game-title");
 
-let isRandomizingTitleText = false;
-let isRandomizingContinueButton = false;
-let isRandomizingHomeButton = false;
+// let isRandomizingTitleText = false;
+// let isRandomizingContinueButton = false;
+// let isRandomizingHomeButton = false;
 
 const path = document.getElementById("path");
 const currentFile = document.getElementById("current-file");
@@ -24,7 +24,7 @@ const fileLinks = document.getElementById("links");
 
 // #region Main
 
-initGameTitle();
+// initGameTitle();
 initButtonEffects();
 initFolders();
 initFiles();
@@ -33,44 +33,44 @@ initFiles();
 
 // #region Functions
 
-function initGameTitle()
-{
-    gameTitle.addEventListener("mouseenter", async () =>
-    {
-        if (isRandomizingTitleText) return;
+// function initGameTitle()
+// {
+//     gameTitle.addEventListener("mouseenter", async () =>
+//     {
+//         if (isRandomizingTitleText) return;
 
-        isRandomizingTitleText = true;
+//         isRandomizingTitleText = true;
 
-        await randomizeTextEffect(gameTitle);
+//         await randomizeTextEffect(gameTitle);
 
-        isRandomizingTitleText = false;
-    });
-}
+//         isRandomizingTitleText = false;
+//     });
+// }
 
-function initButtonEffects()
-{
-    continueButton.addEventListener("mouseenter", async () =>
-    {
-        if (isRandomizingContinueButton) return;
+// function initButtonEffects()
+// {
+//     continueButton.addEventListener("mouseenter", async () =>
+//     {
+//         if (isRandomizingContinueButton) return;
 
-        isRandomizingContinueButton = true;
+//         isRandomizingContinueButton = true;
 
-        await randomizeTextEffect(continueButton);
+//         await randomizeTextEffect(continueButton);
 
-        isRandomizingContinueButton = false;
-    });
+//         isRandomizingContinueButton = false;
+//     });
 
-    homeButton.addEventListener("mouseenter", async () =>
-    {
-        if (isRandomizingHomeButton) return;
+//     homeButton.addEventListener("mouseenter", async () =>
+//     {
+//         if (isRandomizingHomeButton) return;
 
-        isRandomizingHomeButton = true;
+//         isRandomizingHomeButton = true;
 
-        await randomizeTextEffect(homeButton);
+//         await randomizeTextEffect(homeButton);
 
-        isRandomizingHomeButton = false;
-    });
-}
+//         isRandomizingHomeButton = false;
+//     });
+// }
 
 async function randomizeTextEffect(stringElement)
 {
