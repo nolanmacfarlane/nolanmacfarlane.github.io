@@ -28,7 +28,8 @@
 
         #left-file-container, #main-file-container, #info-container
         {
-            width: 100% !important;
+            width: auto !important;
+            min-width: 0;
         }
 
         #info-container
@@ -45,26 +46,10 @@
         {
             width: 80% !important;
         }
-
-        .stat-bar-segment
-        {
-            width: 20px !important;
-        }
     }
 
-    @media (max-width: 600px), (max-height: 800px)
+    @media (max-width: 600px), (max-height: 900px)
     {
-        #path-container
-        {
-            display: none !important;
-        }
-        
-        #info-container
-        {
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-        
         #file-logo
         {
             font-size: 8px !important;
@@ -72,26 +57,22 @@
 
         #file-description
         {
-            height: 150px;
+            height: fit-content;
+            max-height: 150px;
             overflow: auto;
+        }
+    }
+
+    @media (max-width: 600px), (max-height: 700px)
+    {
+        #path-container
+        {
+            display: none !important;
         }
 
         #footer
         {
             display: none !important;
-        }
-    }
-
-    @media (orientation: landscape) and (max-width: 1000px)
-    {
-        #title-screen
-        {
-            height: 120vh !important;
-        }
-        
-        #content-container
-        {
-            height: max-content !important;
         }
     }
 
@@ -122,7 +103,27 @@
         width: 100%;
         gap: 1vh;
         padding: 1vh;
-        border: 2px solid var(--text-color);
+        border: 0.2vh solid var(--text-color);
+    }
+
+    #title, #clock
+    {
+        font-size: 1.6vh;
+        top: 0.2vh;
+        background: var(--background-color);
+        padding: 0 0.4vh;
+        font-weight: bold;
+    }
+
+    #title
+    {
+        position: fixed;
+    }
+
+    #clock
+    {
+        position: absolute;
+        align-self: center;
     }
 
     #path-container
@@ -221,45 +222,6 @@
         text-decoration: none;
         padding: 10px;
         border: 3px dotted var(--text-color) ;
-    }
-
-    #file-stats
-    {
-        display: flex;
-        gap: 8px;
-    }
-
-    #stat-title-container, #stat-bar-container
-    {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .stat-title
-    {
-        display: flex;
-        height: 24px;
-        align-items: center;
-    }
-
-    .stat
-    {
-        display: flex;
-        gap: 5px;
-    }
-
-    .stat-bar-segment
-    {
-        height: 20px;
-        width: 40px;
-        background-color: var(--background-color);
-        border: 2px solid var(--text-color);
-    }
-
-    .stat-bar-segment.fill
-    {
-        background-color: var(--text-color);
     }
 
     #footer

@@ -5,6 +5,8 @@ style: home.css
 script: home.js
 ---
 
+<div id="title">Files</div>
+<div id="clock">12:00:00</div>
 <div id="path-container">
     <div id="user">nolanmacfarlane@portfolioOS:~$ </div>
     <div id="path"></div>
@@ -87,28 +89,6 @@ script: home.js
             <a class="button" id="github-portfolio" href="https://github.com/nolanmacfarlane/nolanmacfarlane.github.io" target="_blank">Github</a>
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
         </div>
-        <!-- <section id="file-stats">
-            <div id="stat-title-container">
-                <div class="stat-title skill">Experience</div>
-                <div class="stat-title skill">Proficiency</div>
-                <div class="stat-title skill">Use Cases</div>
-                <div class="stat-title skill">Recency</div>
-                <div class="stat-title tool">Functionality</div>
-                <div class="stat-title tool">Aesthetic</div>
-                <div class="stat-title tool">Customizability</div>
-                <div class="stat-title tool">Support</div>
-            </div>
-            <div id="stat-bar-container">
-                {% include stat-bar.html class="skill" id="experience" %}
-                {% include stat-bar.html class="skill" id="proficiency" %}
-                {% include stat-bar.html class="skill" id="usecases" %}
-                {% include stat-bar.html class="skill" id="recency" %}
-                {% include stat-bar.html class="tool" id="functionality" %}
-                {% include stat-bar.html class="tool" id="aesthetic" %}
-                {% include stat-bar.html class="tool" id="customizability" %}
-                {% include stat-bar.html class="tool" id="support" %}
-            </div>
-        </section> -->
     </section>
 </section>
 <div id="footer">
