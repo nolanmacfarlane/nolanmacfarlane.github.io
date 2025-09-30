@@ -13,7 +13,7 @@ const fileLogo = document.getElementById("file-logo");
 const fileTitle = document.getElementById("file-title");
 const fileDescription = document.getElementById("file-description");
 const fileLinks = document.getElementById("link-container");
-const fileInput = document.getElementById("theme-form");
+const fileInput = document.getElementById("form");
 
 // #endregion
 
@@ -82,7 +82,10 @@ function initFolders()
                     link.style.display = "none";
                 });
 
-                fileInput.style.display = "none";
+                Array.from(fileInput.children).forEach(input =>
+                {
+                    input.style.display = "none";
+                });
 
                 files.forEach(file =>
                 {
@@ -146,7 +149,13 @@ function initFiles()
                 });
             }
 
-            fileInput.style.display = file.dataset.input === "true" ? "flex" : "none";
+            Array.from(fileInput.children).forEach(input =>
+            {
+                input.style.display = "none";
+            });
+
+            if (file.dataset.input != null)
+                document.getElementById(file.dataset.input).style.display = "flex";
 
             randomizeTextEffect(fileTitle);
         });

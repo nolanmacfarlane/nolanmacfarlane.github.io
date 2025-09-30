@@ -4,7 +4,7 @@ title: Home
 style: home.css
 script: 
   - home.js
-  - theme-input.js
+  - input.js
 ---
 
 <div id="title">Files</div>
@@ -80,9 +80,13 @@ script:
             Visual Studio Code.txt
             <div class="file-size">62.2 kB</div>
         </div>
-        <div class="button file config" id="Theme" data-logo="" data-description="Customize the theme of the site by editing the text file." data-input="true">
+        <div class="button file config" id="Theme" data-logo="" data-description="Customize the theme of the site by editing the text file." data-input="theme-input">
             Theme.txt
             <div class="file-size">4.1 kB</div>
+        </div>
+        <div class="button file config" id="UI" data-logo="" data-description="Customize the UI elements of the site by editing the text file." data-input="ui-input">
+            UI.txt
+            <div class="file-size">3.6 kB</div>
         </div>
     </section>
     <section id="info-container">
@@ -96,8 +100,8 @@ script:
             <a class="button" id="github-portfolio" href="https://github.com/nolanmacfarlane/nolanmacfarlane.github.io" target="_blank">Github</a>
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
         </div>
-        <form id="theme-form">
-            <textarea id="theme-input" name="theme" rows="8" cols="60" spellcheck="false" maxlength="500">
+        <form id="form">
+            <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500">
 # Uncomment the theme you want to select
 # If multiple themes are selected then the bottom-most theme takes priority
 
@@ -105,6 +109,12 @@ theme=default
 # theme=solarized
 # theme=solarized-dark
 # theme=rosepine-moon</textarea>
+            <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500">
+# Change the value to true or false to enable/disable visibility
+
+clock=true
+path=true
+bottombar=true</textarea>
         </form>
     </section>
 </section>
