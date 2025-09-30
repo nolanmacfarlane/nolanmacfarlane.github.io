@@ -79,6 +79,12 @@ function filterInput(input)
 
 // #region Events
 
+window.addEventListener("DOMContentLoaded", () =>
+{
+    updateTheme();
+    updateUI();
+});
+
 themeInput.addEventListener("input", () =>
 {
     clearTimeout(timeout);
