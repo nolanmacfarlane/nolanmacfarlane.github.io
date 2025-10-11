@@ -147,7 +147,8 @@ function initFiles()
             if (file.dataset.input != null)
                 document.getElementById(file.dataset.input).style.display = "flex";
 
-            randomizeTextEffect(fileTitle);
+            if (localStorage.getItem("randomize-effect") === "true")
+                randomizeTextEffect(fileTitle);
         });
     });
 

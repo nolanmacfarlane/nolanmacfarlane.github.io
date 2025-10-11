@@ -18,11 +18,12 @@ let lastSoundTime = 0;
 // #region Main
 
 updateClock();
-setInterval(updateClock, 500);
+setInterval(updateClock, 1000);
 preloadSounds();
 initButtonEffects();
 setTheme(localStorage.getItem("theme"));
 setUI(clock, localStorage.getItem(clock.id));
+setCRTEffect(localStorage.getItem("crt-effect"));
 
 // #endregion
 
@@ -92,7 +93,10 @@ function initButtonEffects()
 
 function setTheme(theme)
 {
-    document.body.className = "";
+    if (localStorage.getItem("crt-effect") === "true")
+        document.body.className = "crt";
+    else
+        document.body.className = "";
 
     if (theme !== null)
     {
@@ -117,6 +121,26 @@ function setUI(uiElement, isEnabled)
     {
         uiElement.style.display = "none";
         localStorage.setItem(uiElement.id, isEnabled);
+    }
+}
+
+function setRandomizeText(isEnabled)
+{
+    if (isEnabled === "true" || isEnabled === "false")
+        localStorage.setItem("randomize-effect", isEnabled);
+}
+
+function setCRTEffect(isEnabled)
+{
+    if (isEnabled === "true")
+    {
+        document.body.classList.add("crt");
+        localStorage.setItem("crt-effect", "true");
+    }
+    else if (isEnabled === "false" || isEnabled === null)
+    {
+        document.body.classList.remove("crt");
+        localStorage.setItem("crt-effect", "false");
     }
 }
 

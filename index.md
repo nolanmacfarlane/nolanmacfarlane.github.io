@@ -25,7 +25,7 @@ script:
             Nolan MacFarlane.txt
             <div class="file-size">27.4 kB</div>
         </div>
-        <div class="button file skill" id="C" data-logo="/assets/images/c.txt" data-description="I studied the C programming language in my first computer science course at UVic (CSC 111). Prior to this course, I had already learned Java and C# so the jump wasn't too difficult. The course covered the following topics: Variables, Functions, File I/O, Pointers, Linked Lists and Memory Management. I have yet to use C in any projects.">
+        <div class="button file skill" id="C" data-logo="/assets/images/c.txt" data-description="I studied the C programming language in my first computer science course at UVic (CSC 111). Prior to this course, I had already learned Java and C# so the jump wasn't too difficult. The course covered the following topics: Variables, Functions, File I/O, Pointers, Linked Lists and Memory Management.">
             C.txt
             <div class="file-size">372.7 kB</div>
         </div>
@@ -37,7 +37,7 @@ script:
             Java.txt
             <div class="file-size">57.1 kB</div>
         </div>
-        <div class="button file skill" id="JavaScript" data-logo="/assets/images/javascript.txt" data-description="JavaScript was the first programming language I learned. In highschool, I used it to make fun animations or games with the canvas. Recently, the main project in my ENGR 120 course required my team to design a web page that worked with a Raspberry Pi Pico to display sensor information. I volunteered to program the entire webpage since I had the most experience. This project lead me down a rabbit hole of web development that brought me to designing this portfolio site using plain JavaScript, HTML and CSS.">
+        <div class="button file skill" id="JavaScript" data-logo="/assets/images/javascript.txt" data-description="JavaScript was the first programming language I learned. In highschool, I used it to make fun animations or games with the canvas. Recently, I have been using JavaScript along with HTML, and CSS to design this website.">
             JavaScript.txt
             <div class="file-size">242.5 kB</div>
         </div>
@@ -49,15 +49,10 @@ script:
             CSS.txt
             <div class="file-size">89.4 kB</div>
         </div>
-        <div class="button file skill" id="Python" data-logo="/assets/images/python.txt" data-description="In the project mentioned in JavaScript.txt, we also needed to program the behavior of the Raspberry Pi Pico using python.">
-            Python.txt
-            <div class="file-size">29.9 kB</div>
-        </div>
         <div class="button file skill" id="Unity" data-logo="/assets/images/unity.txt" data-description="As mentioned in C#.txt, I used Unity to make several small games in highschool. I have also been using Unity for the last 2 years to develop my metroidvania game. I have experience with the following Unity features: Post Processing, Lighting, UI, Sound, Prefabs, Scriptable Objects, Particle System and Input System (Keyboard or Controller).">
             Unity.txt
             <div class="file-size">162.5 kB</div>
         </div>
-        <!-- TODO: Add API call to get real github repo description. -->
         <div class="button file project" id="Portfolio Website" data-logo="/assets/images/ui.txt" data-description="I built this site to host my projects, skills and experiences as well as, practice my HTML, CSS and JavaScript skills. It has gone through many iterations and will continue to evolve as my skills improve. I am always trying to learn something new; Let me know if you have any suggestions for my site! :)" data-links="github-portfolio">
             Porfolio Website.txt
             <div class="file-size">55 MB</div>
@@ -70,7 +65,7 @@ script:
             Ubuntu.txt
             <div class="file-size">10.3 kB</div>
         </div>
-        <div class="button file tool" id="Zen Browser" data-logo="/assets/images/zen.txt" data-description="I was recommended this browser from a friend and have absolutely fallen in love with the organization and customization options.">
+        <div class="button file tool" id="Zen Browser" data-logo="/assets/images/zen.txt" data-description="Undoubtedly, the best browser for productivity, organization and customization. It's open source too.">
             Zen Browser.txt
             <div class="file-size">392.5 kB</div>
         </div>
@@ -85,6 +80,10 @@ script:
         <div class="button file config" id="UI" data-logo="" data-description="Customize the UI elements of the site by editing the text file." data-input="ui-input">
             UI.txt
             <div class="file-size">3.6 kB</div>
+        </div>
+        <div class="button file config" id="Text Effects" data-logo="" data-description="Customize the text effects of the site by editing the text file." data-input="effect-input">
+            Text Effects.txt
+            <div class="file-size">2.8 kB</div>
         </div>
     </section>
     <section id="info-container">
@@ -102,6 +101,7 @@ script:
         <form id="form">
             <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
             <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
+            <textarea id="effect-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
         </form>
     </section>
 </section>

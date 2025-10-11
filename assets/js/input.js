@@ -2,9 +2,11 @@
 
 const themeInput = document.getElementById("theme-input");
 const uiInput = document.getElementById("ui-input");
+const effectInput = document.getElementById("effect-input");
 
 const themes = ["default", "solarized", "solarized-dark", "rosepine-moon", "dark-forest", "mocha"];
 const uiElements = ["clock", "path-container", "footer"];
+const textEffects = ["randomize-effect", "crt-effect"];
 
 const pathContainer = document.getElementById("path-container");
 const footer = document.getElementById("footer");
@@ -19,6 +21,8 @@ setThemeInputText();
 setUI(pathContainer, localStorage.getItem(pathContainer.id));
 setUI(footer, localStorage.getItem(footer.id));
 setUIInputText();
+checkCRTEffect();
+setEffectInputText();
 
 //  #endregion
 
@@ -87,6 +91,63 @@ function updateUI()
     });
 }
 
+function setEffectInputText()
+{
+    let effectInputText = "# Change the value to true or false to enable/disable visibility\n# Warning: The crt-effect may make the text harder to read\n\n";
+
+    textEffects.forEach(textEffect =>
+    {
+        if (localStorage.getItem(textEffect) !== null)
+            effectInputText += textEffect + "=" + localStorage.getItem(textEffect) + "\n";
+        else
+            effectInputText += textEffect + "=false\n";
+    });
+
+    effectInput.value = effectInputText;
+}
+
+function updateTextEffects()
+{
+    lines = filterInput(effectInput);
+
+    lines.forEach(line =>
+    {
+        const splitLine = line.trim().split("=");
+
+        if (splitLine[1] !== "")
+        {
+            if (splitLine[0] === "randomize-effect")
+                setRandomizeText(splitLine[1].trim());
+            if (splitLine[0] === "crt-effect")
+                setCRTEffect(splitLine[1].trim());
+        }
+    });
+
+    checkCRTEffect();
+}
+
+function checkCRTEffect()
+{
+    if (localStorage.getItem("crt-effect") === "true")
+    {
+        inputFields = document.querySelectorAll(".input");
+
+        inputFields.forEach(inputField =>
+        {
+            inputField.classList.add("crt");
+        });
+    }
+    else if (localStorage.getItem("crt-effect") === "false")
+    {
+        inputFields = document.querySelectorAll(".input");
+
+        inputFields.forEach(inputField =>
+        {
+            inputField.classList.remove("crt");
+        });
+    }
+}
+
 function filterInput(input)
 {
     return input.value.split(/\r?\n/).filter(line =>
@@ -110,6 +171,12 @@ uiInput.addEventListener("input", () =>
 {
     clearTimeout(timeout);
     timeout = setTimeout(updateUI, 100);
+});
+
+effectInput.addEventListener("input", () =>
+{
+    clearTimeout(timeout);
+    timeout = setTimeout(updateTextEffects, 100);
 });
 
 // #endregion
