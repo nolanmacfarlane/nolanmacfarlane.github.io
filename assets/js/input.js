@@ -61,7 +61,7 @@ function setUIInputText()
         if (localStorage.getItem(uiElement) !== null)
             uiInputText += uiElement + "=" + localStorage.getItem(uiElement) + "\n";
         else
-            uiInputText += uiElement + "=true";
+            uiInputText += uiElement + "=true\n";
     });
 
     uiInput.value = uiInputText;
