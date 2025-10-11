@@ -99,6 +99,11 @@ function setTheme(theme)
         document.body.classList.add(theme);
         localStorage.setItem("theme", theme);
     }
+    else
+    {
+        document.body.classList.add("default");
+        localStorage.setItem("theme", "default");
+    }
 }
 
 function setUI(uiElement, isEnabled)
