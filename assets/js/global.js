@@ -94,7 +94,7 @@ function setTheme(theme)
 {
     document.body.className = "";
 
-    if (theme !== "")
+    if (theme !== null)
     {
         document.body.classList.add(theme);
         localStorage.setItem("theme", theme);
