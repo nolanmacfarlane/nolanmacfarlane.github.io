@@ -58,7 +58,10 @@ function setUIInputText()
 
     uiElements.forEach(uiElement =>
     {
-        uiInputText += uiElement + "=" + localStorage.getItem(uiElement) + "\n";
+        if (localStorage.getItem(uiElement) !== null)
+            uiInputText += uiElement + "=" + localStorage.getItem(uiElement) + "\n";
+        else
+            uiInputText += uiElement + "=true";
     });
 
     uiInput.value = uiInputText;
