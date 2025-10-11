@@ -8,6 +8,62 @@
         font-style: normal;
     }
 
+    :root
+    {
+        --background-color: #000000;
+        --text-color: #008000;
+        --user-color: #234e86;
+        --current-file-color: #cecece;
+    }
+
+    .default
+    {
+        --background-color: #000000;
+        --text-color: #008000;
+        --user-color: #234e86;
+        --current-file-color: #cecece;
+    }
+
+    .solarized
+    {
+        --background-color: #FDF6E3;
+        --text-color: #002B36;
+        --user-color: #4e7afb;
+        --current-file-color: #fb784e;
+    }
+
+    .solarized-dark
+    {
+        --background-color: #002B36;
+        --text-color: #FDF6E3;
+        --user-color: #4e7afb;
+        --current-file-color: #fb784e;
+    }
+
+    .rosepine-moon
+    {
+        --background-color: #232136;
+        --text-color: hsl(245, 50%, 91%);
+        --user-color: #d77e00;
+        --current-file-color: #ea9a97;
+    }
+
+    .dark-forest
+    {
+        --background-color: #0b130f;
+        --text-color: #9cd2bb;
+        --user-color: #727c41;
+        --current-file-color: #8e55ed;
+    }
+
+    .mocha
+    {
+        --background-color: #170f0b;
+        --text-color: #dec0b4;
+        --user-color: #826353;
+        --current-file-color: #d68955;
+    }
+
     body 
     {
         display: flex;
@@ -15,7 +71,56 @@
         min-height: 100vh;
         margin: 0;
         font-family: "ubuntu-mono";
+        color: var(--text-color);
+        background: var(--background-color);
         overflow: hidden;
+    }
+
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+        padding: 1vh;
+        gap: 1vh;
+        overflow: hidden;
+    }
+
+    #content-container
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        box-sizing: border-box;
+        height: 98vh;
+        width: 100%;
+        gap: 1vh;
+        padding: 1vh;
+        border: 0.2vh solid var(--text-color);
+    }
+
+    #title, #clock
+    {
+        font-size: 1.6vh;
+        top: 0.2vh;
+        background: var(--background-color);
+        padding: 0 0.4vh;
+        font-weight: bold;
+    }
+
+    #title
+    {
+        position: fixed;
+        left: 2vh;
+    }
+
+    #clock
+    {
+        position: absolute;
+        align-self: center;
     }
 
     .button

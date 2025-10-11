@@ -7,8 +7,6 @@ script:
   - input.js
 ---
 
-<div id="title">Files</div>
-<div id="clock">12:00:00</div>
 <div id="path-container">
     <div id="user">nolanmacfarlane@portfolioOS:~$ </div>
     <div id="path"></div>
@@ -23,7 +21,7 @@ script:
         <div class="button folder" id="config">.config</div>
     </section>
     <section id="main-file-container">
-        <div class="button file about" id="Nolan MacFarlane" data-logo="/assets/images/nolan.txt" data-description="Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development. I have experience with C# and I am learning HTML, CSS and JavaScript. Outside of school and coding I enjoy playing tennis, video games, violin and cooking." data-links="resume github email">
+        <div class="button file about" id="Nolan MacFarlane" data-logo="/assets/images/nolan.txt" data-description="Hi I'm Nolan MacFarlane! I am currently a software engineering student at UVic with a passion for UI design and game development. I have experience with C# and I am learning HTML, CSS and JavaScript. Outside of school and coding I enjoy playing tennis, video games, violin and cooking." data-links="resume resume-html github email">
             Nolan MacFarlane.txt
             <div class="file-size">27.4 kB</div>
         </div>
@@ -94,29 +92,16 @@ script:
         <h1 id="file-title"></h1>
         <p id="file-description"></p>
         <div id="link-container">
-            <a class="button" id="resume" href="/assets/files/NolanMacFarlane.pdf" target="_blank">Resume (PDF)</a>
+            <a class="button" id="resume" href="/assets/files/nolanmacfarlane.pdf" target="_blank">Resume (PDF)</a>
+            <a class="button" id="resume-html" href="nolanmacfarlane.html">Resume (HTML)</a>
             <a class="button" id="github" href="https://github.com/nolanmacfarlane" target="_blank">Github</a>
             <a class="button" id="email" href="mailto:nolanmacfarlane05@gmail.com" target="_blank">Email</a>
             <a class="button" id="github-portfolio" href="https://github.com/nolanmacfarlane/nolanmacfarlane.github.io" target="_blank">Github</a>
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
         </div>
         <form id="form">
-            <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500">
-# Uncomment the theme you want to select
-# If multiple themes are selected then the bottom-most theme takes priority
-
-theme=default
-# theme=solarized
-# theme=solarized-dark
-# theme=rosepine-moon
-# theme=dark-forest
-# theme=mocha</textarea>
-            <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500">
-# Change the value to true or false to enable/disable visibility
-
-clock=true
-path=true
-bottombar=true</textarea>
+            <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
+            <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
         </form>
     </section>
 </section>

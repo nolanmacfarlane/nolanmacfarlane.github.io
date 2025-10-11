@@ -1,0 +1,105 @@
+/* #region General Styles and Variables */
+
+    :root 
+    {
+        --background-color: white;
+        --text-color: #645240;
+        --current-file-color: #7d55be;
+    }
+
+    #content-container
+    {
+        justify-content: start;
+        align-items: normal;
+        overflow: auto;
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+/* #endregion */
+
+/* #region Media Queries */
+
+    @media (max-width: 700px)
+    {
+        #content-container
+        {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .item-header
+        {
+            flex-direction: column;
+        }
+        
+        .grid
+        {
+            display: flex !important;
+            flex-direction: column;
+        }
+    }
+
+/* #endregion */
+
+    header
+    {
+        text-align: center;
+    }
+
+    h1 
+    {
+        margin: 0;
+        font-size: 50px;
+    }
+
+    .subtitle 
+    {
+        margin: 0;
+        font-size: 16px;
+        color: var(--text-color);
+    }
+
+    h2 
+    {
+        color: var(--current-file-color);
+        margin-bottom: 2px;
+        border-bottom: 3px double var(--current-file-color);
+        padding-bottom: 2px;
+    }
+
+    .item 
+    {
+        margin-bottom: 0.2cm;
+    }
+
+    .item-header 
+    {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 900;
+    }
+
+    .item-sub 
+    {
+        font-size: 14px;
+        margin-top: 0.2cm;
+        color: var(--text-color);
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    ul 
+    {
+        margin: 0;
+        margin-top: 0.1cm;
+        padding-left: 0.4cm;
+    }
+
+    .grid
+    {
+        display: grid;
+        grid-template: 0.5fr 0.5fr / 0.5fr 0.5fr;
+    }

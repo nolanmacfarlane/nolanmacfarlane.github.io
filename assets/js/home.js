@@ -1,7 +1,5 @@
 // #region Variables
 
-const clock = document.getElementById("clock");
-
 const path = document.getElementById("path");
 const currentFile = document.getElementById("current-file");
 const fileMetadata = document.getElementById("file-metadata");
@@ -19,20 +17,12 @@ const fileInput = document.getElementById("form");
 
 // #region Main
 
-updateClock();
 initFolders();
 initFiles();
-
-setInterval(updateClock, 500);
 
 // #endregion
 
 // #region Functions
-
-function updateClock()
-{
-    clock.textContent = new Date().toLocaleTimeString();
-}
 
 async function randomizeTextEffect(stringElement)
 {

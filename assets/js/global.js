@@ -1,5 +1,7 @@
 // #region Global Variables
 
+const clock = document.getElementById("clock");
+
 const loadedSoundsMap =
 {
     "/assets/sounds/click.wav": new Audio("/assets/sounds/click.wav"),
@@ -15,13 +17,21 @@ let lastSoundTime = 0;
 
 // #region Main
 
+updateClock();
+setInterval(updateClock, 500);
 preloadSounds();
 initButtonEffects();
-checkLightMode();
+setTheme(localStorage.getItem("theme"));
+setUI(clock, localStorage.getItem(clock.id));
 
 // #endregion
 
 // #region Functions
+
+function updateClock()
+{
+    clock.textContent = new Date().toLocaleTimeString();
+}
 
 function preloadSounds()
 {
@@ -30,30 +40,6 @@ function preloadSounds()
         sound.preload = "auto";
         sound.load();
     }
-}
-
-function initButtonEffects()
-{
-    buttons.forEach(button =>
-    {
-        // For keyboard compatibility
-        button.tabIndex = 0;
-        button.role = "button";
-
-        button.addEventListener("keydown", (event) =>
-        {
-            if (event.key === "Enter" || event.key === " ")
-            {
-                button.click();
-                event.preventDefault();
-            }
-        });
-        
-        button.addEventListener("mouseenter", () =>
-        {
-            playSound("/assets/sounds/hover.wav");
-        });
-    });
 }
 
 function playSound(url)
@@ -80,16 +66,53 @@ function getLoadedSound(url)
     return sound ? sound.cloneNode() : null;
 }
 
-function checkLightMode()
+function initButtonEffects()
 {
-    if (localStorage.getItem("isLightMode") === "false") document.body.classList.add("dark-mode");
+    buttons.forEach(button =>
+    {
+        // For keyboard compatibility
+        button.tabIndex = 0;
+        button.role = "button";
+
+        button.addEventListener("keydown", (event) =>
+        {
+            if (event.key === "Enter" || event.key === " ")
+            {
+                button.click();
+                event.preventDefault();
+            }
+        });
+        
+        button.addEventListener("mouseenter", () =>
+        {
+            playSound("/assets/sounds/hover.wav");
+        });
+    });
 }
 
-function toggleLightMode()
+function setTheme(theme)
 {
-    document.body.classList.toggle("dark-mode");
-    let isLightMode = !document.body.classList.contains("dark-mode");
-    localStorage.setItem("isLightMode", isLightMode.toString());
+    document.body.className = "";
+
+    if (theme !== "")
+    {
+        document.body.classList.add(theme);
+        localStorage.setItem("theme", theme);
+    }
+}
+
+function setUI(uiElement, isEnabled)
+{
+    if (isEnabled === "true")
+    {
+        uiElement.style.display = "";
+        localStorage.setItem(uiElement.id, isEnabled);
+    }
+    else if (isEnabled === "false")
+    {
+        uiElement.style.display = "none";
+        localStorage.setItem(uiElement.id, isEnabled);
+    }
 }
 
 // #endregion
