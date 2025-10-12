@@ -60,7 +60,7 @@ script:
             Porfolio Website.txt
             <div class="file-size">55 MB</div>
         </div>
-        <div class="button file project" id="Chess Engine" data-logo="/assets/images/chess-knight.txt" data-description="nmacBot is a simple chess engine in Java. The chess engine features a basic Java gui for local games against other players or the bot. The engine uses the lichess-bot github repository to connect to lichess online." data-links="github-chess" data-div="lichess-game">
+        <div class="button file project" id="Chess Engine" data-logo="/assets/images/chess-knight.txt" data-description="nmacBot is a UCI compatible chess engine in Java. The chess engine features a basic Java gui for local games against other players or the bot. The engine uses the lichess-bot github repository to connect to lichess online." data-links="github-chess" data-div="lichess-game">
             Chess Engine.txt
             <div class="file-size">20 MB</div>
         </div>

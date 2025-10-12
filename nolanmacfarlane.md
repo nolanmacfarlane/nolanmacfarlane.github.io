@@ -24,6 +24,7 @@ style: resume.css
         <ul>
             <li>Cumulative GPA: 3.7 (92.5%)</li>
             <li>Relevant coursework: Fundamentals of Programming I & II, Computer Architecture, Software Development Methods</li>
+            <li>Clubs: UVic Tennis Team (Present)</li>
         </ul>
     </div>
 </section>

@@ -26,7 +26,7 @@ async function updateGame()
 
         if (!res.ok)
         {
-            status.textContent = "Bot is not currently playing.";
+            status.textContent = "No game found.";
             boardContainer.firstElementChild.replaceChildren();
             currentPGN = "";
             return;
@@ -49,6 +49,9 @@ async function updateGame()
             });
             
             status.textContent = "Currently playing:";
+
+            if (!pgn.includes('[Termination "Unterminated"]'))
+                status.textContent = "Latest game played:";
         }
     }
     catch (e)
