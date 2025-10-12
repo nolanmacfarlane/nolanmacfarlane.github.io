@@ -5,7 +5,7 @@
         #file-containers
         {
             display: grid !important;
-            grid-template-columns: 0.2fr 0.8fr;
+            grid-template: 0.3fr 10fr / 0.2fr 0.8fr;
             box-sizing: border-box;
         }
 
@@ -37,13 +37,6 @@
         {
             font-size: 8px !important;
         }
-
-        #file-description
-        {
-            height: fit-content;
-            max-height: 150px;
-            overflow: auto;
-        }
     }
 
     @media (max-width: 600px), (max-height: 700px)
@@ -66,6 +59,7 @@
     #path-container
     {
         display: flex;
+        height: auto;
     }
 
     #user
@@ -82,7 +76,8 @@
     #file-containers
     {
         display: flex;
-        height: 100%;
+        flex: 1;
+        height: 90%;
         width: 100%;
         gap: 8px;
         font-weight: 700;
@@ -142,6 +137,10 @@
         flex-direction: column;
         align-items: center;
         width: 60%;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow: auto;
+        border: 0.2vh solid var(--text-color);
     }
 
     #file-logo
@@ -185,7 +184,7 @@
         box-shadow: 0 0 10px 3px var(--user-color);
     }
 
-    #form
+    #extra-div
     {
         display: flex;
         flex-direction: column;
@@ -204,20 +203,82 @@
         padding: 10px;
         color: var(--text-color);
         background: transparent;
-        border: 3px solid var(--text-color);
+        border: 0.2vh solid var(--text-color);
         transition: border 0.3s;
+        caret-color: var(--current-file-color);
     }
 
     .input:focus
     {
         outline: none;
-        border: 3px solid var(--current-file-color);
+        border: 0.2vh solid var(--current-file-color);
+    }
+
+    #lichess-game
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #status
+    {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    #board-container
+    {
+        width: 400px;
+        height: 400px;
+        margin-bottom: 80px;
+    }
+
+    .lpv
+    {
+        border: 0.2vh solid var(--text-color) !important;
+        border-radius: 0 !important;
+        transition: border 0.3s;
+    }
+
+    .lpv:focus
+    {
+        border: 0.2vh solid var(--current-file-color) !important;
+        outline: none !important;
+    }
+
+    .lpv__player
+    {
+        background-color: var(--background-color) !important;
+    }
+
+    .lpv__player__person
+    {
+        padding: none;
+        border: none;
+    }
+
+    .lpv__player__person:hover
+    {
+        background-color: var(--background-color) !important;
+        box-shadow: none;
+    }
+
+    cg-board
+    {
+        background-color: var(--background-color) !important;
+    }
+
+    .cg-wrap piece
+    {
+        opacity: 0.7;
     }
 
     #footer
     {
         display: flex;
         width: 100%;
+        height: auto;
     }
 
     #file-metadata, #credit, #storage

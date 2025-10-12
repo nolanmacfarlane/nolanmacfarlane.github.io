@@ -3,6 +3,7 @@
 const themeInput = document.getElementById("theme-input");
 const uiInput = document.getElementById("ui-input");
 const effectInput = document.getElementById("effect-input");
+const inputFields = [themeInput, uiInput, effectInput];
 
 const themes = ["default", "solarized", "solarized-dark", "rosepine-moon", "dark-forest", "mocha"];
 const uiElements = ["clock", "path-container", "footer"];
@@ -45,7 +46,7 @@ function setThemeInputText()
 
 function updateTheme()
 {
-    lines = filterInput(themeInput);
+    let lines = filterInput(themeInput);
     
     lines.forEach(line =>
     {
@@ -73,7 +74,7 @@ function setUIInputText()
 
 function updateUI()
 {
-    lines = filterInput(uiInput);
+    let lines = filterInput(uiInput);
     
     lines.forEach(line =>
     {
@@ -108,7 +109,7 @@ function setEffectInputText()
 
 function updateTextEffects()
 {
-    lines = filterInput(effectInput);
+    let lines = filterInput(effectInput);
 
     lines.forEach(line =>
     {
@@ -130,8 +131,6 @@ function checkCRTEffect()
 {
     if (localStorage.getItem("crt-effect") === "true")
     {
-        inputFields = document.querySelectorAll(".input");
-
         inputFields.forEach(inputField =>
         {
             inputField.classList.add("crt");
@@ -139,8 +138,6 @@ function checkCRTEffect()
     }
     else if (localStorage.getItem("crt-effect") === "false")
     {
-        inputFields = document.querySelectorAll(".input");
-
         inputFields.forEach(inputField =>
         {
             inputField.classList.remove("crt");

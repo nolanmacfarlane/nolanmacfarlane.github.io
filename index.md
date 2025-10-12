@@ -1,10 +1,13 @@
 ---
 layout: home
 title: Home
-style: home.css
+style: 
+  - home.css
+  - lichess-pgn-viewer.css
 script: 
   - home.js
   - input.js
+  - lichessbot.js
 ---
 
 <div id="path-container">
@@ -57,7 +60,7 @@ script:
             Porfolio Website.txt
             <div class="file-size">55 MB</div>
         </div>
-        <div class="button file project" id="Chess Engine" data-logo="/assets/images/chess-knight.txt" data-description="nmacBot is a simple chess engine in Java. The chess engine features a basic Java gui for local games against other players or the bot. The engine uses the lichess-bot github repository to connect to lichess online." data-links="github-chess">
+        <div class="button file project" id="Chess Engine" data-logo="/assets/images/chess-knight.txt" data-description="nmacBot is a simple chess engine in Java. The chess engine features a basic Java gui for local games against other players or the bot. The engine uses the lichess-bot github repository to connect to lichess online." data-links="github-chess" data-div="lichess-game">
             Chess Engine.txt
             <div class="file-size">20 MB</div>
         </div>
@@ -73,15 +76,15 @@ script:
             Visual Studio Code.txt
             <div class="file-size">62.2 kB</div>
         </div>
-        <div class="button file config" id="Theme" data-logo="" data-description="Customize the theme of the site by editing the text file." data-input="theme-input">
+        <div class="button file config" id="Theme" data-logo="" data-description="Customize the theme of the site by editing the text file." data-div="theme-input">
             Theme.txt
             <div class="file-size">4.1 kB</div>
         </div>
-        <div class="button file config" id="UI" data-logo="" data-description="Customize the UI elements of the site by editing the text file." data-input="ui-input">
+        <div class="button file config" id="UI" data-logo="" data-description="Customize the UI elements of the site by editing the text file." data-div="ui-input">
             UI.txt
             <div class="file-size">3.6 kB</div>
         </div>
-        <div class="button file config" id="Text Effects" data-logo="" data-description="Customize the text effects of the site by editing the text file." data-input="effect-input">
+        <div class="button file config" id="Text Effects" data-logo="" data-description="Customize the text effects of the site by editing the text file." data-div="effect-input">
             Text Effects.txt
             <div class="file-size">2.8 kB</div>
         </div>
@@ -98,11 +101,17 @@ script:
             <a class="button" id="github-portfolio" href="https://github.com/nolanmacfarlane/nolanmacfarlane.github.io" target="_blank">Github</a>
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
         </div>
-        <form id="form">
+        <div id="extra-div">
             <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
             <textarea id="ui-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
             <textarea id="effect-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
-        </form>
+            <div id="lichess-game">
+                <div id="status">Checking for live games...</div>
+                <div id="board-container">
+                    <div id="board"></div>
+                </div>
+            </div>
+        </div>
     </section>
 </section>
 <div id="footer">

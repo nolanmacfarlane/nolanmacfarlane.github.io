@@ -6,14 +6,20 @@
         <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
         
         {% if page.style %}
-            <link rel="stylesheet" href="{{ '/assets/css/' | append: page.style | relative_url }}">
+            {% for css in page.style %}
+                {% if css contains 'http' %}
+                    <link rel="stylesheet" href="{{ css }}">
+                {% else %}
+                    <link rel="stylesheet" href="{{ '/assets/css/' | append: css | relative_url }}">
+                {% endif %}
+            {% endfor %}
         {% endif %}
 
         <script src="{{ '/assets/js/global.js' | relative_url }}" defer></script>
 
         {% if page.script %}
             {% for js in page.script %}
-                <script src="{{ '/assets/js/' | append: js | relative_url }}" defer></script>
+                <script type="module" src="{{ '/assets/js/' | append: js | relative_url }}" defer></script>
             {% endfor %}
         {% endif %}
     </head>

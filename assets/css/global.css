@@ -10,7 +10,7 @@
 
     :root
     {
-        --background-color: #000000;
+        --background-color: #0c0c0c;
         --text-color: #008000;
         --user-color: #234e86;
         --current-file-color: #25ac4d;
@@ -18,7 +18,7 @@
 
     .default
     {
-        --background-color: #000000;
+        --background-color: #0c0c0c;
         --text-color: #008000;
         --user-color: #234e86;
         --current-file-color: #25ac4d;

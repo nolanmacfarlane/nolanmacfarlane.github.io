@@ -11,7 +11,7 @@ const fileLogo = document.getElementById("file-logo");
 const fileTitle = document.getElementById("file-title");
 const fileDescription = document.getElementById("file-description");
 const fileLinks = document.getElementById("link-container");
-const fileInput = document.getElementById("form");
+const fileDiv = document.getElementById("extra-div");
 
 // #endregion
 
@@ -72,9 +72,9 @@ function initFolders()
                     link.style.display = "none";
                 });
 
-                Array.from(fileInput.children).forEach(input =>
+                Array.from(fileDiv.children).forEach(div =>
                 {
-                    input.style.display = "none";
+                    div.style.display = "none";
                 });
 
                 files.forEach(file =>
@@ -139,13 +139,13 @@ function initFiles()
                 });
             }
 
-            Array.from(fileInput.children).forEach(input =>
+            Array.from(fileDiv.children).forEach(div =>
             {
-                input.style.display = "none";
+                div.style.display = "none";
             });
 
-            if (file.dataset.input != null)
-                document.getElementById(file.dataset.input).style.display = "flex";
+            if (file.dataset.div != null)
+                document.getElementById(file.dataset.div).style.display = "flex";
 
             if (localStorage.getItem("randomize-effect") === "true")
                 randomizeTextEffect(fileTitle);
