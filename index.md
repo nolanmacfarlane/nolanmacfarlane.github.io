@@ -64,6 +64,10 @@ script:
             Chess Engine.txt
             <div class="file-size">20 MB</div>
         </div>
+        <div class="button file project" id="Metroidvania Game" data-logo="/assets/images/controller.txt" data-description="I have been developing a metroidvania game in the Unity game engine with C# inspired by Hollow Knight and Animal Well. I plan on adding a polished web demo to the website in the future. Here are a few screenshots of the progress so far." data-div="metroidvania-screenshots">
+            Metroidvania Game.txt
+            <div class="file-size">2.7 GB</div>
+        </div>
         <div class="button file tool" id="Ubuntu" data-logo="/assets/images/ubuntu.txt" data-description="I recently switched to Ubuntu from Windows because I thought it would be fun to try a new operating system and mess around with customization.">
             Ubuntu.txt
             <div class="file-size">10.3 kB</div>
@@ -110,6 +114,10 @@ script:
                 <div id="board-container">
                     <div id="board"></div>
                 </div>
+            </div>
+            <div id="metroidvania-screenshots">
+                <img class="screenshot" src="/assets/images/metroidvania-level-screenshot.png">
+                <img class="screenshot" src="/assets/images/metroidvania-forge-menu-screenshot.png">
             </div>
         </div>
     </section>

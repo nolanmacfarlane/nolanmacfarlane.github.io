@@ -53,7 +53,7 @@ style: resume.css
                 <span>Tools</span>
             </div>
             <ul>
-                <li>Unity Game Engine, Git, Bash, Matlab, Excel, VS Code</li>
+                <li>Unity Game Engine, Git, Bash, VS Code</li>
             </ul>
         </div>
         <div class="item">
@@ -101,8 +101,7 @@ style: resume.css
             Okanagan Mission Tennis Club, Kelowna, BC
         </div>
         <ul>
-            <li>Coached adult group clinics, beginner and intermediate levels</li>
-            <li>Coached junior group clinics, ages 6 to 14, from red ball to regular ball</li>
+            <li>Coached adult and junior group clinics, beginner and intermediate levels</li>
         </ul>
         <div class="item-sub">
             City of Kelowna, Kelowna, BC
@@ -120,7 +119,7 @@ style: resume.css
             Basil & Mint, Kelowna, BC
         </div>
         <ul>
-            <li>Performed duties such as washing dishes and prepping food for chefs upholding highest sanitary standards</li>
+            <li>Performed duties such as washing dishes and prepping food for chefs</li>
             <li>Managed closing duties every night</li>
         </ul>
     </div>
@@ -143,6 +142,14 @@ style: resume.css
         </div>
         <ul>
             <li>2024 Piano and Strings Performance Scholarship</li>
+        </ul>
+    </div>
+    <div class="item">
+        <div class="item-header">
+            <span>Royal Conservatory</span>
+        </div>
+        <ul>
+            <li>Completed Grade 10 Violin Exam</li>
         </ul>
     </div>
 </section>
