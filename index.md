@@ -68,7 +68,7 @@ script:
             Metroidvania Game.txt
             <div class="file-size">2.7 GB</div>
         </div>
-        <div class="button file project" id="HospiFlow" data-logo="/assets/images/heart-pulse.txt" data-description="HospiFlow is a bed and patient management system that my team and I designed in ENGR 120. It uses a Raspberry Pi Pico along with a breadboard circuit to collect data about patients' beds occupation status and displays the information on a device-hosted webpage. The concept is intended to be integrated with other admin tools to optimize patient management. I developed the micropython and webpage code." data-links="github-hospiflow" data-div="hospiflow-images">
+        <div class="button file project" id="HospiFlow" data-logo="/assets/images/heart-pulse.txt" data-description="HospiFlow is a bed and patient management system that my team and I designed in ENGR 120. It uses a Raspberry Pi Pico along with a breadboard circuit to collect data about patients' beds occupation status and displays the information on a device-hosted webpage. The concept is intended to be integrated with other admin tools to optimize patient management. I developed the micropython and webpage code." data-links="github-hospiflow">
             HospiFlow.txt
             <div class="file-size">1.2 kB</div>
         </div>
@@ -124,10 +124,6 @@ script:
             <div id="metroidvania-screenshots" class="img-container">
                 <img src="/assets/images/metroidvania-level-screenshot.png">
                 <img src="/assets/images/metroidvania-forge-menu-screenshot.png">
-            </div>
-            <div id="hospiflow-images" class="img-container">
-                <img src="/assets/images/hospiflow-webpage.png">
-                <img src="/assets/images/hospiflow-breadboard.png">
             </div>
         </div>
     </section>
