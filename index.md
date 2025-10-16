@@ -68,6 +68,10 @@ script:
             Metroidvania Game.txt
             <div class="file-size">2.7 GB</div>
         </div>
+        <div class="button file project" id="HospiFlow" data-logo="/assets/images/heart-pulse.txt" data-description="HospiFlow is a bed and patient management system that my team and I designed in ENGR 120. It uses a Raspberry Pi Pico along with a breadboard circuit to collect data about patients' beds occupation status and displays the information on a device-hosted webpage. The concept is intended to be integrated with other admin tools to optimize patient management. I developed the micropython and webpage code." data-links="github-hospiflow" data-div="hospiflow-images">
+            HospiFlow.txt
+            <div class="file-size">1.2 kB</div>
+        </div>
         <div class="button file tool" id="Ubuntu" data-logo="/assets/images/ubuntu.txt" data-description="I recently switched to Ubuntu from Windows because I thought it would be fun to try a new operating system and mess around with customization.">
             Ubuntu.txt
             <div class="file-size">10.3 kB</div>
@@ -104,6 +108,7 @@ script:
             <a class="button" id="email" href="mailto:nolanmacfarlane05@gmail.com" target="_blank">Email</a>
             <a class="button" id="github-portfolio" href="https://github.com/nolanmacfarlane/nolanmacfarlane.github.io" target="_blank">Github</a>
             <a class="button" id="github-chess" href="https://github.com/nolanmacfarlane/Chess-Engine" target="_blank">Github</a>
+            <a class="button" id="github-hospiflow" href="https://github.com/nolanmacfarlane/ENGR-120-Design-Project-HospiFlow">Github</a>
         </div>
         <div id="extra-div">
             <textarea id="theme-input" class="input" rows="8" cols="60" spellcheck="false" maxlength="500"></textarea>
@@ -115,9 +120,14 @@ script:
                     <div id="board"></div>
                 </div>
             </div>
-            <div id="metroidvania-screenshots">
-                <img class="screenshot" src="/assets/images/metroidvania-level-screenshot.png">
-                <img class="screenshot" src="/assets/images/metroidvania-forge-menu-screenshot.png">
+            <!-- TODO: Add an embed for metroidvania game -->
+            <div id="metroidvania-screenshots" class="img-container">
+                <img src="/assets/images/metroidvania-level-screenshot.png">
+                <img src="/assets/images/metroidvania-forge-menu-screenshot.png">
+            </div>
+            <div id="hospiflow-images" class="img-container">
+                <img src="/assets/images/hospiflow-webpage.png">
+                <img src="/assets/images/hospiflow-breadboard.png">
             </div>
         </div>
     </section>

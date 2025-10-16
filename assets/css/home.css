@@ -276,17 +276,18 @@
         opacity: 0.7;
     }
 
-    #metroidvania-screenshots
+    .img-container
     {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .screenshot
+    img
     {
         width: 100%;
         border: 0.2vh solid var(--text-color);
+        opacity: 0.8;
     }
 
     #footer
